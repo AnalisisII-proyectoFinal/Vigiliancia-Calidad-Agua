@@ -10,7 +10,7 @@ router.get('/',inicio);
 
 
 async function inicio(req,res,next) {
-  res.json({saludo:'soy ruta usuario'})
+  res.json({saludo:'soy ruta reporte'})
 }
 
 

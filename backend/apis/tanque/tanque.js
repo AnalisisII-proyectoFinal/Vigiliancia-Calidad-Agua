@@ -5,12 +5,10 @@ const router = express.Router();
 
 // rutas
 
-router.get('/',inicio);
+router.get('/',iniTanque);
 
-
-
-async function inicio(req,res,next) {
-  res.json({saludo:'soy ruta usuario'})
+async function iniTanque(req,res,next) {
+  respuesta.exito(req,res,{saludo:'soy ruta tanque'},200);
 }
 
 

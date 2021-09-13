@@ -1,4 +1,5 @@
-import PeticionPanel from './ControladorPanel.js';
+//import PeticionPanel from './ControladorPanel.js
+import {validarInput} from '../utilidades/ValidarFormulario.js';
 export function Institucion(){
     const $institucion = document.createElement('div');
         $institucion.classList.add("pagina");
@@ -10,11 +11,11 @@ export function Institucion(){
       <h3>Institución</h3>
       <span>Datos actualizados el: 21/01/2021 08:55</span>
       <hr>
-      <form action="">
+      <form action="" class="form-datos-institucion">
         <p><label for="" class="input-label">Entidad:</label>
-          <input type="text" class="input-dato" id="" placeholder="Nombre institución" required=""/></p>
+          <input type="text" class="input-dato" name="titulo" id="n-institucion" placeholder="Nombre institución" required=""/></p>
         <p><label for="" class="input-label">Departamento:</label>
-           <input type="text" class="input-dato" id="" placeholder="Dependencia" required=""/></p>
+           <input type="text" class="input-dato" name="titulo" id="dependencia" placeholder="Dependencia" required=""/></p>
         <p class="contenedor-archivo">
             <label for="">logotipo:</label>
               <label class="input-archivo"> 
@@ -23,7 +24,7 @@ export function Institucion(){
               </label>
           </p>
         <p><label for="" class="input-label">Nombre del Sistema:</label>
-           <input type="text" class="input-dato" id="" placeholder="Nombre del sistema" required=""/></p>
+           <input type="text" class="input-dato" name="titulo" id="n-sis" placeholder="Nombre del sistema" required=""/></p>
         <p><label for="" class="input-label">Mision:</label>
            <input type="text" class="input-dato" id="" placeholder="Mision" required=""/></p>
         <p class="contenedor-archivo">
@@ -83,27 +84,18 @@ export function Institucion(){
     </div> 
   </section>
         `;
-        function iniInstucion() {
-           /*
-            const peticonPanel = new PeticionPanel();
-            peticonPanel.hacerPeticion(null,{},'GET').then(datos=>{
-            const $list = document.getElementById('datos-institucion');
-            console.table(datos.results)
-            for (const iterator of datos.results) {
-                console.log(iterator)
-                $list.innerHTML +=`
-                <tr>
-                    <td>${iterator.name}</td>
-                    <td>${iterator.url}</td>
-                <td>
-                <a class='button' href='#'>opcion</a>
-                <a class='button' href='#'>opcion2</a>
-                </td>
-                </tr>
-                `;
-            }
-            })*/
+        function iniInstitucion() {
+          const form = document.querySelector('.form-datos-institucion');
+          form.addEventListener('keydown',(e)=>{
+            let tipo = e.target.name;
+            let id = e.target.id;
+            let valor = e.target.value;
+            validarInput(tipo,id,valor);
+          })
+                
+                  
+               
         }
-        //setTimeout(()=>iniInstucion(),100);
+        setTimeout(()=>iniInstitucion(),100);
         return $institucion;
 }

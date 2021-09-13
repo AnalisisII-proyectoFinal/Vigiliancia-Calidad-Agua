@@ -8,9 +8,8 @@ const router = express.Router();
 router.get('/',inicio);
 
 
-
-async function inicio(req,res,next) {
-  res.json({saludo:'soy ruta usuario'})
+function inicio(req,res,next) {
+  res.json({saludo:'soy ruta ayuda'})
 }
 
 
