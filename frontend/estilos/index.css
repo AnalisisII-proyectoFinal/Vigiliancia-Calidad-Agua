@@ -1,0 +1,29 @@
+/**
+Estilos sistema de vigilancia de calidad de agua. municipilidad de san jose chacayá.
+--- Universidad Mariano galvez de Guatemala.
+--- Facultad de ingenieria en sistemas 
+--- Proyecto de analisis de sistemas II 
+*/
+/* importando fuente*/
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+/*-================= importacion de archivos de estilos =================*/
+@import url('./colores.css');
+@import url('./app.css');
+@import url('./elementos.css');
+@import url('./login.css');
+@import url('./usuario.css');
+@import url('./ayuda.css');
+@import url('./dashboard.css');
+@import url('./muestra.css');
+@import url('./panel.css');
+@import url('./reporte.css');
+@import url('./tanque.css');
+@import url('./usuario.css');
+@import url('./inicio.css');
+
+
+body{
+    background-color: var(--primer-color);
+    margin: 0 auto;
+    font-family: 'Playfair Display', serif;
+}
