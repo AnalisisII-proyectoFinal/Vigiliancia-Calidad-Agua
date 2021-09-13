@@ -30,3 +30,13 @@ git pull
 
 //ver ramas
 git branch
+
+
+///mas comandos
+echo "# Vigiliancia-Calidad-Agua" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:AnalisisII-proyectoFinal/Vigiliancia-Calidad-Agua.git
+git push -u origin main
