@@ -1,6 +1,5 @@
 "use strict";
 //@ts-check
-
 /**
  * Modulo Muestra - encargado de ingresar las muestras y creacion de hilos
  * @module Constantes

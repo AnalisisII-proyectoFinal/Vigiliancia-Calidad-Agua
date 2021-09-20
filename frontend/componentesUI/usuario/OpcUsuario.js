@@ -26,11 +26,10 @@ export function OpcUsuario(){
     const $opcusuario = document.createElement('div');
         $opcusuario.classList.add("menu-lateral");
         $opcusuario.innerHTML=`
-                    <h1>Opciones</h1>
-                    <button id="btn-1" class="btn-modulo">usuario1</button>
-                    <button id="btn-2" class="btn-modulo">usuari2</button>
-                    <button id="btn-3" class="btn-modulo">usuario3</button>
-                    <button id="btn-4" class="btn-modulo">usuario4</button>
+                    <img src="./assets/img/usear.svg" alt="img">
+                    <button id="btn-1" class="btn-modulo">Lista de Usuarios</button>
+                    <button id="btn-2" class="btn-modulo">Crear Usuarios</button>
+                    <button id="btn-3" class="btn-modulo">Editar Lista de Usuarios</button>
         `;
         /**
          * inicio de funcionalidades

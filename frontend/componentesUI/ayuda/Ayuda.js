@@ -5,7 +5,9 @@
  * @requires componente: opcPanel  para las opciones del modulo
  */
 import {OpcAyuda} from './OpcAyuda.js'
-
+import { Tutoriales} from './Tutoriales.js';
+import { ManualWeb } from './ManualWeb.js';
+import { ManualMovil } from './ManualMovil.js';
 
 /**
  * Unificacion de componentes del modulo
@@ -19,7 +21,9 @@ export function Ayuda() {
     /**paginas contenedor de paginas */
     const $paginas = document.createElement('div');
     $paginas.classList.add("contenido-pagina")
-    /** aqui se agregan las paginas... */
+    $paginas.appendChild(Tutoriales());
+    $paginas.appendChild(ManualWeb());
+    $paginas.appendChild(ManualMovil());
     
     $ayuda.appendChild($paginas);
     return $ayuda;

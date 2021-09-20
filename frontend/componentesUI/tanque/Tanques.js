@@ -1,5 +1,6 @@
 "use strict";
 //@ts-check
+import{validarInput}from '../utilidades/ValidarFormulario.js'
 /**
  * creacion de las opciones que tendra el modulo dashboard
  * @returns {void} historial del modulo y funcionalidades
@@ -65,5 +66,15 @@ export function Tanques(){
         </div>
     </section>
         `;
+        function iniTanques(){
+          const form = document.querySelector ('.tanque-buscador');
+          form.addEventListener('keydown',(e)=>{
+            let tipo = e.target.name;
+            let id = e.target.id;
+            let valor = e.target.value;
+            validarInput(tipo,id,valor);
+          })
+        }
+        setTimeout(()=>iniTanques(),100);
         return $tanques;
 }

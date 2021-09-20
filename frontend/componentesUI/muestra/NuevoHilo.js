@@ -1,5 +1,6 @@
 "use strict";
 //@ts-check
+import{validarInput}from '../utilidades/ValidarFormulario.js'
 /**
  * creacion de las opciones que tendra el modulo dashboard
  * @returns {void} historial del modulo y funcionalidades
@@ -15,10 +16,10 @@ export function NuevoHilo(){
             <h2 id="titulo">Crear nuevo hilo de muestras</h2>
             <hr> 
             <form action="" class="form-hilo">
-                <p><label for="" class="input-label">Fecha de inicio:</label>
-                    <input type="date" class="input-dato" id="" placeholder="" required=""/></p>
-                <p><label for="" class="input-label">Fecha de finalizacón:</label>
-                    <input type="date" class="input-dato" id="" placeholder="" required=""/></p>
+            <p><label for="" class="input-label">Fecha de inicio:</label>
+            <input type="date" class="input-dato" name="fecha" id="n-inico" placeholder="" required=""/></p>
+        <p><label for="" class="input-label">Fecha de finalizacón:</label>
+            <input type="date" class="input-dato" name="fecha" id="n-final" placeholder="" required=""/></p>
                 <p>
                     <label class="input-label" for="">Responsables</label>
                     <select class="input-opciones" id="">
@@ -95,5 +96,18 @@ export function NuevoHilo(){
         </div>
     </section>
         `;
+        function iniNuevoHilo(){
+          const form = document.querySelector ('.form-hilo');
+          form.addEventListener('keydown',(e)=>{
+            let tipo = e.target.name;
+            let id = e.target.id;
+            let valor = e.target.value;
+            validarInput(tipo,id,valor);
+          })
+
+
+
+        }
+        setTimeout(()=>iniNuevoHilo(),100);
         return $nuevohilo;
 }

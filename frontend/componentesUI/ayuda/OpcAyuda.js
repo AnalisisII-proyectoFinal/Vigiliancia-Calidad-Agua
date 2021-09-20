@@ -26,11 +26,10 @@ export function OpcAyuda(){
   const $opcayuda = document.createElement('div');
         $opcayuda.classList.add("menu-lateral");
         $opcayuda.innerHTML=`
-                    <h1>Opciones</h1>
-                    <button id="btn-1" class="btn-modulo">Ayuda1</button>
-                    <button id="btn-2" class="btn-modulo">Ayuda2</button>
-                    <button id="btn-3" class="btn-modulo">Ayuda3</button>
-                    <button id="btn-4" class="btn-modulo">Ayuda4</button>
+                    <div><img src="./assets/img/help.svg" alt="img"></div>
+                    <button id="btn-1" class="btn-modulo">Tutoriales</button>
+                    <button id="btn-2" class="btn-modulo">Manual de App Web</button>
+                    <button id="btn-3" class="btn-modulo">Manual de App Móvil</button>
         `;
         /**
          * inicio de funcionalidades

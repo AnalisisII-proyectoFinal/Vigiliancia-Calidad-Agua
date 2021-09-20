@@ -1,0 +1,42 @@
+@import url('./colores.css');
+
+.contenedor-tanques{
+    width: 98%;
+    height: 76vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    color: var(--titulo-color);
+    padding: 0px 10px 0px 10px;
+}
+
+.color-video{
+    background-color: rgb(3, 52, 187);
+}
+.tutoriales-buscador
+{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.pag-ayuda-tutoriales{
+    background-color: rgba(2, 26, 206, 0.568);
+    text-align:center;
+    width: 100%;
+    max-width: 1000px;
+    margin: 3px auto;
+    display: grid;
+    grid-area: 20px;
+}
+
+.pdfview{
+background-color: rgb(20, 24, 255);
+margin: 3px;
+
+}
+.sitio{
+    background-color: rgb(68, 86, 253);
+}
+.pag-web{
+    background-color: rgb(248, 248, 241);
+   text-decoration:none;
+}

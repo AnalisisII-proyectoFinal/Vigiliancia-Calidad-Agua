@@ -1,10 +1,11 @@
 const regex={
-    titulo: /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/,
+    texto: /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/,
     nombre:/^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/,
     email:/^[a-zA-Z0-9_.+-]+@[a-z0-9-]+\.[a-z0-9.]+$/,
     phone: /^[5,0,2]{3}[4|5|7]{1}([\d]{7})$/,
     fecha: /^(0[1-9]|1\d|2\d|3[01])\/(0[1-9]|1[0-2])\/(19|20)\d{2}$/,
-    descripcion: /^\w+\s+/
+    descripcion: /^\w+\s+/,
+    numero:/^\d/
 }
 
 
@@ -44,6 +45,10 @@ export function validarInput(tyInput,idInput,valInput){
         case 'descripcion':
                 let resultdescripcion = regex.descripcion.test(valInput);
                 actEstado(resultdescripcion,idInput);
+            break;
+        case 'numero':
+                let resultnumero = regex.numero.test(valInput);
+                actEstado(resultnumero,idInput);
             break;
         default:
             console.log('dato no admitido')

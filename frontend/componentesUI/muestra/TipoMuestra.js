@@ -1,5 +1,5 @@
 "use strict";
-//@ts-check
+import{validarInput}from '../utilidades/ValidarFormulario.js'
 /**
  * creacion de las opciones que tendra el modulo dashboard
  * @returns {void} historial del modulo y funcionalidades
@@ -15,10 +15,10 @@ export function TipoMuestra(){
           <h2>Nuevo tipo de muestra</h2>
           <hr>
           <form action="" class="form-nuevo-tipo-muestra">
-            <p><label for="" class="input-label">Nombre:</label>
-              <input type="text" class="input-dato" id="" placeholder="Full name" required=""/></p>
-            <p><label for="" class="input-label">Descripcion:</label>
-              <input type="text" class="input-dato" id="" placeholder="Full name" required=""/></p>
+          <p><label for="" class="input-label">Nombre:</label>
+          <input type="text" class="input-dato" name="nombre" id="n-nombre" placeholder="Full name" required=""/></p>
+        <p><label for="" class="input-label">Descripcion:</label>
+          <input type="text" class="input-dato" name="descripcion" id="n-descripcion" placeholder="Full name" required=""/></p>
               <p>
               <p><label for="" class="input-label"></label>
               <button class="primer-btn">Guardar</button></p>
@@ -62,5 +62,18 @@ export function TipoMuestra(){
       </div>
     </section>
         `;
+        function iniTipoMuestra(){
+          const form = document.querySelector ('.form-nuevo-tipo-muestra');
+          form.addEventListener('keydown',(e)=>{
+            let tipo = e.target.name;
+            let id = e.target.id;
+            let valor = e.target.value;
+            validarInput(tipo,id,valor);
+          })
+
+
+
+        }
+        setTimeout(()=>iniTipoMuestra(),100);
         return $tipomuestra;
 }

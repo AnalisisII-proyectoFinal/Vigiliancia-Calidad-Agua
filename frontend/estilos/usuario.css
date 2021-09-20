@@ -1,7 +1,89 @@
-@import url(./colores.css);
+@import url('./colores.css');
 
-.cuerp-usuario{
-    width: 200px;
-    height: 200px;
-    background-color: var(--tercer-color);
+.contenedor-Usuarios
+{
+    width: 98%;
+    height: 76vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    color: var(--titulo-color);
+    padding: 0px 10px 0px 10px;
+}
+
+
+.datos-institucion{
+    width: 100%;
+    color: var(--titulo-color);
+    padding: 0px 10px 0px 10px;
+}
+
+.datos-institucion form
+{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.datos-institucion p 
+{
+    width: 40%;
+}
+.botones-institucion{
+    display: flex;
+    justify-content:space-evenly;
+}
+
+.datos-informe-salud
+{
+    width: 100%;
+    color: var(--titulo-color);
+    padding: 0px 10px 0px 10px;
+}
+
+.datos-informe-salud form
+{
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    gap: 5%;
+}
+
+
+.contenedor-publicacion h3
+{
+    text-align: left;
+}
+
+.datos-publicaciones
+{
+    width: 98%;
+    padding: 0px 20px 0px 10px;
+}
+
+.nueva-publicacion
+{
+    width: 100%;
+    padding: 0px 10px 0px 10px;
+}
+.nueva-publicacion form
+{
+    display: flex;
+    justify-content:space-evenly;
+}
+
+.nueva-backup form
+{
+    display: flex;
+    justify-content: space-evenly;
+}
+.nueva-backup button
+{
+    height: 40px;
+}
+
+.form-habilitar-app form
+{
+    display: flex;
+    justify-content: space-evenly;
+}
+.form-habilitar-app button
+{
+    height: 40px;
 }

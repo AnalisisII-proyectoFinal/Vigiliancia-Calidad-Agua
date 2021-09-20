@@ -5,7 +5,9 @@
  * @requires componente: opcPanel  para las opciones del modulo
  */
 import {OpcUsuario} from './OpcUsuario.js';
-
+import { ListaUsuarios } from './ListaUsuarios.js';
+import { CreaUsuarios } from './CreaUsuarios.js';
+import { EditaUsuarios } from './EditaUsuarios.js';
 
 /**
  * Unificacion de componentes del modulo
@@ -20,7 +22,9 @@ export function Usuario() {
     const $paginas = document.createElement('div');
     $paginas.classList.add("contenido-pagina")
     /** aqui se agregan las paginas... */
-    
+    $paginas.appendChild(ListaUsuarios());
+    $paginas.appendChild(CreaUsuarios());
+    $paginas.appendChild(EditaUsuarios());
     $usuario.appendChild($paginas);
     return $usuario;
 }

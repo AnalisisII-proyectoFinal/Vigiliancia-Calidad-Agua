@@ -26,11 +26,10 @@ export function OpcReporte(){
     const $opcreporte = document.createElement('div');
         $opcreporte.classList.add("menu-lateral");
         $opcreporte.innerHTML=`
-                    <h1>Opciones</h1>
-                    <button id="btn-1" class="btn-modulo">reporte1</button>
-                    <button id="btn-2" class="btn-modulo">reporte2</button>
-                    <button id="btn-3" class="btn-modulo">reporte3</button>
-                    <button id="btn-4" class="btn-modulo">reporte4</button>
+                    <div><img src="./assets/img/reporte.svg" alt="img"></div>
+                    <button id="btn-1" class="btn-modulo">Tanques</button>
+                    <button id="btn-2" class="btn-modulo">Centro Salud</button>
+                    <button id="btn-3" class="btn-modulo">Usuario</button>
         `;
         /**
          * inicio de funcionalidades

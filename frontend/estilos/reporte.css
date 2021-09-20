@@ -1,0 +1,12 @@
+.contenedor-reporte{
+    width: 98%;
+    height: 76vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    color: var(--titulo-color);
+    padding: 0px 10px 0px 10px;
+}
+.form-reporte-detalle-tanque{
+    display: flex;
+    justify-content:space-around;
+}

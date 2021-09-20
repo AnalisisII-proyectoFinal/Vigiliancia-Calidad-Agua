@@ -1,5 +1,6 @@
 "use strict";
 //@ts-check
+import{validarInput}from '../utilidades/ValidarFormulario.js'
 /**
  * creacion de las opciones que tendra el modulo dashboard
  * @returns {void} historial del modulo y funcionalidades
@@ -14,7 +15,7 @@ export function Hilos(){
         <h3>Hilo de muestras</h3>
         <hr>
         <form action="" class="tanque-buscador">
-          <input type="date" class="input-buscador" id="" placeholder="nombre del tanque" required=""/>
+        <input type="date" class="input-buscador" name="fecha" id="n-hilom" placeholder="nombre del tanque" required=""/>
           <button class="primer-btn">Buscar</button>
         </form>
         <div>
@@ -65,5 +66,15 @@ export function Hilos(){
     </div>
   </section>
         `;
+        function iniHilo(){
+          const form = document.querySelector ('.tanque-buscador');
+          form.addEventListener('keydown',(e)=>{
+            let tipo = e.target.name;
+            let id = e.target.id;
+            let valor = e.target.value;
+            validarInput(tipo,id,valor);
+          })
+        }
+        setTimeout(()=>iniHilo(),100);
         return $hilos;
 }

@@ -22,5 +22,6 @@ const getConexion = async()=>{
 }
 
 module.exports={
-    getConexion
+    getConexion,
+    sql
 }

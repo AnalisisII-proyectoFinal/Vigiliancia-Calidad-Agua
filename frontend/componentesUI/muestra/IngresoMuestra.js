@@ -1,5 +1,6 @@
 "use strict";
 //@ts-check
+import{validarInput}from '../utilidades/ValidarFormulario.js'
 /**
  * creacion de las opciones que tendra el modulo dashboard
  * @returns {void} historial del modulo y funcionalidades
@@ -26,13 +27,13 @@ export function IngresoMuestra(){
             </select>
           </p>
           <p><label for="" class="input-label">Punto de muestra:</label>
-            <input type="text" class="input-dato" id="" placeholder="Hogar,tanque.." required=""/></p>
-          <p><label for="" class="input-label">PH:</label>
-            <input type="text" class="input-dato" id="" placeholder="ph" required=""/></p>
-          <p><label for="" class="input-label">Cloro recidual:</label>
-            <input type="text" class="input-dato" id="" placeholder="Full name" required=""/></p>
-          <p><label for="" class="input-label">Presion de agua:</label>
-            <input type="text" class="input-dato" id="" placeholder="Full name" required=""/></p>  
+          <input type="text" class="input-dato" name="nombre" id="n-muestra" placeholder="Hogar,tanque.." required=""/></p>
+        <p><label for="" class="input-label">PH:</label>
+          <input type="text" class="input-dato" name="numero" id="n-ph" placeholder="ph" required=""/></p>
+        <p><label for="" class="input-label">Cloro recidual:</label>
+          <input type="text" class="input-dato" name="numero" id="n-color" placeholder="" required=""/></p>
+        <p><label for="" class="input-label">Presion de agua:</label>
+          <input type="text" class="input-dato" name="numero" id="n-precsion" placeholder="" required=""/></p>  
           </form>
           <div class="btn-ingreso-muestra">
           <button class="primer-btn">Guardar</button>
@@ -77,5 +78,15 @@ export function IngresoMuestra(){
   </div>
 </section> 
         `;
+        function iniIngresoMuestra(){
+          const form = document.querySelector ('.form-ingreso-muestra');
+          form.addEventListener('keydown',(e)=>{
+            let tipo = e.target.name;
+            let id = e.target.id;
+            let valor = e.target.value;
+            validarInput(tipo,id,valor);
+          })
+        }
+        setTimeout(()=>iniIngresoMuestra(),100);
         return $ingresomuestra;
 }

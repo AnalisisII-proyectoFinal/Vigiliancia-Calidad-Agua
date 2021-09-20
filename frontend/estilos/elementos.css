@@ -5,7 +5,7 @@
 @import url(./colores.css);
 /*-================ botones=============================-*/
 .primer-btn /*- boton primario-*/
-{
+{   height: 40px;
     background-color: var(--primer-boton);
     border: none;
     color: var(--texto-color-light);
@@ -189,6 +189,41 @@
     border-radius: 5px;
   }
 
+/*-================modal================-*/
+.modal-contenedor{
+  background: rgba(240, 237, 237, 0.5);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  animation: intro-modal .6s ease;
+}
+
+.modal-contenedor::before{
+  content: 'X';
+  color: var(--titulo-color);
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  opacity: .5;
+}
+
+.modal-contenido{
+  background: var(--primer-color);
+  width: 90%;
+  max-width: 1000px;
+  border: 1px solid var(--quinto-color);
+  margin: auto;
+}
+
+@keyframes intro-modal {
+  from{
+    opacity: 0;
+    transform: translate3d(0,0,0) scale(0.3);
+  }
+}
 
 
 /*-=================    TABLA MOSTRAR DATOS =======================-*/  
@@ -245,7 +280,7 @@ tfoot th {
       padding: 8px;
       background-color: var(--tercer-boton);
 }
-    
+   
   
     
     

@@ -1,5 +1,6 @@
 "use strict";
 //@ts-check
+import{validarInput}from '../utilidades/ValidarFormulario.js'
 /**
  * creacion de las opciones que tendra el modulo dashboard
  * @returns {void} historial del modulo y funcionalidades
@@ -15,19 +16,19 @@ export function Mantenimiento(){
             <h2>Mantenimiento y mejoras de tanques</h2>
           <hr>
           <form action="" class="form-mantenimiento">
-            <p><label for="" class="input-label">Titulo:</label>
-              <input type="text" class="input-dato" id="" placeholder="titulo" required=""/></p>
-            <p><label for="" class="input-label">Descripcion:</label>
-              <input type="text" class="input-dato" id="" placeholder="descripcion" required=""/></p>
-            <p><label for="" class="input-label">Fecha:</label>
-              <input type="date" class="input-dato" id="" placeholder="" required=""/></p>
-            <p>
-              <label for="" class="input-label">Fotografia:</label>
-              <label class="input-archivo">
-                  <input type="file" id="file" aria-label="archivo">
-                  <span class="input-archivo-personalizado"></span>
-                </label>
-            </p>
+          <p><label for="" class="input-label">Titulo:</label>
+          <input type="text" class="input-dato" name="titulo" id="ntitulo" placeholder="titulo" required=""/></p>
+        <p><label for="" class="input-label">Descripcion:</label>
+          <input type="text" class="input-dato" name="descripcion" id="n-mant" placeholder="descripcion" required=""/></p>
+        <p><label for="" class="input-label">Fecha:</label>
+          <input type="date" class="input-dato" name="fecha" id="n-fecha" placeholder="" required=""/></p>
+        <p>
+          <label for="" class="input-label">Fotografia:</label>
+          <label class="input-archivo">
+              <input type="file" id="file" aria-label="archivo">
+              <span class="input-archivo-personalizado"></span>
+            </label>
+        </p>
             <p>
               <label class="input-label" for="">Tanque</label>
               <select class="input-opciones" id="">
@@ -88,5 +89,15 @@ export function Mantenimiento(){
         </div>
     </section>
         `;
+        function iniMantenimiento(){
+          const form = document.querySelector ('.form-mantenimiento');
+          form.addEventListener('keydown',(e)=>{
+            let tipo = e.target.name;
+            let id = e.target.id;
+            let valor = e.target.value;
+            validarInput(tipo,id,valor);
+          })
+        }
+        setTimeout(()=>iniMantenimiento(),100);
         return $mantenimiento;
 }

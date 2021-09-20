@@ -4,8 +4,10 @@
  * Importacion de componentes para el modulo
  * @requires componente: opcPanel  para las opciones del modulo
  */
-import {OpcReporte} from './OpcReporte.js';
-
+import { OpcReporte } from './OpcReporte.js';
+import { ReporteTanque } from './ReporteTanque.js'; 
+import { ReporteCentroSalud } from './ReporteCentroSalud.js';
+import { ReporteUsuario } from './ReporteUsuario.js';
 
 /**
  * Unificacion de componentes del modulo
@@ -19,8 +21,9 @@ export function Reporte() {
     /**paginas contenedor de paginas */
     const $paginas = document.createElement('div');
     $paginas.classList.add("contenido-pagina")
-    /** aqui se agregan las paginas... */
-    
+    $paginas.appendChild(ReporteTanque());
+    $paginas.appendChild(ReporteCentroSalud());
+    $paginas.appendChild(ReporteUsuario());
     $reporte.appendChild($paginas);
     return $reporte;
 }

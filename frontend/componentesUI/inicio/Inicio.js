@@ -1,4 +1,4 @@
-import PeticionInicio from './ControladorInicio.js'
+import PeticionInicio from './Controlador.js'
 
 export function Inicio() {
     const $Inicio = document.createElement('div');

@@ -14,7 +14,7 @@ export function Institucion(){
       <form action="" class="form-datos-institucion">
         <p><label for="" class="input-label">Entidad:</label>
           <input type="text" class="input-dato" name="titulo" id="n-institucion" placeholder="Nombre institución" required=""/></p>
-        <p><label for="" class="input-label">Departamento:</label>
+        <p><label for="" class="input-label">Dependencia:</label>
            <input type="text" class="input-dato" name="titulo" id="dependencia" placeholder="Dependencia" required=""/></p>
         <p class="contenedor-archivo">
             <label for="">logotipo:</label>
@@ -53,7 +53,7 @@ export function Institucion(){
       <h3>Datos para informe centro de salud</h3>
       <span>Datos actualizados el: 21/01/2021 08:55</span>
       <hr>
-      <form action="">
+      <form action="" >
         <p><label for="" class="input-label">Departamento:</label>
           <input type="text" class="input-dato" id="" placeholder="Nombre institución" required=""/></p>
         <p><label for="" class="input-label">Municipio:</label>
@@ -65,7 +65,7 @@ export function Institucion(){
         <p><label for="" class="input-label">Distrito Salud:</label>
           <input type="text" class="input-dato" id="" placeholder="Nombre institución" required=""/></p>
         <p><label for="" class="input-label">Director de Salud:</label>
-          <input type="text" class="input-dato" id="" placeholder="Nombre institución" required=""/></p>
+          <input type="text" class="input-dato" name="texto" id="" placeholder="Nombre institución" required=""/></p>
         <p class="contenedor-archivo">
             <label for="">logotipo Ministerio de Salud:</label>
               <label class="input-archivo"> 
@@ -93,8 +93,7 @@ export function Institucion(){
             validarInput(tipo,id,valor);
           })
                 
-                  
-               
+       
         }
         setTimeout(()=>iniInstitucion(),100);
         return $institucion;

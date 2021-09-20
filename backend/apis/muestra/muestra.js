@@ -1,7 +1,6 @@
 const express = require('express');
 const respuesta = require('../../respuesta/respuesta.js');
 const {getConexion} = require('../../sqlserver/sqlserverconexion.js');
-const {getUsuarios} = require('./controlador.js');
 const router = express.Router();
 
 // rutas

@@ -1,6 +1,6 @@
 const express = require('express');
 const respuesta = require('../../respuesta/respuesta.js');
-const {getConexion} = require('../../sqlserver/sqlserverconexion.js');
+const {getConexion,sql} = require('../../sqlserver/sqlserverconexion.js');
 const router = express.Router();
 
 // rutas
@@ -8,10 +8,17 @@ const router = express.Router();
 router.get('/',inicio);
 
 
-
-
 async function inicio(req,res,next) {
-  res.json({saludo:'soy ruta panel'})
+
+  const pool = await getConexion();
+
+  pool.request()
+  .input('primernombre', sql.VarChar(30), 'Kevin')
+  .execute('pr_obtnerempleado_usuario').then(result=>{
+    console.dir(result)
+  }).catch(err=>{
+    console.log(err)
+  })
 }
 
 
