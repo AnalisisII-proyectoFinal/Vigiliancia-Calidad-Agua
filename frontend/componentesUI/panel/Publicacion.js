@@ -1,3 +1,5 @@
+import{EditarPublicacion}from './EditarPublicacion.js';
+import{ventanModal}from '../utilidades/VentanaModal.js';
 export function Publicacion(){
     const $publicacion = document.createElement('div');
         $publicacion.classList.add("pagina");
@@ -8,7 +10,7 @@ export function Publicacion(){
         <div class="datos-publicaciones">
           <h3>Publicaciones</h3>
           <hr>
-          <table>
+          <table id="tabla-publicaciones">
             <thead>
               <tr>
                 <th>No.</th>
@@ -31,9 +33,9 @@ export function Publicacion(){
                 <td>Limpieza de tanques</td>
                 <td>12/07/2021</td>
                 <td>activo</td>
-                <td>
-                  <a class='button' href='#'>opcion</a>
-                  <a class='button' href='#'>opcion2</a>
+                <td class="opciones">
+                <button class="editar">✏️</button>
+                <button class="eliminar">🗑️</button>
                 </td>
               </tr>
               <tr>
@@ -43,8 +45,8 @@ export function Publicacion(){
                 <td>12/07/2021</td>
                 <td>activo</td>
                 <td>
-                  <a class='button' href='#'>opcion</a>
-                  <a class='button' href='#'>opcion2</a>
+                <button class="editar">✏️</button>
+                <button class="eliminar">🗑️</button>
                 </td>
               </tr>
               <tr>
@@ -54,8 +56,8 @@ export function Publicacion(){
                 <td>12/07/2021</td>
                 <td>activo</td>
                 <td>
-                  <a class='button' href='#'>opcion</a>
-                  <a class='button' href='#'>opcion2</a>
+                <button class="editar">✏️</button>
+                <button class="eliminar">🗑️</button>
                 </td>
               </tr>
             </tbody>
@@ -85,5 +87,16 @@ export function Publicacion(){
         </div> 
       </section>
         `;
+        function initPublicacion() {
+          document.getElementById('tabla-publicaciones').addEventListener('click',(e)=>{
+            if (e.target.classList.contains('editar')) {
+              ventanModal(EditarPublicacion());
+            }else if(e.target.classList.contains('eliminar')){
+              console.log('elimando registro')
+            }
+          })
+          
+        }
+        setTimeout(()=>initPublicacion(),100)
         return $publicacion;
 }

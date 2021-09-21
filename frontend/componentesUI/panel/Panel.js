@@ -11,7 +11,7 @@
 import { OpcPanel } from "./OpcPanel.js"; 
 import { Institucion } from "./Institucion.js"; 
 import {AppMovil} from "./AppMovil.js"; 
-import { Publicacion } from "./publicion.js"; 
+import { Publicacion } from './Publicacion.js'; 
 import { CopiaSeguridad } from "./CopiaSeguridad.js";
 
 /**

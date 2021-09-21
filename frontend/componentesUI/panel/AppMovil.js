@@ -64,7 +64,9 @@ export function AppMovil(){
                     <td>12/02/2021</td>
                     <td>Activo</td>
                     <td>
-                      <a class='button' href='#'>opcion</a>
+                      <a class='button' href='#'>Editar</a>
+                      <a class='button' href='#'>Eliminar</a>
+                      <a class='button' href='#'>Bloquear</a>
                     </td>
                   </tr>
               </tbody>

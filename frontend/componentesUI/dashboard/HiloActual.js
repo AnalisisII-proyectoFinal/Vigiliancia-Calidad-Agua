@@ -20,23 +20,25 @@ export function HiloActual(){
         <section class="contenedor-grafica-dash">
             <div class="card-progreso-dash">
                 <h3>tanque no. 1</h3>
-                <p class="progreso-dash"><progress min="0" max="100" value="50"></progress></p>
+                <p style="width:35%" data-value="35">Muestras</p>
+                <progress max="100" value="35" class="progreso-muestra">
                 <h3>porcentaje 50%</h3>
             </div>
             <div class="card-progreso-dash">
                 <h3>tanque no. 1</h3>
-                <p class="progreso-dash"><progress min="0" max="100" value="50"></progress></p>
+                <p style="width:35%" data-value="35">Muestras</p>
+                <progress max="100" value="35" class="progreso-muestra">
                 <h3>porcentaje 50%</h3>
             </div>
             <div class="card-progreso-dash">
                 <h3>tanque no. 1</h3>
-                <p class="progreso-dash"><progress min="0" max="100" value="50"></progress></p>
+                <p style="width:35%" data-value="35">Muestras</p>
+                <progress max="100" value="35" class="progreso-muestra">
                 <h3>porcentaje 50%</h3>
             </div>
         </section>
     </section>
-    
-        `;
+    `;
         function iniHiloActual() {
             document.querySelector('.contenedor-grafica-dash').addEventListener('click',(e)=>{
                 if(e.target.tagName ==='DIV'||e.target.tagName ==='H3'||e.target.tagName ==='P'){

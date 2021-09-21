@@ -10,113 +10,123 @@ export function Inicio() {
     <div class="contenedor-grafica">
       <div class="card-progreso">
         <h3>tanque no. 1</h3>
-        <div class="elemento-progreso">
-          <p class="progreso"><label for="">Tanque #1</label><progress min="0" max="100" value="50"></progress><label for="">75%</label></p>
-          <p class="progreso"><label for="">Muestra 1</label><progress min="0" max="100" value="25"></progress><label for="">75%</label></p>
-          <p class="progreso"><label for="">Muestra 2</label><progress min="0" max="100" value="65"></progress><label for="">75%</label></p>
-          <p class="progreso"><label for="">Muestra 3</label><progress min="0" max="100" value="15"></progress><label for="">75%</label></p>
-        </div>
-        <h3>porcentaje 50%</h3>
+      <div>
+          <p style="width:35%" data-value="35">Tanque</p>
+            <progress max="100" value="35" class="progreso-muestra">
+          <div class="progress-bar">
+            <span style="width: 35%"> 35%</span>
+          </div>
+      </div>
+      <div>
+          <p style="width:35%" data-value="35">Hogar 1</p>
+            <progress max="100" value="35" class="progreso-muestra">
+          <div class="progress-bar">
+            <span style="width: 35%"> 35%</span>
+          </div>
+      </div>
+      <div>
+          <p style="width:35%" data-value="35">Hogar 2</p>
+            <progress max="100" value="35" class="progreso-muestra">
+          <div class="progress-bar">
+            <span style="width: 35%"> 35%</span>
+          </div>
+      </div>
       </div>
       <div class="card-progreso">
         <h3>tanque no. 1</h3>
-        <div class="elemento-progreso">
-          <p class="progreso"><label for="">Tanque #1</label><progress min="0" max="100" value="55"></progress><label for="">75%</label></p>
-          <p class="progreso"><label for="">Muestra 1</label><progress min="0" max="100" value="85"></progress><label for="">75%</label></p>
-          <p class="progreso"><label for="">Muestra 2</label><progress min="0" max="100" value="15"></progress><label for="">75%</label></p>
-          <p class="progreso"><label for="">Muestra 3</label><progress min="0" max="100" value="65"></progress><label for="">75%</label></p>
-        </div>
-        <h3>porcentaje 50%</h3>
+      <div>
+          <p style="width:35%" data-value="35">Tanque</p>
+            <progress max="100" value="35" class="progreso-muestra">
+          <div class="progress-bar">
+            <span style="width: 35%"> 35%</span>
+          </div>
+      </div>
+      <div>
+          <p style="width:35%" data-value="35">Hogar 1</p>
+            <progress max="100" value="35" class="progreso-muestra">
+          <div class="progress-bar">
+            <span style="width: 35%"> 35%</span>
+          </div>
+      </div>
+      <div>
+          <p style="width:35%" data-value="35">Hogar 2</p>
+            <progress max="100" value="35" class="progreso-muestra">
+          <div class="progress-bar">
+            <span style="width: 35%"> 35%</span>
+          </div>
+      </div>
       </div>
       <div class="card-progreso">
         <h3>tanque no. 1</h3>
-        <div class="elemento-progreso">
-          <p class="progreso"><label for="">Tanque #1</label><progress min="0" max="100" value="75"></progress><label for="">75%</label></p>
-          <p class="progreso"><label for="">Muestra 1</label><progress min="0" max="100" value="75"></progress><label for="">75%</label></p>
-          <p class="progreso"><label for="">Muestra 2</label><progress min="0" max="100" value="75"></progress><label for="">75%</label></p>
-          <p class="progreso"><label for="">Muestra 3</label><progress min="0" max="100" value="75"></progress><label for="">75%</label></p>
-        </div>
-        <h3>porcentaje 50%</h3>
+      <div>
+          <p style="width:35%" data-value="35">Tanque</p>
+            <progress max="100" value="35" class="progreso-muestra">
+          <div class="progress-bar">
+            <span style="width: 35%"> 35%</span>
+          </div>
+      </div>
+      <div>
+          <p style="width:35%" data-value="35">Hogar 1</p>
+            <progress max="100" value="35" class="progreso-muestra">
+          <div class="progress-bar">
+            <span style="width: 35%"> 35%</span>
+          </div>
+      </div>
+      <div>
+          <p style="width:35%" data-value="35">Hogar 2</p>
+            <progress max="100" value="35" class="progreso-muestra">
+          <div class="progress-bar">
+            <span style="width: 35%"> 35%</span>
+          </div>
+      </div>
       </div>
       <div class="card-progreso">
         <h3>tanque no. 1</h3>
-        <div class="elemento-progreso">
-          <p class="progreso"><label for="">Tanque #1</label><progress min="0" max="100" value="75"></progress><label for="">75%</label></p>
-          <p class="progreso"><label for="">Muestra 1</label><progress min="0" max="100" value="75"></progress><label for="">75%</label></p>
-          <p class="progreso"><label for="">Muestra 2</label><progress min="0" max="100" value="75"></progress><label for="">75%</label></p>
-          <p class="progreso"><label for="">Muestra 3</label><progress min="0" max="100" value="75"></progress><label for="">75%</label></p>
-        </div>
-        <h3>porcentaje 50%</h3>
+      <div>
+          <p style="width:35%" data-value="35">Tanque</p>
+            <progress max="100" value="35" class="progreso-muestra">
+          <div class="progress-bar">
+            <span style="width: 35%"> 35%</span>
+          </div>
+      </div>
+      <div>
+          <p style="width:35%" data-value="35">Hogar 1</p>
+            <progress max="100" value="35" class="progreso-muestra">
+          <div class="progress-bar">
+            <span style="width: 35%"> 35%</span>
+          </div>
+      </div>
+      <div>
+          <p style="width:35%" data-value="35">Hogar 2</p>
+            <progress max="100" value="35" class="progreso-muestra">
+          <div class="progress-bar">
+            <span style="width: 35%"> 35%</span>
+          </div>
+      </div>
       </div>
       <div class="card-progreso">
         <h3>tanque no. 1</h3>
-        <div class="elemento-progreso">
-          <p class="progreso"><label for="">Tanque #1</label><progress min="0" max="100" value="75"></progress><label for="">75%</label></p>
-          <p class="progreso"><label for="">Muestra 1</label><progress min="0" max="100" value="75"></progress><label for="">75%</label></p>
-          <p class="progreso"><label for="">Muestra 2</label><progress min="0" max="100" value="75"></progress><label for="">75%</label></p>
-          <p class="progreso"><label for="">Muestra 3</label><progress min="0" max="100" value="75"></progress><label for="">75%</label></p>
-        </div>
-        <h3>porcentaje 50%</h3>
+      <div>
+          <p style="width:35%" data-value="100">Tanque</p>
+            <progress max="100" value="100" class="progreso-muestra">
+          <div class="progress-bar">
+            <span style="width: 35%"> 35%</span>
+          </div>
       </div>
-      <div class="card-progreso">
-        <h3>tanque no. 1</h3>
-        <div class="elemento-progreso">
-          <p class="progreso"><label for="">Tanque #1</label><progress min="0" max="100" value="75"></progress><label for="">75%</label></p>
-          <p class="progreso"><label for="">Muestra 1</label><progress min="0" max="100" value="75"></progress><label for="">75%</label></p>
-          <p class="progreso"><label for="">Muestra 2</label><progress min="0" max="100" value="75"></progress><label for="">75%</label></p>
-          <p class="progreso"><label for="">Muestra 3</label><progress min="0" max="100" value="75"></progress><label for="">75%</label></p>
-        </div>
-        <h3>porcentaje 50%</h3>
+      <div>
+          <p style="width:35%" data-value="35">Hogar 1</p>
+            <progress max="100" value="35" class="progreso-muestra">
+          <div class="progress-bar">
+            <span style="width: 35%"> 35%</span>
+          </div>
       </div>
-      <div class="card-progreso">
-        <h3>tanque no. 1</h3>
-        <div class="elemento-progreso">
-          <p class="progreso"><label for="">Tanque #1</label><progress min="0" max="100" value="75"></progress><label for="">75%</label></p>
-          <p class="progreso"><label for="">Muestra 1</label><progress min="0" max="100" value="75"></progress><label for="">75%</label></p>
-          <p class="progreso"><label for="">Muestra 2</label><progress min="0" max="100" value="75"></progress><label for="">75%</label></p>
-          <p class="progreso"><label for="">Muestra 3</label><progress min="0" max="100" value="75"></progress><label for="">75%</label></p>
-        </div>
-        <h3>porcentaje 50%</h3>
+      <div>
+          <p style="width:35%" data-value="35">Hogar 2</p>
+            <progress max="100" value="35" class="progreso-muestra">
+          <div class="progress-bar">
+            <span style="width: 35%"> 35%</span>
+          </div>
       </div>
-      <div class="card-progreso">
-        <h3>tanque no. 1</h3>
-        <div class="elemento-progreso">
-          <p class="progreso"><label for="">Tanque #1</label><progress min="0" max="100" value="50"></progress><label for="">75%</label></p>
-          <p class="progreso"><label for="">Muestra 1</label><progress min="0" max="100" value="55"></progress><label for="">75%</label></p>
-          <p class="progreso"><label for="">Muestra 2</label><progress min="0" max="100" value="75"></progress><label for="">75%</label></p>
-          <p class="progreso"><label for="">Muestra 3</label><progress min="0" max="100" value="75"></progress><label for="">75%</label></p>
-        </div>
-        <h3>porcentaje 50%</h3>
-      </div>
-      <div class="card-progreso">
-        <h3>tanque no. 1</h3>
-        <div class="elemento-progreso">
-          <p class="progreso"><label for="">Tanque #1</label><progress min="0" max="100" value="75"></progress><label for="">75%</label></p>
-          <p class="progreso"><label for="">Muestra 1</label><progress min="0" max="100" value="75"></progress><label for="">75%</label></p>
-          <p class="progreso"><label for="">Muestra 2</label><progress min="0" max="100" value="75"></progress><label for="">75%</label></p>
-          <p class="progreso"><label for="">Muestra 3</label><progress min="0" max="100" value="75"></progress><label for="">75%</label></p>
-        </div>
-        <h3>porcentaje 50%</h3>
-      </div>
-      <div class="card-progreso">
-        <h3>tanque no. 1</h3>
-        <div class="elemento-progreso">
-          <p class="progreso"><label for="">Tanque #1</label><progress min="0" max="100" value="75"></progress><label for="">75%</label></p>
-          <p class="progreso"><label for="">Muestra 1</label><progress min="0" max="100" value="75"></progress><label for="">75%</label></p>
-          <p class="progreso"><label for="">Muestra 2</label><progress min="0" max="100" value="75"></progress><label for="">75%</label></p>
-          <p class="progreso"><label for="">Muestra 3</label><progress min="0" max="100" value="75"></progress><label for="">75%</label></p>
-        </div>
-        <h3>porcentaje 50%</h3>
-      </div>
-      <div class="card-progreso">
-        <h3>tanque no. 1</h3>
-        <div class="elemento-progreso">
-          <p class="progreso"><label for="">Tanque #1</label><progress min="0" max="100" value="75"></progress><label for="">75%</label></p>
-          <p class="progreso"><label for="">Muestra 1</label><progress min="0" max="100" value="75"></progress><label for="">75%</label></p>
-          <p class="progreso"><label for="">Muestra 2</label><progress min="0" max="100" value="75"></progress><label for="">75%</label></p>
-          <p class="progreso"><label for="">Muestra 3</label><progress min="0" max="100" value="75"></progress><label for="">75%</label></p>
-        </div>
-        <h3>porcentaje 50%</h3>
       </div>
     </div>
   </section>
