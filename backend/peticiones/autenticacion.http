@@ -1,0 +1,48 @@
+### Get ruta user
+GET http://localhost:3000/api/v1/usuario
+
+
+### post ruta inicio
+POST http://localhost:3000/api/v1/inicio
+Content-Type: application/json
+x-access-token:{mitokenels}
+{ 
+    "usuario":"epilo",
+    "contrasena":"contrasena"
+}
+
+
+### post ruta user
+POST http://localhost:3000/api/v1/auth/ingresar
+Content-Type: application/json
+x-access-token:"my value"
+{ 
+    "usuario":"epilo",
+    "contrasena":"contrasena"
+}
+### post ruta user
+POST http://localhost:3000/api/v1/usuario/registrarusuario
+Content-Type: application/json
+
+{ 
+    "us":"epilo",
+    "con":"contrasena",
+    "per":1,
+    "est":1,
+    "emp":1
+}
+
+### post ruta user
+POST http://localhost:3000/api/usuario
+Content-Type: application/json
+
+{ 
+    "nombres":"prueba",
+    "apellidos":"pruba",
+    "dui":"lslls",
+    "direccion":"lslsls",
+    "telefono":"kssuue", 
+    "cargo":"lsisie",
+    "usuario":"lsisie",
+    "contrasena":"123"
+}

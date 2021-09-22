@@ -1,9 +1,9 @@
 const {getConexion} = require('../../sqlserver/sqlserverconexion.js');
 
-async function getPublicaciones() {
+async function obtnerDatosInstitucion() {
     try{
         const pool = await getConexion();  
-        return result = await pool.request().query("select * from dbo.tbl_publicacion");
+        return result = await pool.request().execute('dbo.uspObtnerDatosInstitucion');
 
     }catch (err){
         return err;
@@ -11,5 +11,5 @@ async function getPublicaciones() {
 }
 
 module.exports = {
-    getPublicaciones
+    obtnerDatosInstitucion
 }

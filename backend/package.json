@@ -7,12 +7,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node apis/index.js"
   },
-  "author": "",
+  "author": "umg-grupo2",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",
     "mssql": "^7.2.1"
   }

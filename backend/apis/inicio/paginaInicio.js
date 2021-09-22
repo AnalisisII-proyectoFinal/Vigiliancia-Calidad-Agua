@@ -1,22 +1,20 @@
 const express = require('express');
 const respuesta = require('../../respuesta/respuesta.js');
-const {getPublicaciones}= require('./controlador.js')
+const {obtnerDatosInstitucion}= require('./controlador.js')
 
 const router = express.Router();
 
 // rutas
-router.get('/',inicio);
+router.get('/',cargarDatos);
 
+async function cargarDatos(req,res) {
 
-
-function inicio(req,res) {
-    getPublicaciones().then((result)=>{
+    try {
+        const result = await obtnerDatosInstitucion();
         respuesta.exito(req,res,result.recordset,200);
-        console.log(result.recordset);
-    }).catch(err=>{
-        respuesta.error(req,res,err,500);
-    });
+    } catch (error) {
+        respuesta.error(req,res,error,500);
+    }
 }
-
 
 module.exports = router;
