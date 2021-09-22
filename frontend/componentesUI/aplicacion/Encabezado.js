@@ -1,3 +1,4 @@
+import PeticionEncabezado from './Controlador.js';
 export function Encabezado() {
     const $Encabezado=document.createElement('head');
     $Encabezado.classList.add('encabezado')
@@ -5,16 +6,23 @@ export function Encabezado() {
         <div>
             <img src="./assets/img/logo.png" alt="logo">
         </div>
-        <div>
-            <h1>Municipalidad de San José Chacayá<br>Oficina de agua<br>
-            Sistema de vigiliancia de calidad de agua</h1>
+        <div id="encabezado-datos">
         </div>
         <div>
             <button id="btn-irlogin" class="primer-btn">Entrar</button>
             <button id="btn-menu" class="primer-btn">Menu</button>
         </div>
         `;
-    function irLogin(){
+    function initEncabezado(){
+        const $manEncabezado = new PeticionEncabezado();
+        const $tituloEl = document.createElement('h1');
+        $manEncabezado.hacerPeticion(null,{},'GET').then(datos =>{
+            $tituloEl.innerHTML=`${datos.body[0].entidad}<br>${datos.body[0].dependencia}<br>${datos.body[0].nombre_aplicacion}`;
+        }).then(()=>{
+            document.getElementById('encabezado-datos').appendChild($tituloEl);
+        })
+
+
         const btn = document.getElementById('btn-irlogin');
 
         btn.addEventListener('click',()=>{
@@ -32,6 +40,8 @@ export function Encabezado() {
             }
         })
     }
-    setTimeout(()=>irLogin(),100);
+    setTimeout(()=>initEncabezado(),100);
     return $Encabezado; 
 }
+
+//<h1>${datos.entidad}<br>${datos.dependencia}<br>${datos.aplicacion}</h1>

@@ -27,38 +27,30 @@ export function TipoMuestra(){
         <div>
           <h2>Tipos de muestras</h2>
           <hr>
-            <table>
-              <thead>
-                <tr>
-                  <th>nombre</th>
-                  <th>correo</th>
-                  <th>Opciones</th>
-                </tr>
-              </thead>
-              <tfoot>
-                <tr>
-                  <th colspan='2'>tipos de muestras</th>
-                </tr>
-              </tfoot>
-              <tbody>
-                <tr>
-                  <td>Iacob Geaorgescu</td>
-                  <td>e-mail@test-email.com</td>
-                  <td>
-                    <a class='button' href='#'>opcion</a>
-                    <a class='button' href='#'>opcion2</a>
-                  </td>
-                </tr>
-                <tr>
-                <td>Iacob Geaorgescu</td>
-                <td>e-mail@test-email.com</td>
-                <td>
-                  <a class='button' href='#'>opcion</a>
-                  <a class='button' href='#'>opcion2</a>
-                </td>
-              </tr>
-            </tbody>
-        </table>
+          <table>
+          <thead>
+            <tr>
+              <th>nombre</th>
+              <th>correo</th>
+              <th>Opciones</th>
+            </tr>
+          <tbody>
+            <tr>
+              <td>Juan Carlos</td>
+              <td>limpieza de tanque</td>
+              <td>
+                <a class='button' href='#'>Editar</a>
+              </td>
+            </tr>
+            <tr>
+            <td>Gabriel Julajuj</td>
+            <td>limpieza de tanque 2</td>
+            <td>
+              <a class='button' href='#'>Editar</a>
+            </td>
+          </tr>
+        </tbody>
+    </table>
       </div>
     </section>
         `;

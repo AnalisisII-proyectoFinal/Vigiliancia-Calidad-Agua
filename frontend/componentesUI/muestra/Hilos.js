@@ -22,45 +22,79 @@ export function Hilos(){
         <h3>Hilo de muestras</h3>
         <hr>
         <table>
-          <thead>
-            <tr>
-              <th>nombre</th>
-              <th>correo</th>
-              <th>Opciones</th>
-          </tr>
-        </thead>
-        <tfoot>
-          <tr>
-            <th colspan='2'>listado usuario</th>
-          </tr>
-        </tfoot>
-        <tbody>
-          <tr>
-            <td>Iacob Geaorgescu</td>
-            <td>e-mail@test-email.com</td>
-            <td>
-              <a class='button' href='#'>opcion</a>
-              <a class='button' href='#'>opcion2</a>
-            </td>
-          </tr>
-          <tr>
-            <td>Julius Neumann</td>
-            <td>e-mail@test-email.com</td>
-            <td>
-              <a class='button' href='#'>opcion</a>
-              <a class='button' href='#'>opcion2</a>
-            </td>
-          </tr>
-          <tr>
-            <td>Christoph Koller</td>
-            <td>e-mail@test-email.com</td>
-            <td><a class='button' href='#'>opcion</a></td>
-          </tr>
-          <tr>
-            <td>Bram Lemmens</td>
-            <td>e-mail@test-email.com</td>
-            <td><a class='button' href='#'>opcion</a></td>
-          </tr>
+            <thead>
+                <tr>
+                  <th>No.</th>
+                  <th>Tanque 1</th>
+                  <th>Nombre</th>
+                  <th>Descripción</th>
+                  <th>Fecha de inicio</th>
+                  <th>Fecha de finalización</th>
+                  <th>Responsables</th>
+                  <th>Tipo de muestra</th>
+                  <th>Punto de muestra</th>
+                  <th>PH</th>
+                  <th>Cloro recidual</th>
+                  <th>Presion de Agua</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>tanque 1</td>
+                  <td>Sebastian JUlajuj</td>
+                  <td>Reparacion de tanque</td>
+                  <td>22/08/2021</td>
+                  <td>26/08/2021</td>
+                  <td>Director</td>
+                  <td>tanque 2</td>
+                  <td>Sanjose Chacaya</td>
+                  <td>7</td>
+                  <td>compuesto reductores</td>
+                  <td>regular</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>tanque 1</td>
+                    <td>Roberto Carlos</td>
+                    <td>mantenimiento de tanque</td>
+                    <td>21/08/2021</td>
+                    <td>22/08/2021</td>
+                    <td>Director</td>
+                    <td>tanque 1</td>
+                    <td>Sanjose Chacaya</td>
+                    <td>7</td>
+                    <td>compuesto reductores</td>
+                    <td>regular</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>tanque 1</td>
+                    <td>Leonardo Cuxulic</td>
+                    <td>mantenimiento de tanque</td>
+                    <td>22/08/2021</td>
+                    <td>26/08/2021</td>
+                    <td>Director</td>
+                    <td>tanque 3</td>
+                    <td>Sanjose Chacaya</td>
+                    <td>7</td>
+                    <td>compuesto reductores</td>
+                    <td>regular</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>tanque 1</td>
+                    <td>Elias JUlajuj</td>
+                    <td>mantenimiento de tanque</td>
+                    <td>28/08/2021</td>
+                    <td>29/08/2021</td>
+                    <td>Director</td>
+                    <td>tanque 1</td>
+                    <td>Sanjose Chacaya</td>
+                    <td>7</td>
+                    <td>compuesto reductores</td>
+                    <td>regular</td>
+                </tr>
         </tbody>
     </table>
     </div>

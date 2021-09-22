@@ -85,12 +85,8 @@ export function Router(id){
           $contenedor.appendChild(Usuario());
         break;
       case '#/app/panel':
-        if (id==2) {
           $contenedor.appendChild(MenuApp(M_PANEL));
           $contenedor.appendChild(Panel());
-          }else{
-            location.href= '#/app/dashboard';
-          }
         break;
       case '#/app/ayuda':
         $contenedor.appendChild(MenuApp(M_AYUDA));

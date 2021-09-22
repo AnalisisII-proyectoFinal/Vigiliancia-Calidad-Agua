@@ -8,14 +8,19 @@
 import {Encabezado}from './componentesUI/aplicacion/Encabezado.js';
 import {Cuerpo} from './componentesUI/aplicacion/Cuerpo.js';
 import {Router} from './componentesUI/Router.js';
-let idp=2;
+
+
+export function Init() {
+    const $encabezado= document.getElementById('encabezado');
+    $encabezado.appendChild(Encabezado());
+    App();   
+}
 /**
  * App unificacion de componentes
  */
 export function App(){
     const $root = document.getElementById('root');
         $root.innerHTML = null;
-        $root.appendChild(Encabezado());
         $root.appendChild(Cuerpo());
-    Router(idp);
+    Router();
 }

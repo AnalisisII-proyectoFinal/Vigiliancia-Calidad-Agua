@@ -47,45 +47,49 @@ export function Mantenimiento(){
           <h2>Historial de mantenimientos</h2>
           <hr>
           <table>
-            <thead>
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>Tanque</th>
+              <th>Titulo</th>
+              <th>Descripción</th>
+              <th>Fecaha</th>
+              <th>Opciones</th>
+            </tr>
+          </thead>
+          <tbody>
               <tr>
-                <th>nombre</th>
-                <th>correo</th>
-                <th>Opciones</th>
+                <td>1</td>
+                <td>tanque 1</td>
+                <td>mantenimineto</td>
+                <td>reparación de tanque</td>
+                <td>21/08/2021</td>
+                  <td>
+                    <a class='button' href='#'>Editar</a>
+                  </td>
               </tr>
-            </thead>
-            <tfoot>
               <tr>
-                <th colspan='2'>Mantenimientos</th>
+                <td>2</td>
+                <td>tanque 2</td>
+                <td>reparación</td>
+                <td>Mantenimiento</td>
+                <td>21/08/2021</td>
+                <td>
+                  <a class='button' href='#'>Editar</a>
+                </td>
               </tr>
-            </tfoot>
-            <tbody>
-                <tr>
-                  <td>Iacob Geaorgescu</td>
-                  <td>e-mail@test-email.com</td>
-                    <td>
-                      <a class='button' href='#'>opcion</a>
-                      <a class='button' href='#'>opcion2</a>
-                    </td>
-                </tr>
-                <tr>
-                  <td>Julius Neumann</td>
-                  <td>e-mail@test-email.com</td>
-                  <td>
-                    <a class='button' href='#'>opcion</a>
-                    <a class='button' href='#'>opcion2</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Julius Neumann</td>
-                  <td>e-mail@test-email.com</td>
-                  <td>
-                    <a class='button' href='#'>opcion</a>
-                    <a class='button' href='#'>opcion2</a>
-                  </td>
-                </tr>
-                  </tbody>
-              </table>          
+              <tr>
+                <td>3</td>
+                <td>tanque 3</td>
+                <td>reparación</td>
+                <td>Mantenimiento</td>
+                <td>27/08/2021</td>
+                <td>
+                  <a class='button' href='#'>Editar</a>
+                </td>
+              </tr>
+                </tbody>
+            </table>           
         </div>
     </section>
         `;

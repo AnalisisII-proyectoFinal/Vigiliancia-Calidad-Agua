@@ -30,43 +30,35 @@ export function MetodoCloracion(){
         <table>
         <thead>
           <tr>
-            <th>nombre</th>
-            <th>correo</th>
+            <th>Tratamiento</th>
+            <th>Descripcion</th>
             <th>Opciones</th>
           </tr>
         </thead>
-        <tfoot>
-          <tr>
-            <th colspan='2'>Mantenimientos</th>
-          </tr>
-        </tfoot>
         <tbody>
             <tr>
-              <td>Iacob Geaorgescu</td>
-              <td>e-mail@test-email.com</td>
+              <td>separacion de agua y aceite</td>
+              <td>mantenimiento de tanque</td>
                 <td>
-                  <a class='button' href='#'>opcion</a>
-                  <a class='button' href='#'>opcion2</a>
+                  <a class='button' href='#'>Editar</a>
                 </td>
             </tr>
             <tr>
-              <td>Julius Neumann</td>
-              <td>e-mail@test-email.com</td>
+              <td>coagulacion y floculacion</td>
+              <td>limpieza de agua</td>
               <td>
-                <a class='button' href='#'>opcion</a>
-                <a class='button' href='#'>opcion2</a>
+                <a class='button' href='#'>Editar</a>
               </td>
             </tr>
             <tr>
-              <td>Julius Neumann</td>
-              <td>e-mail@test-email.com</td>
+              <td>filtracion de agua</td>
+              <td>mantenimiento</td>
               <td>
-                <a class='button' href='#'>opcion</a>
-                <a class='button' href='#'>opcion2</a>
+                <a class='button' href='#'>Editar</a>
               </td>
             </tr>
               </tbody>
-          </table>          
+          </table> 
       </div>
     </section>
         `;

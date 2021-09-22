@@ -50,6 +50,11 @@ export function Nuevo(){
             let valor = e.target.value;
             validarInput(tipo,id,valor);
           })
+          
+          //
+
+
+          //cortas el codigo y lo pegas aqui
 
 
 

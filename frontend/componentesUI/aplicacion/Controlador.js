@@ -2,14 +2,14 @@
 //@ts-check
 /**
  * Clase de peticiones http
- * @module peticionPanel - clase handler
+ * @module peticionInicio - clase handler
  * @author autor 
  * @copyright - ksksue
  * @version 1.0
  */
-class PeticionPanel {
+class PeticionEncabezado {
     constructor(){
-        this.url ='https://pokeapi.co/api/v2/pokemon';
+        this.url ='http://localhost:3000/api/v1/inicio';
     }
     obtnerEncabezado(){
         return{
@@ -33,7 +33,6 @@ class PeticionPanel {
             .then(response =>{
                 return response.json();
             }).then(data =>{
-                console.log(data)
                 resolve(data);
             })
             .catch(error=>{
@@ -44,4 +43,4 @@ class PeticionPanel {
     }
 }
 
-export default PeticionPanel;
+export default PeticionEncabezado;

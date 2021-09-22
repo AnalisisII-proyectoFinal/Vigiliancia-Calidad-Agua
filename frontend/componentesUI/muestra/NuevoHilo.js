@@ -52,46 +52,50 @@ export function NuevoHilo(){
             </form>
             <table>
                 <thead>
-                  <tr>
-                    <th>nombre</th>
-                    <th>correo</th>
-                    <th>Opciones</th>
-                  </tr>
-                </thead>
-                <tfoot>
-                  <tr>
-                    <th colspan='2'>listado usuario</th>
-                  </tr>
-                </tfoot>
-                <tbody>
-                  <tr>
-                    <td>Iacob Geaorgescu</td>
-                    <td>e-mail@test-email.com</td>
-                    <td>
-                      <a class='button' href='#'>opcion</a>
-                      <a class='button' href='#'>opcion2</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Julius Neumann</td>
-                    <td>e-mail@test-email.com</td>
-                    <td>
-                      <a class='button' href='#'>opcion</a>
-                      <a class='button' href='#'>opcion2</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Christoph Koller</td>
-                    <td>e-mail@test-email.com</td>
-                    <td><a class='button' href='#'>opcion</a></td>
-                  </tr>
-                  <tr>
-                    <td>Bram Lemmens</td>
-                    <td>e-mail@test-email.com</td>
-                    <td><a class='button' href='#'>opcion</a></td>
-                  </tr>
-                </tbody>
+                    <tr>
+                      <th>No.</th>
+                      <th>Responsables</th>
+                      <th>Fecha de inicio</th>
+                      <th>Fecha de finalizacón</th>
+                      <th>Tanques</th>
+                      <th>Opciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>tanque 1</td>
+                      <td>21/08/2021</td>
+                      <td>24/08/2021</td>
+                      <td>1</td>
+                      <td><a class='button' href='#'>Editar</a></td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Tanque 2</td>
+                      <td>20/07/2021</td>
+                      <td>22/07/2021</td>
+                      <td>2</td>
+                      <td><a class='button' href='#'>Editar</a></td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>Tanque 3</td>
+                      <td>19/08/2021</td>
+                      <td>21/08/2021</td>
+                      <td>3</td>
+                      <td><a class='button' href='#'>Editar</a></td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>Tanque 4</td>
+                      <td>25/08/2021</td>
+                      <td>26/08/2021</td>
+                      <td>4</td>
+                      <td><a class='button' href='#'>Editar</a></td>
+                    </tr>
             </table>
+
             </div>
         </div>
     </section>

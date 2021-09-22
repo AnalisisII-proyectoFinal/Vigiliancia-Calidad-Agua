@@ -51,8 +51,8 @@ export function Historial(){
             <td>2021</td>
             <td>Finalizado</td>
             <td>
-              <a class='button' href='#'>ver</a>
-              <a class='button' href='#'>informe</a>
+            <button class="editar">✏️</button>
+            <button class="eliminar">🗑️</button>
             </td>
           </tr>
           <tr>
@@ -63,8 +63,8 @@ export function Historial(){
             <td>2021</td>
             <td>Finalizado</td>
             <td>
-              <a class='button' href='#'>ver</a>
-              <a class='button' href='#'>informe</a>
+            <button class="editar">✏️</button>
+            <button class="eliminar">🗑️</button>
             </td>
           </tr>
           <tr>
@@ -75,8 +75,8 @@ export function Historial(){
             <td>2021</td>
             <td>Finalizado</td>
             <td>
-              <a class='button' href='#'>ver</a>
-              <a class='button' href='#'>informe</a>
+            <button class="editar">✏️</button>
+            <button class="eliminar">🗑️</button>
             </td>
           </tr>
         </tbody>

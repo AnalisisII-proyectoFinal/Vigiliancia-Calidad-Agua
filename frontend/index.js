@@ -4,7 +4,7 @@
  * importacion del general
  * @requires modulo: App  todos los componentes de la aplicacion
  */
-import {App} from './App.js';
+import {App,Init} from './App.js';
 /**-- escuchadores al documento --- */
-document.addEventListener('DOMContentLoaded',App);
+document.addEventListener('DOMContentLoaded',Init);
 window.addEventListener('hashchange',App);

@@ -45,35 +45,55 @@ export function IngresoMuestra(){
           <hr>
           <table>
             <thead>
-            <tr>
-              <th>nombre</th>
-              <th>correo</th>
-              <th>Opciones</th>
-            </tr>
-            </thead>
-            <tfoot>
-            <tr>
-              <th colspan='2'>Historial Muestras</th>
-            </tr>
-            </tfoot>
-            <tbody>
-            <tr>
-              <td>Iacob Geaorgescu</td>
-              <td>e-mail@test-email.com</td>
-              <td>
-              <a class='button' href='#'>opcion</a>
-              <a class='button' href='#'>opcion2</a>
-              </td>
-            </tr>
-            <tr>
-            <td>Iacob Geaorgescu</td>
-            <td>e-mail@test-email.com</td>
-            <td>
-            <a class='button' href='#'>opcion</a>
-            <a class='button' href='#'>opcion2</a>
-            </td>
-          </tr>
+                <tr>
+                  <th>No.</th>
+                  <th>Tipo de muestra</th>
+                  <th>Punto de muestra</th>
+                  <th>PH</th>
+                  <th>Cloro recidual</th>
+                  <th>Presion de Agua</th>
+                  <th>Opciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>tanque 1</td>
+                  <td>Carlos JUlajuj</td>
+                  <td>8</td>
+                  <td>compuesto reductores</td>
+                  <td>regular</td>
+                  <td><a class='button' href='#'>Editar</a></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Tanque 2</td>
+                  <td>Juan Carlos</td>
+                  <td>8</td>
+                  <td>cloraminas</td>
+                  <td>Normal</td>
+                  <td><a class='button' href='#'>Editar</a></td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Tanque 3</td>
+                  <td>Sebastian Par</td>
+                  <td>7</td>
+                  <td>Organicos de cloro</td>
+                  <td>Regular</td>
+                  <td><a class='button' href='#'>Editar</a></td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Tanque 4</td>
+                  <td>Mario JUlajuj</td>
+                  <td>7</td>
+                  <td>Cloro no destruidos</td>
+                  <td>Normal</td>
+                  <td><a class='button' href='#'>Editar</a></td>
+                </tr>
         </tbody>
+    </table>
     </table>
   </div>
 </section> 

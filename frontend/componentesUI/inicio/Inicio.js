@@ -241,10 +241,7 @@ export function Inicio() {
         `;
 
     function iniInicio() {
-      const $peticionInicio = new PeticionInicio();
-        $peticionInicio.hacerPeticion(null,{},'GET').then(datos =>{
-          console.table(datos);
-        })
+     
     }
     setTimeout(()=>iniInicio(),100);
     return $Inicio; 
