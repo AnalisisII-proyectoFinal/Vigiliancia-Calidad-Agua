@@ -12,3 +12,13 @@ Content-Type: application/json
     "aplicacion":"en desarrollo"
 }
 
+
+### post ruta user
+PUT http://localhost:3000/api/v1/panel/datoscentrosalud
+Content-Type: application/json
+
+{ 
+    "entidad":"Muni san jose",
+    "dependencia":"oficina agua",
+    "aplicacion":"en desarrollo"
+}

@@ -14,55 +14,107 @@
 {
     width: 100%;
     display: grid;
-    grid-template-columns: 20% 20% 20% 20%;
+    grid-template-columns: 30% 30% 30%;
     gap: 5%;
     width: 96%;
-    height: 60vh;
+    height: 66vh;
     overflow-y: auto;
     overflow-x: hidden;
-    padding: 0px 5px 0px 20px;
 }
 
-.contenedor-grafica-dash h3{
-    font-size: 1rem;
-     
-}
-.card-progreso-dash
-{
-    display: flex;
-    flex-direction: column;
-    background-color: var(--quinto-color);
-    color: var(--texto-color-light);
-    padding: 0px 10px 0px 10px;
-    height: 150px;
-    text-align: center;
+.card-tanque-dash{
+    position: relative;
+    max-width: 300px;
+    height: 215px;
     border-radius: 5px;
-    box-shadow: 2px 2px 5px #999;
-    font-size: .75rem;
-    transition: all .3s;
-}
-
-
-
-.card-progreso-dash:hover
-{
-    transform: scale(0.9);
-}
-
-.historial-muestra-filtro form
-{
-    display: flex;
-    justify-content: space-evenly;
-}
-
-
-.card-detalle{
+    background-color: var(--cuarto-color);
+    margin: 30px 10px;
+    padding: 10px 10px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    box-shadow: 2px 2px 5px #999;
+    transition: 0.3s ease-in-out;
+  }
+  .card-tanque-dash:hover{
+    height: 500px;
+  }
+  .card-tanque-dash-e{
+    position: relative;
+    max-width: 300px;
+    height: 215px;
+    border-radius: 5px;
+    background-color: var(--texto-color);
+    margin: 30px 10px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 2px 5px #999;
+    transition: 0.3s ease-in-out;
+  }
+  .card-tanque-dash-e:hover{
+    height: 500px;
+  }
+
+  .card-progreso-d{
+    position: relative;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    width: 60%;
-    height: 60%;
-    background-color: var(--primer-color);
-    color: var(--titulo-color);
+    align-items: center;
+    padding: 5px 5px;
+    background-color: #fff;
+    width: 80%;
+    height: 230px;
+    top: -60px;
+    left: 20px;
+  }
+  .contentenido-tanque{
+      display: grid;
+      grid-template-columns: 15% 85%;
+      position: relative;
+      margin-top: 0px;
+      padding: 10px 15px;
+      text-align: center;
+      color: #fff;
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.3s ease-in-out;
+  }
+  .card-tanque-dash:hover .contentenido-tanque{
+      visibility: visible;
+      opacity: 1;
+      margin-top: -40px;
+      transition-delay: 0.3s;
+  }
+  .card-tanque-dash-e:hover .contentenido-tanque{
+    visibility: visible;
+    opacity: 1;
+    margin-top: -40px;
+    transition-delay: 0.3s;
+}
+.porcentaje{
+    position: relative;
+    width: 75px;
+    height: 75px;
+    color: var(--texto-color-light);
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    background-color: var(--quinto-color);
+    box-shadow: 2px 2px 5px #999;
+}
+
+.porcentaje-e{
+    position: relative;
+    width: 75px;
+    height: 75px;
+    color: var(--texto-color-light);
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    background-color: var(--texto-color);
+    box-shadow: 2px 2px 5px #999;
 }

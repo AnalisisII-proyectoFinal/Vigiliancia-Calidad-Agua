@@ -1,5 +1,5 @@
 /**
---- definicion de colores... 
+--- definicion de colores...#0046AF EFF0F2
 */
 
 :root
@@ -8,10 +8,11 @@
     --primer-color: #EFF0F2;
     --segundo-color: #FFFFFF;
     --tercer-color: #0162CC;
-    --cuarto-color: #0046AF;
+    --cuarto-color: #0046AF;/*#121F3D*/
     --quinto-color:#0162CC;
     --sexto-color:#9A2E28;
     --septimo-color: #27C868;
+    --octavo-color: #2D7C31;
     /*--=== colores de texto ===-*/
     --titulo-color:#274472;
     --texto-color:#445D6E;

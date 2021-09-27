@@ -49,7 +49,7 @@ const M_AYUDA='m-ayuda';
  * Enrutador de navegacion de modulos de aplicacion
  * @returns {void} - muestra el componente seleccionado
  */
-export function Router(id){
+export function Router(){
   const $contenedor = document.getElementById('contenedor-modulo');
     let {hash} = location;
     console.log(hash);

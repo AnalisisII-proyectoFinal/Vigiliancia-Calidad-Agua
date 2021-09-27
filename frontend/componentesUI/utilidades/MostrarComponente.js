@@ -8,7 +8,6 @@
  * @copyright - ksksue
  * @version 1.0
  */
-
 /**
  * constantes
  * @type {string} - claese y id de paginas, valores prefedifinidos
@@ -36,8 +35,9 @@ function mostrarPagina(pag){
     document.querySelectorAll(CLASE_PAGINA).forEach(div=>{
       div.style.display = "none";
       })
-        document.querySelector(`#${pag}`).style.display="block";
+        document.querySelector(`#${pag}`).style.display="block";      
 }
+        
 
 /**
 * actualiza el color de la opcion seleccionada

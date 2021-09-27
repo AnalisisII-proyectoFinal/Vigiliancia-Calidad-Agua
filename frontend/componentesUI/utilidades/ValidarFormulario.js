@@ -1,5 +1,5 @@
 const regex={
-    texto: /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/,
+    texto: /^\w+\s+/,
     nombre:/^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/,
     email:/^[a-zA-Z0-9_.+-]+@[a-z0-9-]+\.[a-z0-9.]+$/,
     phone: /^[5,0,2]{3}[4|5|7]{1}([\d]{7})$/,
@@ -20,8 +20,8 @@ function actEstado(result,idInput){
 
 export function validarInput(tyInput,idInput,valInput){
     switch (tyInput) {
-        case 'titulo':
-                let resultTit = regex.titulo.test(valInput);
+        case 'text':
+                let resultTit = regex.texto.test(valInput);
                 actEstado(resultTit,idInput);
             
             break;

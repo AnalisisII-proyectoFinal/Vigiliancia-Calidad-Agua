@@ -9,10 +9,10 @@
  * @requires componente: copia seguridad  pagina del modulo
  */
 import { OpcPanel } from "./OpcPanel.js"; 
-import { Institucion } from "./Institucion.js"; 
-import {AppMovil} from "./AppMovil.js"; 
-import { Publicacion } from './Publicacion.js'; 
-import { CopiaSeguridad } from "./CopiaSeguridad.js";
+import { Institucion } from "./paginas/Institucion.js"; 
+import { AppMovil } from "./paginas/AppMovil.js"; 
+import { Publicacion } from './paginas/Publicacion.js'; 
+import { CopiaSeguridad } from "./paginas/CopiaSeguridad.js";
 
 /**
  * Unificacion de componentes del modulo

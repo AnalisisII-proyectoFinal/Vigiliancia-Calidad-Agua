@@ -14,41 +14,191 @@ export function HiloActual(){
         $hiloactual.setAttribute('style',"display:block;")
         $hiloactual.innerHTML=`
         <section class="contenedor-dashboard">
-        <h3>Hilo actual de muestras</h3>
-        <h3>Del: 21/05/2021 Al: 28/05/2021</h3>
+        <h3>Muestra Del: 21/05/2021 Al: 28/05/2021</h3>
         <hr>
-        <section class="contenedor-grafica-dash">
-            <div class="card-progreso-dash">
-                <h3>tanque no. 1</h3>
-                <p style="width:35%" data-value="35">Muestras</p>
-                <progress max="100" value="35" class="progreso-muestra">
-                <h3>porcentaje 50%</h3>
+        <div class="contenedor-grafica-dash">
+          <div class="card-tanque-dash">
+          <div class="card-progreso-d">
+            <h3>tanque no. 1</h3>
+            <div class="porcentaje">
+              <p>75%</p>
             </div>
-            <div class="card-progreso-dash">
-                <h3>tanque no. 1</h3>
-                <p style="width:35%" data-value="35">Muestras</p>
-                <progress max="100" value="35" class="progreso-muestra">
-                <h3>porcentaje 50%</h3>
+            <br>
+              <progress max="100" value="75" class="progreso-muestra"></progress>
+          </div>
+          <div class="contentenido-tanque">
+            <p>Tanque</p>
+            <div class="contenedor-toma">
+              <ul class="muestras-progreso">
+                <li class="listo">ph(1.2)</li>
+                <li class="listo">cloro(2.1)</li>
+                <li class="listo">pa(3.2)</li>
+              </ul>
             </div>
-            <div class="card-progreso-dash">
-                <h3>tanque no. 1</h3>
-                <p style="width:35%" data-value="35">Muestras</p>
-                <progress max="100" value="35" class="progreso-muestra">
-                <h3>porcentaje 50%</h3>
+            <p>Hogar1</p>
+            <div class="contenedor-toma">
+              <ul class="muestras-progreso">
+                <li class="listo">ph(1.2)</li>
+                <li class="">cloro(2.1)</li>
+                <li class="">pa(3.2)</li>
+              </ul>
             </div>
-        </section>
+            <p>Hogar2</p>
+            <div class="contenedor-toma">
+              <ul class="muestras-progreso">
+                <li class="">ph(1.2)</li>
+                <li class="">cloro(2.1)</li>
+                <li class="">pa(3.2)</li>
+              </ul>
+            </div>
+          </div>
+      </div>
+      <div class="card-tanque-dash">
+          <div class="card-progreso-d">
+            <h3>tanque no. 1</h3>
+            <div class="porcentaje">
+              <p>50%</p>
+            </div>
+            <br>
+              <progress max="100" value="55" class="progreso-muestra"></progress>
+          </div>
+          <div class="contentenido-tanque">
+            <p>Tanque</p>
+            <div class="contenedor-toma">
+              <ul class="muestras-progreso">
+                <li class="listo">ph(1.2)</li>
+                <li class="listo">cloro(2.1)</li>
+                <li class="listo">pa(3.2)</li>
+              </ul>
+            </div>
+            <p>Hogar1</p>
+            <div class="contenedor-toma">
+              <ul class="muestras-progreso">
+                <li class="listo">ph(1.2)</li>
+                <li class="">cloro(2.1)</li>
+                <li class="">pa(3.2)</li>
+              </ul>
+            </div>
+            <p>Hogar2</p>
+            <div class="contenedor-toma">
+              <ul class="muestras-progreso">
+                <li class="">ph(1.2)</li>
+                <li class="">cloro(2.1)</li>
+                <li class="">pa(3.2)</li>
+              </ul>
+            </div>
+          </div>
+      </div>
+      <div class="card-tanque-dash-e">
+          <div class="card-progreso-d">
+            <h3>tanque no. 1</h3>
+            <div class="porcentaje-e">
+              <p>35%</p>
+            </div>
+            <br>
+              <progress max="100" value="35" class="progreso-muestra"></progress>
+          </div>
+          <div class="contentenido-tanque">
+            <p>Tanque</p>
+            <div class="contenedor-toma">
+              <ul class="muestras-progreso">
+                <li class="listo">ph(1.2)</li>
+                <li class="listo">cloro(2.1)</li>
+                <li class="listo">pa(3.2)</li>
+              </ul>
+            </div>
+            <p>Hogar1</p>
+            <div class="contenedor-toma">
+              <ul class="muestras-progreso">
+                <li class="listo">ph(1.2)</li>
+                <li class="">cloro(2.1)</li>
+                <li class="">pa(3.2)</li>
+              </ul>
+            </div>
+            <p>Hogar2</p>
+            <div class="contenedor-toma">
+              <ul class="muestras-progreso">
+                <li class="">ph(1.2)</li>
+                <li class="">cloro(2.1)</li>
+                <li class="">pa(3.2)</li>
+              </ul>
+            </div>
+          </div>
+      </div>
+      <div class="card-tanque-dash">
+          <div class="card-progreso-d">
+            <h3>tanque no. 1</h3>
+            <div class="porcentaje">
+              <p>35%</p>
+            </div>
+            <br>
+              <progress max="100" value="35" class="progreso-muestra"></progress>
+          </div>
+          <div class="contentenido-tanque">
+            <p>Tanque</p>
+            <div class="contenedor-toma">
+              <ul class="muestras-progreso">
+                <li class="listo">ph(1.2)</li>
+                <li class="listo">cloro(2.1)</li>
+                <li class="listo">pa(3.2)</li>
+              </ul>
+            </div>
+            <p>Hogar1</p>
+            <div class="contenedor-toma">
+              <ul class="muestras-progreso">
+                <li class="listo">ph(1.2)</li>
+                <li class="">cloro(2.1)</li>
+                <li class="">pa(3.2)</li>
+              </ul>
+            </div>
+            <p>Hogar2</p>
+            <div class="contenedor-toma">
+              <ul class="muestras-progreso">
+                <li class="">ph(1.2)</li>
+                <li class="">cloro(2.1)</li>
+                <li class="">pa(3.2)</li>
+              </ul>
+            </div>
+          </div>
+      </div>
+      <div class="card-tanque-dash-e">
+          <div class="card-progreso-d">
+            <h3>tanque no. 1</h3>
+            <div class="porcentaje-e">
+              <p>35%</p>
+            </div>
+            <br>
+              <progress max="100" value="35" class="progreso-muestra"></progress>
+          </div>
+          <div class="contentenido-tanque">
+            <p>Tanque</p>
+            <div class="contenedor-toma">
+              <ul class="muestras-progreso">
+                <li class="listo">ph(1.2)</li>
+                <li class="listo">cloro(2.1)</li>
+                <li class="listo">pa(3.2)</li>
+              </ul>
+            </div>
+            <p>Hogar1</p>
+            <div class="contenedor-toma">
+              <ul class="muestras-progreso">
+                <li class="listo">ph(1.2)</li>
+                <li class="">cloro(2.1)</li>
+                <li class="">pa(3.2)</li>
+              </ul>
+            </div>
+            <p>Hogar2</p>
+            <div class="contenedor-toma">
+              <ul class="muestras-progreso">
+                <li class="">ph(1.2)</li>
+                <li class="">cloro(2.1)</li>
+                <li class="">pa(3.2)</li>
+              </ul>
+            </div>
+          </div>
+      </div>
+      </div>
     </section>
     `;
-        function iniHiloActual() {
-            document.querySelector('.contenedor-grafica-dash').addEventListener('click',(e)=>{
-                if(e.target.tagName ==='DIV'||e.target.tagName ==='H3'||e.target.tagName ==='P'){
-                    ventanModal(DetalleTanque());
-                }else  if (e.target.tagName ==='BUTTON') {
-                    console.log('hola')
-                }
-            })   
-            
-        }
-        setTimeout(()=>iniHiloActual(),100);
         return $hiloactual;
 }

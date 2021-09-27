@@ -1,4 +1,4 @@
-import PeticionEncabezado from './Controlador.js';
+//import PeticionEncabezado from './Controlador.js';
 export function Encabezado() {
     const $Encabezado=document.createElement('head');
     $Encabezado.classList.add('encabezado')
@@ -14,6 +14,7 @@ export function Encabezado() {
         </div>
         `;
     function initEncabezado(){
+        /*
         const $manEncabezado = new PeticionEncabezado();
         const $tituloEl = document.createElement('h1');
         $manEncabezado.hacerPeticion(null,{},'GET').then(datos =>{
@@ -21,7 +22,7 @@ export function Encabezado() {
         }).then(()=>{
             document.getElementById('encabezado-datos').appendChild($tituloEl);
         })
-
+*/
 
         const btn = document.getElementById('btn-irlogin');
 

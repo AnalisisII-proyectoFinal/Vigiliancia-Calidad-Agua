@@ -8,126 +8,103 @@ export function Inicio() {
     <h2>PROGRESO DE TOMA DE MUESTRA</h2>
     <h3>Del: 21/05/2021 Al: 28/05/2021</h3>
     <div class="contenedor-grafica">
-      <div class="card-progreso">
-        <h3>tanque no. 1</h3>
-      <div>
-          <p style="width:35%" data-value="35">Tanque</p>
+      <div class="contenedor-tanque-card">
+        <div class="tanque-card">
+          <div class="frente-card">
+            <p>Tanque 2</p>
+            <hr>
+            <div>
+              <p style="width:35%" data-value="35">Tanque</p>
+              <progress max="100" value="35" class="progreso-muestra">
+              <span style="width: 35%"> 35%</span>
+            </div>
+            <div>
+              <p style="width:35%" data-value="35">Hogar</p>
+              <progress max="100" value="35" class="progreso-muestra">
+              <span style="width: 35%"> 35%</span>
+            </div>
+            <div>
+              <p style="width:35%" data-value="35">Hogar 2</p>
+              <progress max="100" value="35" class="progreso-muestra">
+              <span style="width: 35%"> 35%</span>
+            </div>
+          </div>
+          <div class="detras-card">
+            <p>Tanque</p>
+              <div class="contenedor-toma">
+                <ul class="muestras-progreso">
+                  <li class="listo">ph(1.2)</li>
+                  <li class="listo">cloro(2.1)</li>
+                  <li class="listo">pa(3.2)</li>
+                </ul>
+              </div>
+              <p>Hogar</p>
+              <div class="contenedor-toma">
+                <ul class="muestras-progreso">
+                  <li class="listo">ph(1.2)</li>
+                  <li class="listo">cloro(2.1)</li>
+                  <li class="">pa(3.2)</li>
+                </ul>
+              </div>
+              <p>Hogar2</p>
+              <div class="contenedor-toma">
+                <ul class="muestras-progreso">
+                  <li class="listo">ph(1.2)</li>
+                  <li class="">cloro(2.1)</li>
+                  <li class="">pa(3.2)</li>
+                </ul>
+              </div>
+          </div>
+        </div>
+      </div><div class="contenedor-tanque-card">
+      <div class="tanque-card">
+        <div class="frente-card">
+          <p>Tanque 2</p>
+          <hr>
+          <div>
+            <p style="width:35%" data-value="35">Tanque</p>
             <progress max="100" value="35" class="progreso-muestra">
-          <div class="progress-bar">
             <span style="width: 35%"> 35%</span>
           </div>
-      </div>
-      <div>
-          <p style="width:35%" data-value="35">Hogar 1</p>
+          <div>
+            <p style="width:35%" data-value="35">Hogar</p>
             <progress max="100" value="35" class="progreso-muestra">
-          <div class="progress-bar">
             <span style="width: 35%"> 35%</span>
           </div>
-      </div>
-      <div>
-          <p style="width:35%" data-value="35">Hogar 2</p>
+          <div>
+            <p style="width:35%" data-value="35">Hogar 2</p>
             <progress max="100" value="35" class="progreso-muestra">
-          <div class="progress-bar">
             <span style="width: 35%"> 35%</span>
           </div>
+        </div>
+        <div class="detras-card">
+          <p>Tanque</p>
+            <div class="contenedor-toma">
+              <ul class="muestras-progreso">
+                <li class="listo">ph(1.2)</li>
+                <li class="listo">cloro(2.1)</li>
+                <li class="listo">pa(3.2)</li>
+              </ul>
+            </div>
+            <p>Hogar</p>
+            <div class="contenedor-toma">
+              <ul class="muestras-progreso">
+                <li class="listo">ph(1.2)</li>
+                <li class="listo">cloro(2.1)</li>
+                <li class="">pa(3.2)</li>
+              </ul>
+            </div>
+            <p>Hogar2</p>
+            <div class="contenedor-toma">
+              <ul class="muestras-progreso">
+                <li class="listo">ph(1.2)</li>
+                <li class="">cloro(2.1)</li>
+                <li class="">pa(3.2)</li>
+              </ul>
+            </div>
+        </div>
       </div>
-      </div>
-      <div class="card-progreso">
-        <h3>tanque no. 1</h3>
-      <div>
-          <p style="width:35%" data-value="35">Tanque</p>
-            <progress max="100" value="35" class="progreso-muestra">
-          <div class="progress-bar">
-            <span style="width: 35%"> 35%</span>
-          </div>
-      </div>
-      <div>
-          <p style="width:35%" data-value="35">Hogar 1</p>
-            <progress max="100" value="35" class="progreso-muestra">
-          <div class="progress-bar">
-            <span style="width: 35%"> 35%</span>
-          </div>
-      </div>
-      <div>
-          <p style="width:35%" data-value="35">Hogar 2</p>
-            <progress max="100" value="35" class="progreso-muestra">
-          <div class="progress-bar">
-            <span style="width: 35%"> 35%</span>
-          </div>
-      </div>
-      </div>
-      <div class="card-progreso">
-        <h3>tanque no. 1</h3>
-      <div>
-          <p style="width:35%" data-value="35">Tanque</p>
-            <progress max="100" value="35" class="progreso-muestra">
-          <div class="progress-bar">
-            <span style="width: 35%"> 35%</span>
-          </div>
-      </div>
-      <div>
-          <p style="width:35%" data-value="35">Hogar 1</p>
-            <progress max="100" value="35" class="progreso-muestra">
-          <div class="progress-bar">
-            <span style="width: 35%"> 35%</span>
-          </div>
-      </div>
-      <div>
-          <p style="width:35%" data-value="35">Hogar 2</p>
-            <progress max="100" value="35" class="progreso-muestra">
-          <div class="progress-bar">
-            <span style="width: 35%"> 35%</span>
-          </div>
-      </div>
-      </div>
-      <div class="card-progreso">
-        <h3>tanque no. 1</h3>
-      <div>
-          <p style="width:35%" data-value="35">Tanque</p>
-            <progress max="100" value="35" class="progreso-muestra">
-          <div class="progress-bar">
-            <span style="width: 35%"> 35%</span>
-          </div>
-      </div>
-      <div>
-          <p style="width:35%" data-value="35">Hogar 1</p>
-            <progress max="100" value="35" class="progreso-muestra">
-          <div class="progress-bar">
-            <span style="width: 35%"> 35%</span>
-          </div>
-      </div>
-      <div>
-          <p style="width:35%" data-value="35">Hogar 2</p>
-            <progress max="100" value="35" class="progreso-muestra">
-          <div class="progress-bar">
-            <span style="width: 35%"> 35%</span>
-          </div>
-      </div>
-      </div>
-      <div class="card-progreso">
-        <h3>tanque no. 1</h3>
-      <div>
-          <p style="width:35%" data-value="100">Tanque</p>
-            <progress max="100" value="100" class="progreso-muestra">
-          <div class="progress-bar">
-            <span style="width: 35%"> 35%</span>
-          </div>
-      </div>
-      <div>
-          <p style="width:35%" data-value="35">Hogar 1</p>
-            <progress max="100" value="35" class="progreso-muestra">
-          <div class="progress-bar">
-            <span style="width: 35%"> 35%</span>
-          </div>
-      </div>
-      <div>
-          <p style="width:35%" data-value="35">Hogar 2</p>
-            <progress max="100" value="35" class="progreso-muestra">
-          <div class="progress-bar">
-            <span style="width: 35%"> 35%</span>
-          </div>
-      </div>
-      </div>
+    </div>
     </div>
   </section>
   <section id="#/vision-mision" class="contenedor-vision-mision">
@@ -157,56 +134,60 @@ export function Inicio() {
   <section id="#/publicacion" class="contenedor-publicacion">
     <h2>Mejoras y mantenimientos</h2>
     <div class="publicaciones">
-     <div class="publicacion">
-        <h3>titulo</h3>
-        <img src="./assets/img/grid_view_black_24dp.svg" alt="">
-        <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem fuga nihil non illum praesentium aliquam assumenda debitis repellendus porro! Ab itaque exercitationem tempore magni aliquid natus similique voluptatem ducimus sed.
-        </p>
-        <span>Fecha: 21/02/2021</span>
+      <div class="contenendor-publicacion">
+        <div class="card-public">
+          <div class="imgpublic">
+            <img src="./assets/img/muestra.svg" alt="">
+          </div>
+          <div class="descripcion-public">
+            <h2>helllo</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Eius, velit suscipit. Nesciunt quaerat corporis 
+            odit! Labore neque ex Aut doloremque quae eos alias unde!</p>
+          </div>
+        </div>
+      </div>
+      <div class="contenendor-publicacion">
+        <div class="card-public">
+          <div class="imgpublic">
+            <img src="./assets/img/muestra.svg" alt="">
+          </div>
+          <div class="descripcion-public">
+            <h2>helllo</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Eius, velit suscipit. Nesciunt quaerat corporis 
+            odit! Labore neque ex Aut doloremque quae eos alias unde!</p>
+          </div>
+        </div>
+      </div>
+      <div class="contenendor-publicacion">
+        <div class="card-public">
+          <div class="imgpublic">
+            <img src="./assets/img/muestra.svg" alt="">
+          </div>
+          <div class="descripcion-public">
+            <h2>helllo</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Eius, velit suscipit. Nesciunt quaerat corporis 
+            odit! Labore neque ex Aut doloremque quae eos alias unde!</p>
+          </div>
+        </div>
+      </div>
+      <div class="contenendor-publicacion">
+        <div class="card-public">
+          <div class="imgpublic">
+            <img src="./assets/img/muestra.svg" alt="">
+          </div>
+          <div class="descripcion-public">
+            <h2>helllo</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Eius, velit suscipit. Nesciunt quaerat corporis 
+            odit! Labore neque ex Aut doloremque quae eos alias unde!</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="publicacion">
-        <h3>titulo</h3>
-        <img src="./assets/img/grid_view_black_24dp.svg" alt="">
-        <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem fuga nihil non illum praesentium aliquam assumenda debitis repellendus porro! Ab itaque exercitationem tempore magni aliquid natus similique voluptatem ducimus sed.
-        </p>
-        <span>Fecha: 21/02/2021</span>
-    </div>
-    <div class="publicacion">
-        <h3>titulo</h3>
-        <img src="./assets/img/grid_view_black_24dp.svg" alt="">
-        <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem fuga nihil non illum praesentium aliquam assumenda debitis repellendus porro! Ab itaque exercitationem tempore magni aliquid natus similique voluptatem ducimus sed.
-        </p>
-        <span>Fecha: 21/02/2021</span>
-    </div>
-    <div class="publicacion">
-        <h3>titulo</h3>
-        <img src="./assets/img/grid_view_black_24dp.svg" alt="">
-        <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem fuga nihil non illum praesentium aliquam assumenda debitis repellendus porro! Ab itaque exercitationem tempore magni aliquid natus similique voluptatem ducimus sed.
-        </p>
-        <span>Fecha: 21/02/2021</span>
-    </div>
-    <div class="publicacion">
-        <h3>titulo</h3>
-        <img src="./assets/img/grid_view_black_24dp.svg" alt="">
-        <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem fuga nihil non illum praesentium aliquam assumenda debitis repellendus porro! Ab itaque exercitationem tempore magni aliquid natus similique voluptatem ducimus sed.
-        </p>
-        <span>Fecha: 21/02/2021</span>
-    </div>
-    <div class="publicacion">
-        <h3>titulo</h3>
-        <img src="./assets/img/grid_view_black_24dp.svg" alt="">
-        <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem fuga nihil non illum praesentium aliquam assumenda debitis repellendus porro! Ab itaque exercitationem tempore magni aliquid natus similique voluptatem ducimus sed.
-        </p>
-        <span>Fecha: 21/02/2021</span>
-    </div>
-    </div>
-   </section><br>
+  </section><br>
    <footer>
    <div class="footer-datos">
      <div >
@@ -266,4 +247,6 @@ export function Inicio() {
                 `;
             }
             })
- */
+
+*/
+        

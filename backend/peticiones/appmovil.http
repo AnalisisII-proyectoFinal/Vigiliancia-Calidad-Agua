@@ -1,0 +1,7 @@
+### post ruta user
+POST http://localhost:3000/api/v1/panel/appmovilnuevo
+Content-Type: application/json
+
+{ 
+    "usuario":"epilo"
+}

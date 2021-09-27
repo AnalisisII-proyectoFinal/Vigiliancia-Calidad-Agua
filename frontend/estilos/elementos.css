@@ -103,8 +103,8 @@
     margin-top: 0.7rem;
     display: block;
   }
-  
-.input-dato 
+
+.input-dato, .input-datoi
 {
   width: 100%; 
 	margin-bottom: 5px; 
@@ -123,7 +123,7 @@
 	transition: box-shadow .5s ease;
 }
 .input-dato:focus { box-shadow: inset 0 -5px 45px rgba(18, 155, 235, 0.514), 0 1px 1px rgba(152, 209, 235, 0.5); }
-
+.input-datoi:focus { box-shadow: inset 0 -5px 45px rgba(18, 155, 235, 0.514), 0 1px 1px rgba(152, 209, 235, 0.5); }
 /*-================modal================-*/
 .modal-contenedor{
   background: rgba(240, 237, 237, 0.5);
@@ -146,11 +146,14 @@
 }
 
 .modal-contenido{
-  background: var(--primer-color);
+  background-color: var(--quinto-color);
+  color: var(--texto-color-light);
   width: 90%;
   max-width: 1000px;
-  border: 1px solid var(--quinto-color);
   margin: auto;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, .2);
 }
 
 @keyframes intro-modal {
@@ -274,8 +277,10 @@ table tr:nth-child(even) {
 
 textarea{
   position: relative;
+  width: 100%;
   border: 2px solid var(--quinto-color);
   color: var(--titulo-color);
+  background-color: var(--segundo-color);
 }
 
 /*-====================== BUSCADOR =======================-*/
@@ -314,7 +319,7 @@ input[type="checkbox"]{
   width: 50px;
   height: 25px;
   -webkit-appearance:none;
-  background-color: var(--primer-color);
+  background-color: var(--septimo-color);
   outline: none;
   border-radius: 20px;
   box-shadow: inset 0 0 5px rgba(0, 0, 0, .2);
@@ -323,7 +328,7 @@ input[type="checkbox"]{
 
 input:checked[type="checkbox"]
 {
-  background-color: var(--cuarto-color);
+  background-color: var(--primer-color);
 }
 input[type="checkbox"]::before
 {
@@ -343,4 +348,55 @@ input[type="checkbox"]::before
 input:checked[type="checkbox"]::before
 {
   left: 25px;
+}
+/*-=============progreso de toma de muestras===========-*/
+.contenedor-toma{
+  width: 100%;
+  margin-left: -10%;
+}
+.muestras-progreso{
+  counter-reset: step;
+}
+.muestras-progreso li{
+  list-style-type: none;
+  float: left;
+  width: 33.33%;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+.muestras-progreso li:before{
+  content: counter(step);
+  counter-increment: step;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid var(--primer-color);
+  display: block;
+  text-align: center;
+  margin: 0 auto 10px auto;
+  border-radius: 50%;
+  background-color: var(--tercer-boton);
+}
+.muestras-progreso li:after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: -30%;
+  top: 15px;
+  z-index: -1;
+}
+.muestras-progreso li:first-child::after{
+  content: none;
+}
+.muestras-progreso li.listo{
+  color: var(--texto-color-light);
+}
+.muestras-progreso li.listo:before{
+  border-color: #0791E6;
+  background-color: #0791E6;
+}
+.muestras-progreso li.listo + li:after{
+  background-color: #0791E6;
 }

@@ -11,7 +11,9 @@
  * importacion de modulos
  * @requires componente:funciones - mostrar, ocultar y resaltar componentes.
  */
-import {mostrarComponente} from '../utilidades/MostrarComponente.js'
+import {mostrarComponente} from '../utilidades/MostrarComponente.js';
+import UiAppMovil from './ui/AppMovil.ui.js';
+import UiPublicacion from './ui/Publicacion.ui.js';
 /**
  * @type {string} - id de paginas
  */
@@ -40,6 +42,13 @@ export function OpcPanel(){
       opcModulo.addEventListener('click',(e)=>{
         if(e.target && e.target.tagName === 'BUTTON'){
           mostrarComponente(e.target.id);
+            if (e.target.id==='btn-2') {
+              const $obtUsuarios = new UiAppMovil();
+              $obtUsuarios.obtnerUsuariosApp(); 
+            }else if (e.target.id === 'btn-3') {
+              const $mPublicaciones= new UiPublicacion();
+                $mPublicaciones.obtnerPublicaciones(); 
+            }
           }
         })     
     mostrarComponente(BTN_1);

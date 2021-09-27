@@ -7,7 +7,7 @@
  * @copyright - ksksue
  * @version 1.0
  */
-class PeticionInstitucion {
+class ServicioPanel {
     constructor(){
         this.url ='http://localhost:3000/api/v1/panel';
     }
@@ -18,7 +18,7 @@ class PeticionInstitucion {
     }
     hacerPeticion(peticion,params,tipopeticion){
         return new Promise((resolve,reject)=>{
-            console.log('enviando parametros')
+            console.log(`Enviando peticion a:${peticion}`)
             fetch(this.url + (peticion ||''),{
                 headers: this.obtnerEncabezado(),
                 method: tipopeticion,
@@ -44,4 +44,4 @@ class PeticionInstitucion {
     }
 }
 
-export default PeticionInstitucion;
+export default ServicioPanel;
