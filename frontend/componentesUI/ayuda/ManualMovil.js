@@ -10,34 +10,20 @@ export function ManualMovil(){
         $manualmovil.setAttribute('id',"pg3");
         $manualmovil.setAttribute('style',"display:none;")
         $manualmovil.innerHTML=`
-        <section class="contenedor-Ayuda">
-        <section class="contenedor-Ayuda">
-        <h3>Manual de App Móvil/Usuario</h3>
+        <div class="contenedor-ayuda">
+        <h2><div class="heading">Manual de uso Sistema Móvil</div></h2>
         <hr>
-        <div>
-          <form action="" class="tutoriales-buscador">
-          <input type="text" class="input-buscador" id=""placeholder="Ayuda" required=""/>
-          <button class="primer-btn">Buscar</button>
-          </form>
-          <br>
-          <section class="pag-ayuda-tutoriales">
-          <div>
-          <section class="color-video"><form action="">
-          <p><label for="" class="input-label"></label>
-          <center><object class="pdfview" type="application/pdf" data="https://secretariademovilidad.quito.gob.ec/images/MOVILIDAD/MovilizateUIO/Manual-AppMovil.pdf"></object></center>
-          </form>
-              </div>
-                </tr>       
-    </section>
-        
-        <h3>App Móvil Municipalidad Sololá, Oficina de agua</h3>
-        <hr>
-        <section class="pag-ayuda-tutoriales">
-        <p><label for="" class="input-label">Establecimiento, terminos y Usos de privacidad:</label>
-        <p><label for="" class="input-label">Visita nuestro sitio de descarga :</label>
-        <section class="pag-web">
-        <center><h3><a href="https://play.google.com/store/apps/details?id=com.ayd.sadm&hl=es&gl=US"> Descargar App Móvil / Municipalidad San José Chacayá, Sololá</a></h3></center>
-        </div>
+            <div class="video-container">
+                <div class="">
+                    <h2>Manual de usuarios</h2>
+                    <object class="pdfview" type="application/pdf" data="https://secretariademovilidad.quito.gob.ec/images/MOVILIDAD/MovilizateUIO/Manual-AppMovil.pdf"></object>
+                </div>
+                <div class="">
+                    <h2>Manual App Móvil</h2>
+                    <object class="pdfview" type="application/pdf" data="http://sistema-artext.com/doc/manual.pdf"></object>
+                </div>
+           
+            </div>
         `;
         return $manualmovil;
 }

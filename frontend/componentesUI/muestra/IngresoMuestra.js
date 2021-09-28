@@ -1,6 +1,8 @@
 "use strict";
 //@ts-check
 import{validarInput}from '../utilidades/ValidarFormulario.js'
+import {EditarIngresoMuestra} from './EditarIngresoMuestra.js';
+import{ventanModal}from '../utilidades/VentanaModal.js';
 /**
  * creacion de las opciones que tendra el modulo dashboard
  * @returns {void} historial del modulo y funcionalidades
@@ -19,21 +21,21 @@ export function IngresoMuestra(){
           <p>
             <label class="input-label" for="">Tipo de muestra</label>
             <select class="input-opciones" id="">
-              <option value="Opcion 1">Opcion 1</option>
-              <option value="Opcion 2">Opcion 2</option>
-              <option value="Opcion 3">Opcion 3</option>
-              <option value="Opcion 4">Opcion 4</option>
-              <option value="Opcion 5">Opcion 5</option>
+              <option value="Opcion 1">Tanque 1</option>
+              <option value="Opcion 2">Tanque 2</option>
+              <option value="Opcion 3">Tanque 3</option>
+              <option value="Opcion 4">Tanque 4</option>
+              <option value="Opcion 5">Tanque 5</option>
             </select>
           </p>
           <p><label for="" class="input-label">Punto de muestra:</label>
-          <input type="text" class="input-dato" name="nombre" id="n-muestra" placeholder="Hogar,tanque.." required=""/></p>
-        <p><label for="" class="input-label">PH:</label>
-          <input type="text" class="input-dato" name="numero" id="n-ph" placeholder="ph" required=""/></p>
-        <p><label for="" class="input-label">Cloro recidual:</label>
-          <input type="text" class="input-dato" name="numero" id="n-color" placeholder="" required=""/></p>
-        <p><label for="" class="input-label">Presion de agua:</label>
-          <input type="text" class="input-dato" name="numero" id="n-precsion" placeholder="" required=""/></p>  
+            <input type="text" class="input-dato" name="nombre" id="n-muestra" placeholder="Hogar,tanque.." required=""/></p>
+          <p><label for="" class="input-label">PH:</label>
+            <input type="text" class="input-dato" name="numero" id="n-ph" placeholder="ph" required=""/></p>
+          <p><label for="" class="input-label">Cloro recidual:</label>
+            <input type="text" class="input-dato" name="nombre" id="n-color" placeholder="Full name" required=""/></p>
+          <p><label for="" class="input-label">Presion de agua:</label>
+            <input type="text" class="input-dato" name="nombre" id="n-precsion" placeholder="Full name" required=""/></p>  
           </form>
           <div class="btn-ingreso-muestra">
           <button class="primer-btn">Guardar</button>
@@ -43,7 +45,7 @@ export function IngresoMuestra(){
           <div>
           <h2>Historial de muestras</h2>
           <hr>
-          <table>
+          <table id="tabla-ingreso-muestra">
             <thead>
                 <tr>
                   <th>No.</th>
@@ -63,7 +65,10 @@ export function IngresoMuestra(){
                   <td>8</td>
                   <td>compuesto reductores</td>
                   <td>regular</td>
-                  <td><a class='button' href='#'>Editar</a></td>
+                  <td>
+                  <button class="editar">✏️</button>
+                  <button class="eliminar">🗑️</button>
+                  </td>
                 </tr>
                 <tr>
                   <td>2</td>
@@ -72,7 +77,10 @@ export function IngresoMuestra(){
                   <td>8</td>
                   <td>cloraminas</td>
                   <td>Normal</td>
-                  <td><a class='button' href='#'>Editar</a></td>
+                  <td>
+                  <button class="editar">✏️</button>
+                  <button class="eliminar">🗑️</button>
+                  </td>
                 </tr>
                 <tr>
                   <td>3</td>
@@ -81,7 +89,10 @@ export function IngresoMuestra(){
                   <td>7</td>
                   <td>Organicos de cloro</td>
                   <td>Regular</td>
-                  <td><a class='button' href='#'>Editar</a></td>
+                  <td>
+                  <button class="editar">✏️</button>
+                  <button class="eliminar">🗑️</button>
+                  </td>
                 </tr>
                 <tr>
                   <td>4</td>
@@ -90,15 +101,24 @@ export function IngresoMuestra(){
                   <td>7</td>
                   <td>Cloro no destruidos</td>
                   <td>Normal</td>
-                  <td><a class='button' href='#'>Editar</a></td>
+                  <td>
+                  <button class="editar">✏️</button>
+                  <button class="eliminar">🗑️</button>
+                  </td>
                 </tr>
         </tbody>
     </table>
-    </table>
   </div>
-</section> 
+  </section> 
         `;
-        function iniIngresoMuestra(){
+        function initEditarIngresoMuestra(){
+          document.getElementById('tabla-ingreso-muestra').addEventListener('click',(e)=>{
+            if (e.target.classList.contains('editar')) {
+              ventanModal(EditarIngresoMuestra());
+            }else if (e.target.classList.contains('eliminar')){
+              console.log('eliminando registro');
+            }
+          })
           const form = document.querySelector ('.form-ingreso-muestra');
           form.addEventListener('keydown',(e)=>{
             let tipo = e.target.name;
@@ -107,6 +127,6 @@ export function IngresoMuestra(){
             validarInput(tipo,id,valor);
           })
         }
-        setTimeout(()=>iniIngresoMuestra(),100);
+        setTimeout(()=>initEditarIngresoMuestra(),100);
         return $ingresomuestra;
 }

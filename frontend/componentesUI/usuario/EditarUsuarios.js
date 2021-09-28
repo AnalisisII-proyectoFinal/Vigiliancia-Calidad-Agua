@@ -1,16 +1,9 @@
-"use strict";
-//@ts-check
-/**
- * creacion de las opciones que tendra el modulo dashboard
- * @returns {void} historial del modulo y funcionalidades
- */
-export function CreaUsuarios(){
-    const $creausuarios = document.createElement('div');
-        $creausuarios.classList.add("pagina");
-        $creausuarios.setAttribute('id',"pg2");
-        $creausuarios.setAttribute('style',"display:none;")
-        $creausuarios.innerHTML=`
-        <section class="contenedor-usuario">
+export function EditarUsuarios() {
+    const $editarusuarios = document.createElement('div');
+    $editarusuarios.classList.add('editar-usuario');
+    $editarusuarios.innerHTML=` 
+    <h3>Editar Usuario</h3>
+    <section class="contenedor-Usuarios">
     <div class="datos-Usuario">
      <center><h2>Crear Usuario</h2></center>
       <h4><span>Datos personales creados el: 23/05/2020 09:00</span></h4>
@@ -42,23 +35,22 @@ export function CreaUsuarios(){
           <input type="text" class="input-dato" id="" placeholder="Calle, 000" required=""/></p>
           <p><label for="" class="input-label">Fecha Creación:</label>
           <input type="text" class="input-dato" id="" placeholder="12/03/2021" required=""/></p>
-          <div class="select">
-          <select name="format" id="format">
-            <option selected disabled>selecciona una opcion</option>
-            <option value="opcion1">Opcion1</option>
-            <option value="opcion2">Opcion2</option>
-            <option value="opcion3">Opcion3</option>
-            <option value="opcion4">Opcion4</option>
-          </select>
-        </div>
+          <p><label for="" class="input-label">Cargo/Rol:</label>
+              <select class="input-opciones" id="">
+                <option value="Opcion 1">Elige cargo     ☟</option>
+                <option value="Opcion 2">Secetaria</option>
+                <option value="Opcion 3">Director de A.S</option>
+                <option value="Opcion 3">Auxiliar de Director de A.S</option>
+                <option value="Opcion 3">Otro</option>
         </p>
+<select class="input-opciones" id="">
       </form>
       <div class="botones-institucion">
-        <p><button class="tercer-btn">Resetear</button></p>
-        <p><button class="primer-btn">Guardar</button></p> 
+        
+        <p><button class="primer-btn">Actualizar</button></p> 
       </div>
     </div> 
   </section>
-        `;
-        return $creausuarios;
+    `;
+    return $editarusuarios;
 }

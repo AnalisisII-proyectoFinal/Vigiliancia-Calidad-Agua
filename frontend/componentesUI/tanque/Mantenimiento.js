@@ -1,6 +1,8 @@
 "use strict";
 //@ts-check
 import{validarInput}from '../utilidades/ValidarFormulario.js'
+import{ventanModal}from '../utilidades/VentanaModal.js';
+import { EditarMantenimiento } from './EditarMantenimiento.js';
 /**
  * creacion de las opciones que tendra el modulo dashboard
  * @returns {void} historial del modulo y funcionalidades
@@ -12,41 +14,41 @@ export function Mantenimiento(){
         $mantenimiento.setAttribute('style',"display:none;")
         $mantenimiento.innerHTML=`
         <section class="contenedor-tanques">
-          <div>
-            <h2>Mantenimiento y mejoras de tanques</h2>
-          <hr>
-          <form action="" class="form-mantenimiento">
+        <div>
+          <h2>Mantenimiento y mejoras de tanques</h2>
+        <hr>
+        <form action="" class="form-mantenimiento">
           <p><label for="" class="input-label">Titulo:</label>
-          <input type="text" class="input-dato" name="titulo" id="ntitulo" placeholder="titulo" required=""/></p>
-        <p><label for="" class="input-label">Descripcion:</label>
-          <input type="text" class="input-dato" name="descripcion" id="n-mant" placeholder="descripcion" required=""/></p>
-        <p><label for="" class="input-label">Fecha:</label>
-          <input type="date" class="input-dato" name="fecha" id="n-fecha" placeholder="" required=""/></p>
-        <p>
-          <label for="" class="input-label">Fotografia:</label>
-          <label class="input-archivo">
-              <input type="file" id="file" aria-label="archivo">
-              <span class="input-archivo-personalizado"></span>
-            </label>
-        </p>
-            <p>
-              <label class="input-label" for="">Tanque</label>
-              <select class="input-opciones" id="">
-                <option value="Opcion 1">tanque 1</option>
-                <option value="Opcion 2">tanque 2</option>
-                <option value="Opcion 3">Opcion 3</option>
-                <option value="Opcion 4">Opcion 4</option>
-                <option value="Opcion 5">Opcion 5</option>
-              </select>
-            </p>
-          </form>
-          <br>
-          <button class="primer-btn">Guardar</button>
-          </div>
-      <div>
-          <h2>Historial de mantenimientos</h2>
-          <hr>
-          <table>
+            <input type="text" class="input-dato" name="titulo" id="ntitulo" placeholder="titulo" required=""/></p>
+          <p><label for="" class="input-label">Descripcion:</label>
+            <input type="text" class="input-dato" name="descripcion" id="n-mant" placeholder="descripcion" required=""/></p>
+          <p><label for="" class="input-label">Fecha:</label>
+            <input type="date" class="input-dato" name="fecha" id="n-fecha" placeholder="" required=""/></p>
+          <p>
+            <label for="" class="input-label">Fotografia:</label>
+            <label class="input-archivo">
+                <input type="file" id="file" aria-label="archivo">
+                <span class="input-archivo-personalizado"></span>
+              </label>
+          </p>
+          <p>
+            <label class="input-label" for="">Tanque</label>
+            <select class="input-opciones" id="">
+              <option value="Opcion 1">tanque 1</option>
+              <option value="Opcion 2">tanque 2</option>
+              <option value="Opcion 3">Opcion 3</option>
+              <option value="Opcion 4">Opcion 4</option>
+              <option value="Opcion 5">Opcion 5</option>
+            </select>
+          </p>
+        </form>
+        <br>
+        <button class="primer-btn">Guardar</button>
+        </div>
+    <div>
+        <h2>Historial de mantenimientos</h2>
+        <hr>
+        <table id="tabla-mantenimiento">
           <thead>
             <tr>
               <th>No.</th>
@@ -54,6 +56,7 @@ export function Mantenimiento(){
               <th>Titulo</th>
               <th>Descripción</th>
               <th>Fecaha</th>
+              <th>Fotografia</th>
               <th>Opciones</th>
             </tr>
           </thead>
@@ -64,8 +67,10 @@ export function Mantenimiento(){
                 <td>mantenimineto</td>
                 <td>reparación de tanque</td>
                 <td>21/08/2021</td>
+                <td>foto tanque 1</td>
                   <td>
-                    <a class='button' href='#'>Editar</a>
+                  <button class="editar">✏️</button>
+                  <button class="eliminar">🗑️</button>
                   </td>
               </tr>
               <tr>
@@ -74,8 +79,10 @@ export function Mantenimiento(){
                 <td>reparación</td>
                 <td>Mantenimiento</td>
                 <td>21/08/2021</td>
+                <td>foto tanque 1</td>
                 <td>
-                  <a class='button' href='#'>Editar</a>
+                <button class="editar">✏️</button>
+                <button class="eliminar">🗑️</button>
                 </td>
               </tr>
               <tr>
@@ -84,16 +91,25 @@ export function Mantenimiento(){
                 <td>reparación</td>
                 <td>Mantenimiento</td>
                 <td>27/08/2021</td>
+                <td>foto tanque 1</td>
                 <td>
-                  <a class='button' href='#'>Editar</a>
+                <button class="editar">✏️</button>
+                <button class="eliminar">🗑️</button>
                 </td>
               </tr>
                 </tbody>
-            </table>           
-        </div>
-    </section>
+            </table>          
+      </div>
+  </section>
         `;
-        function iniMantenimiento(){
+        function initEditarMantenimiento(){
+          document.getElementById('tabla-mantenimiento').addEventListener('click',(e)=>{
+            if (e.target.classList.contains('editar')) {
+              ventanModal(EditarMantenimiento());
+            }else if (e.target.classList.contains('eliminar')){
+              console.log('eliminando registro');
+            }
+          })
           const form = document.querySelector ('.form-mantenimiento');
           form.addEventListener('keydown',(e)=>{
             let tipo = e.target.name;
@@ -102,6 +118,6 @@ export function Mantenimiento(){
             validarInput(tipo,id,valor);
           })
         }
-        setTimeout(()=>iniMantenimiento(),100);
+        setTimeout(()=>initEditarMantenimiento(),100);
         return $mantenimiento;
 }

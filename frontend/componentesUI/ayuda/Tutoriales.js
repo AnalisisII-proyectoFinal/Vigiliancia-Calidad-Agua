@@ -10,27 +10,54 @@ export function Tutoriales(){
         $tutoriales.setAttribute('id',"pg1");
         $tutoriales.setAttribute('style',"display:block;")
         $tutoriales.innerHTML=`
-        <section class="contenedor-Ayuda">
-        <h3>Tutoriales</h3>
+        <div class="contenedor-ayuda">
+        <h2><div class="heading">Galeria de Tutoriales</div></h2>
         <hr>
-        <div>
-          <form action="" class="tutoriales-buscador">
-          <input type="text" class="input-buscador" id="" placeholder="videos" required=""/>
-          <button class="primer-btn">Buscar</button>
-          </form>
-          <br>
-          <section class="pag-ayuda-tutoriales">
-          <div>
-          <section class="color-video"><form action="">
-          <p><label for="" class="input-label"></label>
-          <iframe width="200" height="230" src="https://www.youtube.com/embed/tbrhTvWyTCo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <iframe width="200" height="230" src="https://www.youtube.com/embed/YiSpsKE2eIc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <iframe width="200" height="230" src="https://www.youtube.com/embed/nnAzOIxfy9U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </form>
-              </div>
-                </tr>       
-        </div>
-    </section>
-        `;
+            <div class="video-container">
+                <div class="">
+                    <h2>Cómo crear nuevo tanque</h2>
+                    <iframe width="200" height="140" src="https://www.youtube.com/embed/tbrhTvWyTCo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="">
+                    <h2>Métodos de cloración</h2>
+                    <iframe width="200" height="140" src="https://www.youtube.com/embed/tbrhTvWyTCo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="">
+                    <h2>Cómo crear hilo de muestras</h2>
+                    <iframe width="200" height="140" src="https://www.youtube.com/embed/tbrhTvWyTCo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="">
+                    <h2>Historial de muestras</h2>
+                    <iframe width="200" height="140" src="https://www.youtube.com/embed/tbrhTvWyTCo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="">
+                    <h2>Cómo generar reportes</h2>
+                    <iframe width="200" height="140" src="https://www.youtube.com/embed/tbrhTvWyTCo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="">
+                    <h2>Crear y editar Usuarios</h2>
+                    <iframe width="200" height="140" src="https://www.youtube.com/embed/tbrhTvWyTCo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="">
+                    <h2>Backup</h2>
+                    <iframe width="200" height="140" src="https://www.youtube.com/embed/tbrhTvWyTCo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>`;
         return $tutoriales;
 }
+
+/**
+ <script>
+        ver video = document.querySelectorAll("video")
+        video.play.forEach(play => {
+            
+        });
+        if(play.paused){
+            play.play();
+        }else{
+            play.paused();
+            play.currentime = 0;
+        }
+    }))
+ */

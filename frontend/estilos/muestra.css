@@ -55,3 +55,15 @@
     display: flex;
     justify-content: space-evenly;
 }
+
+
+.editar-ingresomues{
+    padding: 10px 10px 10px 10px;
+}
+
+.editar-tipo-muestra{
+    padding: 10px 10px 10px 10px;
+}
+.editar-nuevohilo{
+    padding: 10px 10px 10px 10px;
+}

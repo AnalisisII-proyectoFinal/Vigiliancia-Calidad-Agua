@@ -16,90 +16,90 @@ export function Tanques(){
         <hr>
         <div>
           <form action="" class="tanque-buscador">
-          <input type="text" class="input-buscador" id="" placeholder="nombre del tanque" required=""/>
+          <input type="text" class="input-buscador" name="nombre" id="n-tanque" placeholder="nombre del tanque" required=""/>
           <button class="primer-btn">Buscar</button>
           </form>
           <br>
-          <table>
-          <thead>
-            <tr>
-              <th>No.</th>
-              <th>Nombre</th>
-              <th>Numero</th>
-              <th>Ubicación</th>
-              <th>Fecha en funcionamiento</th>
-              <th>Largo</th>
-              <th>Ancho</th>
-              <th>Altura</th>
-              <th>Titulo</th>
-              <th>Descripción</th>
-              <th>Fecha</th>
-              <th>tanque</th>
-              <th>Tratamiento</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Juan Carlos</td>
-              <td>40588264</td>
-              <td>Sanjose Chacaya</td>
-              <td>28/05/2021</td>
-              <td>18</td>
-              <td>14</td>
-              <td>8</td>
-              <td>mantenimiento</td>
-              <td>reparacion de tanque</td>
-              <td>28/08/2021</td>
-              <td>tanque 1</td>
-              <td>cloracion de agua</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Juan Carlos</td>
-              <td>40588264</td>
-              <td>Sanjose Chacaya</td>
-              <td>28/05/2021</td>
-              <td>18</td>
-              <td>14</td>
-              <td>8</td>
-              <td>mantenimiento</td>
-              <td>reparacion de tanque</td>
-              <td>28/08/2021</td>
-              <td>tanque 1</td>
-              <td>cloracion de agua</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Juan Carlos</td>
-              <td>40588264</td>
-              <td>Sanjose Chacaya</td>
-              <td>28/05/2021</td>
-              <td>18</td>
-              <td>14</td>
-              <td>8</td>
-              <td>mantenimiento</td>
-              <td>reparacion de tanque</td>
-              <td>28/08/2021</td>
-              <td>tanque 1</td>
-              <td>cloracion de agua</td>
-            <tr>
-              <td>1</td>
-              <td>Juan Carlos</td>
-              <td>40588264</td>
-              <td>Sanjose Chacaya</td>
-              <td>28/05/2021</td>
-              <td>18</td>
-              <td>14</td>
-              <td>8</td>
-              <td>mantenimiento</td>
-              <td>reparacion de tanque</td>
-              <td>28/08/2021</td>
-              <td>tanque 1</td>
-              <td>cloracion de agua</td>
-            </tr>
-          </tbody>
-      </table>          
+            <table>
+              <thead>
+                <tr>
+                  <th>No.</th>
+                  <th>Nombre</th>
+                  <th>Numero</th>
+                  <th>Ubicación</th>
+                  <th>Fecha en funcionamiento</th>
+                  <th>Largo</th>
+                  <th>Ancho</th>
+                  <th>Altura</th>
+                  <th>Titulo</th>
+                  <th>Descripción</th>
+                  <th>Fecha</th>
+                  <th>tanque</th>
+                  <th>Tratamiento</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Juan Carlos</td>
+                  <td>40588264</td>
+                  <td>Sanjose Chacaya</td>
+                  <td>28/05/2021</td>
+                  <td>18</td>
+                  <td>14</td>
+                  <td>8</td>
+                  <td>mantenimiento</td>
+                  <td>reparacion de tanque</td>
+                  <td>28/08/2021</td>
+                  <td>tanque 1</td>
+                  <td>cloracion de agua</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>Juan Carlos</td>
+                  <td>40588264</td>
+                  <td>Sanjose Chacaya</td>
+                  <td>28/05/2021</td>
+                  <td>18</td>
+                  <td>14</td>
+                  <td>8</td>
+                  <td>mantenimiento</td>
+                  <td>reparacion de tanque</td>
+                  <td>28/08/2021</td>
+                  <td>tanque 1</td>
+                  <td>cloracion de agua</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>Juan Carlos</td>
+                  <td>40588264</td>
+                  <td>Sanjose Chacaya</td>
+                  <td>28/05/2021</td>
+                  <td>18</td>
+                  <td>14</td>
+                  <td>8</td>
+                  <td>mantenimiento</td>
+                  <td>reparacion de tanque</td>
+                  <td>28/08/2021</td>
+                  <td>tanque 1</td>
+                  <td>cloracion de agua</td>
+                <tr>
+                  <td>1</td>
+                  <td>Juan Carlos</td>
+                  <td>40588264</td>
+                  <td>Sanjose Chacaya</td>
+                  <td>28/05/2021</td>
+                  <td>18</td>
+                  <td>14</td>
+                  <td>8</td>
+                  <td>mantenimiento</td>
+                  <td>reparacion de tanque</td>
+                  <td>28/08/2021</td>
+                  <td>tanque 1</td>
+                  <td>cloracion de agua</td>
+                </tr>
+              </tbody>
+          </table>          
         </div>
     </section>
         `;
@@ -111,6 +111,9 @@ export function Tanques(){
             let valor = e.target.value;
             validarInput(tipo,id,valor);
           })
+
+
+
         }
         setTimeout(()=>iniTanques(),100);
         return $tanques;

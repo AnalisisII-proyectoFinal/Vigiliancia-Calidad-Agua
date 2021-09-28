@@ -1,6 +1,8 @@
 "use strict";
 //@ts-check
 import{validarInput}from '../utilidades/ValidarFormulario.js'
+import { EditarNuevoHilo } from './EditarNuevoHilo.js';
+import{ventanModal}from '../utilidades/VentanaModal.js';
 /**
  * creacion de las opciones que tendra el modulo dashboard
  * @returns {void} historial del modulo y funcionalidades
@@ -16,10 +18,10 @@ export function NuevoHilo(){
             <h2 id="titulo">Crear nuevo hilo de muestras</h2>
             <hr> 
             <form action="" class="form-hilo">
-            <p><label for="" class="input-label">Fecha de inicio:</label>
-            <input type="date" class="input-dato" name="fecha" id="n-inico" placeholder="" required=""/></p>
-        <p><label for="" class="input-label">Fecha de finalizacón:</label>
-            <input type="date" class="input-dato" name="fecha" id="n-final" placeholder="" required=""/></p>
+                <p><label for="" class="input-label">Fecha de inicio:</label>
+                    <input type="date" class="input-dato" name="fecha" id="n-inico" placeholder="" required=""/></p>
+                <p><label for="" class="input-label">Fecha de finalizacón:</label>
+                    <input type="date" class="input-dato" name="fecha" id="n-final" placeholder="" required=""/></p>
                 <p>
                     <label class="input-label" for="">Responsables</label>
                     <select class="input-opciones" id="">
@@ -41,16 +43,16 @@ export function NuevoHilo(){
                     <div>
                     <label class="input-label" for="">Tanques: </label>
                     <select class="input-opciones" id="">
-                            <option value="Opcion 1">Opcion 1</option>
-                            <option value="Opcion 2">Opcion 2</option>
-                            <option value="Opcion 3">Opcion 3</option>
-                            <option value="Opcion 4">Opcion 4</option>
-                            <option value="Opcion 5">Opcion 5</option>
+                            <option value="Opcion 1">Tanque 1</option>
+                            <option value="Opcion 2">Tanque 2</option>
+                            <option value="Opcion 3">Tanque 3</option>
+                            <option value="Opcion 4">Tanque 4</option>
+                            <option value="Opcion 5">Tanque 5</option>
                     </select>
                     </div>
                 <button class="primer-btn">Agregar</button>
             </form>
-            <table>
+            <table id="tabla-nuevohilo">
                 <thead>
                     <tr>
                       <th>No.</th>
@@ -68,7 +70,10 @@ export function NuevoHilo(){
                       <td>21/08/2021</td>
                       <td>24/08/2021</td>
                       <td>1</td>
-                      <td><a class='button' href='#'>Editar</a></td>
+                      <td>
+                      <button class="editar">✏️</button>
+                      <button class="eliminar">🗑️</button>
+                      </td>
                     </tr>
                     <tr>
                       <td>2</td>
@@ -76,7 +81,10 @@ export function NuevoHilo(){
                       <td>20/07/2021</td>
                       <td>22/07/2021</td>
                       <td>2</td>
-                      <td><a class='button' href='#'>Editar</a></td>
+                      <td>
+                      <button class="editar">✏️</button>
+                      <button class="eliminar">🗑️</button>
+                      </td>
                     </tr>
                     <tr>
                       <td>3</td>
@@ -84,7 +92,10 @@ export function NuevoHilo(){
                       <td>19/08/2021</td>
                       <td>21/08/2021</td>
                       <td>3</td>
-                      <td><a class='button' href='#'>Editar</a></td>
+                      <td>
+                      <button class="editar">✏️</button>
+                      <button class="eliminar">🗑️</button>
+                      </td>
                     </tr>
                     <tr>
                       <td>4</td>
@@ -92,15 +103,25 @@ export function NuevoHilo(){
                       <td>25/08/2021</td>
                       <td>26/08/2021</td>
                       <td>4</td>
-                      <td><a class='button' href='#'>Editar</a></td>
+                      <td>
+                      <button class="editar">✏️</button>
+                      <button class="eliminar">🗑️</button>
+                      </td>
                     </tr>
             </table>
-
             </div>
         </div>
     </section>
+</section> 
         `;
-        function iniNuevoHilo(){
+        function initEditarNuevoHilo(){
+          document.getElementById('tabla-nuevohilo').addEventListener('click',(e)=>{
+            if (e.target.classList.contains('editar')) {
+              ventanModal(EditarNuevoHilo());
+            }else if (e.target.classList.contains('eliminar')){
+              console.log('eliminando registro');
+            }
+          })
           const form = document.querySelector ('.form-hilo');
           form.addEventListener('keydown',(e)=>{
             let tipo = e.target.name;
@@ -108,10 +129,7 @@ export function NuevoHilo(){
             let valor = e.target.value;
             validarInput(tipo,id,valor);
           })
-
-
-
         }
-        setTimeout(()=>iniNuevoHilo(),100);
-        return $nuevohilo;
+        setTimeout(()=>initEditarNuevoHilo(),100);
+        return $nuevohilo;       
 }

@@ -7,7 +7,7 @@
 import {OpcUsuario} from './OpcUsuario.js';
 import { ListaUsuarios } from './ListaUsuarios.js';
 import { CreaUsuarios } from './CreaUsuarios.js';
-import { EditaUsuarios } from './EditaUsuarios.js';
+
 
 /**
  * Unificacion de componentes del modulo
@@ -24,7 +24,6 @@ export function Usuario() {
     /** aqui se agregan las paginas... */
     $paginas.appendChild(ListaUsuarios());
     $paginas.appendChild(CreaUsuarios());
-    $paginas.appendChild(EditaUsuarios());
     $usuario.appendChild($paginas);
     return $usuario;
 }

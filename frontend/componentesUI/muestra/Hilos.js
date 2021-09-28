@@ -15,8 +15,8 @@ export function Hilos(){
         <h3>Hilo de muestras</h3>
         <hr>
         <form action="" class="tanque-buscador">
-        <input type="date" class="input-buscador" name="fecha" id="n-hilom" placeholder="nombre del tanque" required=""/>
-          <button class="primer-btn">Buscar</button>
+            <input type="text" class="input-buscador" name="nombre" id="n-tanque" placeholder="nombre del tanque" required=""/>
+            <button class="primer-btn">Buscar</button>
         </form>
         <div>
         <h3>Hilo de muestras</h3>
@@ -108,6 +108,9 @@ export function Hilos(){
             let valor = e.target.value;
             validarInput(tipo,id,valor);
           })
+
+
+
         }
         setTimeout(()=>iniHilo(),100);
         return $hilos;
