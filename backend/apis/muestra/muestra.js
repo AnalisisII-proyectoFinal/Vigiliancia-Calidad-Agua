@@ -1,17 +1,15 @@
 const express = require('express');
-const respuesta = require('../../respuesta/respuesta.js');
-const {getConexion} = require('../../sqlserver/sqlserverconexion.js');
+const ctrl = require('./controladores')
+
 const router = express.Router();
 
 // rutas
 
-router.get('/',inicio);
+router.post('/nuevohilo',ctrl.hilo.nuevoHilo)
+router.get('/hilo',ctrl.hilo.obtnerDatosHilo)
 
 
 
-async function inicio(req,res,next) {
-  res.json({saludo:'soy muestra 2'})
-}
 
 
 module.exports = router;

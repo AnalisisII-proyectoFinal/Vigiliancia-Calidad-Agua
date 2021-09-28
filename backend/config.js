@@ -9,6 +9,6 @@ module.exports = {
         dbUser:'sa',
         dbPassword:'010991',
         dbServer:'localhost',
-        dbDatabase:'calidaddeaguadb',
+        dbDatabase:'dbdireccionagua',
     }
 }

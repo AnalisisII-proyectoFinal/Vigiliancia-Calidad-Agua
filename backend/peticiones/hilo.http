@@ -1,0 +1,17 @@
+### post ruta inicio
+POST http://localhost:3000/api/v1/muestra/nuevohilo
+Content-Type: application/json
+
+{ 
+    "fechafin":"2021-01-05",
+    "descripcion":"intento2",
+    "idusuario":6
+}
+
+### post ruta inicio
+GET http://localhost:3000/api/v1/muestra/hilo
+Content-Type: application/json
+
+{ 
+    "id":3
+}
