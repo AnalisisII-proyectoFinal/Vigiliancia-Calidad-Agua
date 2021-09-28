@@ -137,3 +137,25 @@ GO
 
 /****-- ****/
 SELECT * FROM dbo.tbl_hilo;
+DELETE dbo.tbl_hilo WHERE id=1;
+UPDATE dbo.tbl_hilo SET estado=0, descripcion='actualiza' WHERE id=1;
+
+INSERT INTO dbo.tbl_hilo(fecha_inicio,fecha_fin,descripcion,id_usuario,estado) VALUES(SYSDATETIME(),'2021-05-4','prueslls',1,1)
+
+ALTER PROC dbo.uspcrearnuevohilo
+	@fechaf date,
+	@desc varchar(200),
+	@idus int
+AS
+	INSERT INTO dbo.tbl_hilo(fecha_inicio,fecha_fin,descripcion,id_usuario,estado) 
+	VALUES(SYSDATETIME(),@fechaf,@desc,@idus,1)
+GO
+
+EXECUTE dbo.uspcrearnuevohilo @fechaf='2021-04-06',@desc='prueba3',@idus=1;
+
+ALTER PROC dbo.uspobtnerhilo
+	@idhilo int
+AS
+	SELECT fecha_inicio AS facha1,fecha_fin AS fecha2,descripcion,id_usuario FROM dbo.tbl_hilo Where id=@idhilo;
+GO
+EXECUTE dbo.uspobtnerhilo @idhilo=1;
