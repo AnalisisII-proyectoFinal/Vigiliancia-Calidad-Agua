@@ -1,5 +1,5 @@
-const {getConexion,sql}=require('../../../sqlserver/sqlserverconexion.js')
-const respuesta = require('../../../respuesta/respuesta.js')
+const {getConexion,sql}=require('../../../sqlserver/sqlserverconexion.js');
+const respuesta = require('../../../respuesta/respuesta.js');
 
 async function obtnerDatosHilo(req, res) {
     const {id} =req.body;
@@ -16,29 +16,21 @@ async function obtnerDatosHilo(req, res) {
     
 }
 
-
-
-
-
-
-
-async function nuevoHilo(req,res) {
-    const {fechafin,descripcion,idusuario}=req.body;
+async function obtnerDatosHilos(req, res) {
     try {
-        const pool= await getConexion();
-        await pool.request()
-            .input('fechaf',sql.Date,fechafin)
-            .input('desc',sql.VarChar(200),descripcion)
-            .input('idus',sql.Int,idusuario)
-            .execute('dbo.uspcrearnuevohilo')
-        respuesta.exito(req,res,{msg:'hilo crado satisfactoriament'},200)
+        const pool = await getConexion();
+        const result = await pool.request().execute('dbo.uspobtnerhilos')
+        respuesta.exito(req,res,result.recordset,200)
         
     } catch (error) {
         respuesta.error(req,res,error,500)
-    }    
+    }
+    
 }
 
+
+
 module.exports={
-    nuevoHilo,
-    obtnerDatosHilo
+    obtnerDatosHilo,
+    obtnerDatosHilos
 }

@@ -1,7 +1,4 @@
 @import url('./colores.css');
-
-
-
 .contenedor-muestras
 {
     width: 98%;
@@ -13,36 +10,100 @@
 }
 
 
-.form-hilo{
+.form-filtro-hilos{
     display: grid;
-    grid-template-columns: 30% 30% 30%;
+    grid-template-columns: 40% 50%;
+}
+
+.form-nuevo-hilo{
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    gap: 5%;
+    place-items: center;
+}
+.contenedor-asignar-tanque{
+    display: grid;
+    grid-template-columns: 40% 50%;
     gap: 5%;
 }
 
 
-.agregar-tanque
-{
-    display: grid;
-    grid-template-columns: 40% 55%;
-    gap: 5%;
-} 
 
-.agregar-tanque form
+.contenedor-asignacion{
+    width: 100%;
+    margin-left: -10%;
+  }
+  .tanque-asignados{
+    counter-reset: step;
+  }
+  .tanque-asignados li{
+    list-style-type: none;
+    float: left;
+    width: 20%;
+    position: relative;
+    text-align: center;
+  }
+  .tanque-asignados li:before{
+    content: counter(step);
+    counter-increment: step;
+    width: 40px;
+    height: 40px;
+    line-height: 30px;
+    border: 1px solid var(--primer-color);
+    display: block;
+    text-align: center;
+    color: var(--texto-color-light);
+    margin: 0 auto 10px auto;
+    border-radius: 50%;
+    background-color: var(--tercer-boton);
+  }
+  .tanque-asignados li:after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: -50%;
+    top: 15px;
+    z-index: -1;
+  }
+  .tanque-asignados li:first-child::after{
+    content: none;
+  }
+  .tanque-asignados li:nth-child(6)::after{
+    content: none;
+  }
+  .tanque-asignados li.listo{
+    color: var(--titulo-color);
+  }
+  .tanque-asignados li.listo:before{
+    border-color: var(--cuarto-color);
+    background-color: var(--cuarto-color);
+  }
+  .tanque-asignados li.listo + li:after{
+    background-color: var(--cuarto-color);
+  } 
+
+/**/
+
+.contenedor-asignar-tanque form
 {
     display: flex;
     justify-content: space-evenly;
     align-items: flex-start;
 }
-.agregar-tanque button
-{
-    height: 40px;
-}
+
 
 .form-ingreso-muestra{
     display: grid;
-    grid-template-columns: 20% 20% 20% 20%;
+    grid-template-columns: 25% 25% 25%;
     gap: 5%;
 }
+
+
+.edit-muestra{
+  padding: 5% 5% 5% 5%;
+}
+
 
 
 .btn-ingreso-muestra
@@ -51,7 +112,7 @@
     justify-content: space-evenly;
 }
 
-.form-nuevo-tipo-muestra{
+.nuevo-tipo-muestra{
     display: flex;
     justify-content: space-evenly;
 }

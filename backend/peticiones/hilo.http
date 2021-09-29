@@ -15,3 +15,7 @@ Content-Type: application/json
 { 
     "id":3
 }
+
+### post ruta inicio
+GET http://localhost:3000/api/v1/muestra/hilos
+Content-Type: application/json

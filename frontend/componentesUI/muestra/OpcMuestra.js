@@ -11,7 +11,7 @@
  * importacion de modulos
  * @requires componente:funciones - mostrar, ocultar y resaltar componentes.
  */
-import {mostrarComponente} from '../utilidades/MostrarComponente.js'
+import {mostrarComponente} from '../utilidades/MostrarComponente.js';
 /**
  * @type {string} - id de paginas
  */
@@ -27,7 +27,7 @@ export function OpcMuestra(){
     $opcmuestra.classList.add("menu-lateral");
     $opcmuestra.innerHTML=`
       <div><img src="./assets/img/muestra.svg" alt="img"></div>
-      <button id="btn-1" class="btn-modulo">Hilos</button>
+      <button id="btn-1" class="btn-modulo">Hilos Muestra</button>
       <button id="btn-2" class="btn-modulo">Nuevo Hilo</button>
       <button id="btn-3" class="btn-modulo">Ingreso Muestra</button>
       <button id="btn-4" class="btn-modulo">Tipo Muestra</button>
@@ -44,6 +44,10 @@ export function OpcMuestra(){
         }
       })     
       mostrarComponente(BTN_1);
+      function listarHilos() {
+        const listarH = new UiHilo();
+        listarH.obtnerHilos();            
+      }
   }
   setTimeout(()=>iniMuestra(),100);
   return $opcmuestra;

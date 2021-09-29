@@ -12,11 +12,11 @@
  * Importacion de componentes para el modulo
  * @requires componente:Opciones - opciones del modulo
  */
-import {OpcMuestra} from './OpcMuestra.js';
-import {Hilos} from './Hilos.js';
-import {NuevoHilo} from './NuevoHilo.js';
-import { IngresoMuestra } from './IngresoMuestra.js';
-import { TipoMuestra } from './TipoMuestra.js';
+import { OpcMuestra } from './OpcMuestra.js';
+import { Hilos } from './paginas/Hilos.js';
+import { NuevoHilo } from './paginas/NuevoHilo.js';
+import { IngresoMuestra } from './paginas/IngresoMuestra.js';
+import { TipoMuestra } from './paginas/TipoMuestra.js';
 
 
 
@@ -25,16 +25,20 @@ import { TipoMuestra } from './TipoMuestra.js';
  * @returns {HTMLDivElement}
  */
 export function Muestra() {
+    var f = new Date();
+    let fecha = f.getFullYear() + "/" + (f.getMonth() +1) + "/" + f.getDay();
+    
+   // let datef = `${date.getFullYear()}/${date.getMonth()}/${date.getDay()}`;
+    console.log(fecha)
     const $muestra=document.createElement('section');
     $muestra.classList.add('contenedor-modulo');
     $muestra.appendChild(OpcMuestra());
     const $paginas = document.createElement('div');
     $paginas.classList.add("contenido-pagina")
     $paginas.appendChild(Hilos());
-    $paginas.appendChild(NuevoHilo());
+    $paginas.appendChild(NuevoHilo(fecha));
     $paginas.appendChild(IngresoMuestra());
     $paginas.appendChild(TipoMuestra());
-
     $muestra.appendChild($paginas);
     return $muestra;
 }
