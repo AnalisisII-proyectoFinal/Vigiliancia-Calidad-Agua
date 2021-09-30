@@ -74,7 +74,7 @@ class UiNuevoHilo{
     }
 
     activarTanque(idt){
-        const d =document.getElementById(`t${idt}`).classList.add('listo');
+        document.getElementById(`t${idt}`).classList.add('listo');
         serNotificacionNH.agregarNotificacion('exito','se agregaron tanques al hilo')
     }
     activarTanques(){

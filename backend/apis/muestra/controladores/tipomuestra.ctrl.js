@@ -15,6 +15,34 @@ async function nuevoTipoMuestra(req,res) {
     }
 }
 
+async function obtenerTipoMuestra(req,res) {
+    try {
+        const pool = await getConexion();
+        const result = await pool.request().execute('')
+        respuesta.exito(req,res,result.recordset,200);
+    } catch (error) {
+        respuesta.error(req,res,error.message,500);
+    }
+    
+}
+
+function eliminarTipoMuestra(req,res) {
+    const {id}=req.body;
+    try {
+        const pool = await getConexion();
+        await pool.request()
+        .input('idtm',sql.Int,id)
+        .execute('')
+        respuesta.exito(req,res,{msg:'eliminado'},200);
+    } catch (error) {
+        respuesta.error(req,res,error,500);
+    }
+    
+}
+
+
 module.exports={
-    nuevoTipoMuestra
+    nuevoTipoMuestra,
+    obtenerTipoMuestra,
+    eliminarTipoMuestra
 }

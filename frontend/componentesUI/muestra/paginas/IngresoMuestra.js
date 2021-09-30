@@ -21,7 +21,7 @@ export function IngresoMuestra(){
           <form action="" class="form-ingreso-muestra">
           <div><label for="" class="input-label">Tanque:</label>
             <div class="select">    
-                <select>
+                <select id="m-tanque">
                     <option selected disabled>opcion</option>
                     <option value="opcion1">Opcion1</option>
                     <option value="opcion2">Opcion2</option>
@@ -32,7 +32,7 @@ export function IngresoMuestra(){
             </div>
           <div><label for="" class="input-label">Tipo:</label>
             <div class="select">    
-                <select>
+                <select id="m-tipo">
                     <option selected disabled>opcion</option>
                     <option value="opcion1">Opcion1</option>
                     <option value="opcion2">Opcion2</option>
@@ -43,19 +43,19 @@ export function IngresoMuestra(){
             </div>
           <div>
           <label for="" class="input-label">Punto de muestra:</label>
-            <input type="text" class="input-dato" placeholder="Hogar,tanque.." required=""/></div>
+            <input type="text"  id="m-punto" class="input-dato" placeholder="Hogar,tanque.." required=""/></div>
           <div><label for="" class="input-label">PH:</label>
-            <input type="number" class="input-dato"  placeholder="ph" required=""/></div>
+            <input type="number" id="m-ph" class="input-dato"  placeholder="ph" required=""/></div>
           <div><label for="" class="input-label">Cloro recidual:</label>
-            <input type="number" class="input-dato"  placeholder="cloro" required=""/></div>
+            <input type="number" id="m-cl" class="input-dato"  placeholder="cloro" required=""/></div>
           <div><label for="" class="input-label">Presion de agua:</label>
-            <input type="number" class="input-dato" placeholder="presion agua" required=""/></div>
+            <input type="number" id="m-pa" class="input-dato" placeholder="presion agua" required=""/></div>
           </form>
           <br>
           <br>
           <div class="btn-ingreso-muestra">
-            <button class="primer-btn">Guardar</button>
-            <button class="segundo-btn">Nueva Muestra</button>
+            <button id="m-btn-g" class="primer-btn">Guardar</button>
+            <button id="m-btn-n" class="segundo-btn">Nueva Muestra</button>
           </div>
           </div>
           <div>
@@ -83,7 +83,27 @@ export function IngresoMuestra(){
         `;
         function initEditarIngresoMuestra(){
 
+          const $mtanque = document.getElementById('m-tanque');
+          const $mtipo = document.getElementById('m-tipo');
+          const $mpunto = document.getElementById('m-punto');
+          const $mph = document.getElementById('m-ph');
+          const $mcl = document.getElementById('m-cl');
+          const $mpa = document.getElementById('m-pa');
+          const $btng = document.getElementById('m-btn-g');
+          const $btnn = document.getElementById('m-btn-n');
 
+          $btng.addEventListener('click',()=>{
+            let datosMuestra={
+              tanque:$mtanque.value,
+              tipo:$mtipo.value,
+              punto:$mpunto.value,
+              ph:$mph.value,
+              cl:$mcl.value,
+              pa:$mpa.value
+            }
+            const $nuevaMuestra = new UiIngMuestra();
+            $nuevaMuestra.nuevaMuestra(datosMuestra);
+          })
 
 
           document.getElementById('tabla-ingreso-muestra').addEventListener('click',(e)=>{

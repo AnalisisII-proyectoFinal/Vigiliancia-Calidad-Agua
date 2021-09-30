@@ -1,17 +1,15 @@
 const express = require('express');
-const respuesta = require('../../respuesta/respuesta.js');
-const {getConexion} = require('../../sqlserver/sqlserverconexion.js');
+const {obtnerHiloactual}=require('./controladores/hiloactual.ctrl.js');
+const {obtnerHilo,obtnerHilos}=require('./controladores/historial.ctrl.js');
+
+
 const router = express.Router();
 
 // rutas
 
-router.get('/',inicio);
-
-
-
-async function inicio(req,res,next) {
-  res.json({saludo:'soy ruta dashboard'})
-}
+router.get('/hiloactual',obtnerHiloactual);
+router.get('/historial',obtnerHilos);
+router.get('/hilo',obtnerHilo)
 
 
 module.exports = router;
