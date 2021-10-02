@@ -1,4 +1,4 @@
-import PeticionInicio from './Controlador.js'
+import UiInicio from './ui/Inicio.ui.js';
 
 export function Inicio() {
     const $Inicio = document.createElement('div');
@@ -7,104 +7,8 @@ export function Inicio() {
     <section class="contenedor-progreso">
     <h2>PROGRESO DE TOMA DE MUESTRA</h2>
     <h3>Del: 21/05/2021 Al: 28/05/2021</h3>
-    <div class="contenedor-grafica">
-      <div class="contenedor-tanque-card">
-        <div class="tanque-card">
-          <div class="frente-card">
-            <p>Tanque 2</p>
-            <hr>
-            <div>
-              <p style="width:35%" data-value="35">Tanque</p>
-              <progress max="100" value="35" class="progreso-muestra">
-              <span style="width: 35%"> 35%</span>
-            </div>
-            <div>
-              <p style="width:35%" data-value="35">Hogar</p>
-              <progress max="100" value="35" class="progreso-muestra">
-              <span style="width: 35%"> 35%</span>
-            </div>
-            <div>
-              <p style="width:35%" data-value="35">Hogar 2</p>
-              <progress max="100" value="35" class="progreso-muestra">
-              <span style="width: 35%"> 35%</span>
-            </div>
-          </div>
-          <div class="detras-card">
-            <p>Tanque</p>
-              <div class="contenedor-toma">
-                <ul class="muestras-progreso">
-                  <li class="listo">ph(1.2)</li>
-                  <li class="listo">cloro(2.1)</li>
-                  <li class="listo">pa(3.2)</li>
-                </ul>
-              </div>
-              <p>Hogar</p>
-              <div class="contenedor-toma">
-                <ul class="muestras-progreso">
-                  <li class="listo">ph(1.2)</li>
-                  <li class="listo">cloro(2.1)</li>
-                  <li class="">pa(3.2)</li>
-                </ul>
-              </div>
-              <p>Hogar2</p>
-              <div class="contenedor-toma">
-                <ul class="muestras-progreso">
-                  <li class="listo">ph(1.2)</li>
-                  <li class="">cloro(2.1)</li>
-                  <li class="">pa(3.2)</li>
-                </ul>
-              </div>
-          </div>
-        </div>
-      </div><div class="contenedor-tanque-card">
-      <div class="tanque-card">
-        <div class="frente-card">
-          <p>Tanque 2</p>
-          <hr>
-          <div>
-            <p style="width:35%" data-value="35">Tanque</p>
-            <progress max="100" value="35" class="progreso-muestra">
-            <span style="width: 35%"> 35%</span>
-          </div>
-          <div>
-            <p style="width:35%" data-value="35">Hogar</p>
-            <progress max="100" value="35" class="progreso-muestra">
-            <span style="width: 35%"> 35%</span>
-          </div>
-          <div>
-            <p style="width:35%" data-value="35">Hogar 2</p>
-            <progress max="100" value="35" class="progreso-muestra">
-            <span style="width: 35%"> 35%</span>
-          </div>
-        </div>
-        <div class="detras-card">
-          <p>Tanque</p>
-            <div class="contenedor-toma">
-              <ul class="muestras-progreso">
-                <li class="listo">ph(1.2)</li>
-                <li class="listo">cloro(2.1)</li>
-                <li class="listo">pa(3.2)</li>
-              </ul>
-            </div>
-            <p>Hogar</p>
-            <div class="contenedor-toma">
-              <ul class="muestras-progreso">
-                <li class="listo">ph(1.2)</li>
-                <li class="listo">cloro(2.1)</li>
-                <li class="">pa(3.2)</li>
-              </ul>
-            </div>
-            <p>Hogar2</p>
-            <div class="contenedor-toma">
-              <ul class="muestras-progreso">
-                <li class="listo">ph(1.2)</li>
-                <li class="">cloro(2.1)</li>
-                <li class="">pa(3.2)</li>
-              </ul>
-            </div>
-        </div>
-      </div>
-    </div>
+    <div class="contenedor-grafica" id="contenedor-progreso-ini">
+      
     </div>
   </section>
   <section id="#/vision-mision" class="contenedor-vision-mision">
@@ -222,7 +126,8 @@ export function Inicio() {
         `;
 
     function iniInicio() {
-     
+      const iniDatos = new UiInicio();
+      iniDatos.obtnerDatosProgresoMuestras();
     }
     setTimeout(()=>iniInicio(),100);
     return $Inicio; 

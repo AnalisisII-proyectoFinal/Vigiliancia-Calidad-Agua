@@ -1,6 +1,8 @@
 "use strict";
 //@ts-check
 import{validarInput}from '../utilidades/ValidarFormulario.js'
+import{ventanModal}from '../utilidades/VentanaModal.js';
+import { EditarTanque } from './EditarTanque.js';
 /**
  * creacion de las opciones que tendra el modulo dashboard
  * @returns {void} historial del modulo y funcionalidades
@@ -20,90 +22,107 @@ export function Tanques(){
           <button class="primer-btn">Buscar</button>
           </form>
           <br>
-            <table>
+            <table id="tabla-tanque">
               <thead>
                 <tr>
                   <th>No.</th>
-                  <th>Nombre</th>
-                  <th>Numero</th>
+                  <th>tamque</th>
                   <th>Ubicación</th>
                   <th>Fecha en funcionamiento</th>
                   <th>Largo</th>
                   <th>Ancho</th>
                   <th>Altura</th>
-                  <th>Titulo</th>
-                  <th>Descripción</th>
-                  <th>Fecha</th>
-                  <th>tanque</th>
                   <th>Tratamiento</th>
+                  <th>estado</th>
+                  <th>opciones</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>1</td>
-                  <td>Juan Carlos</td>
-                  <td>40588264</td>
+                  <td>tanque 1</td>
                   <td>Sanjose Chacaya</td>
                   <td>28/05/2021</td>
                   <td>18</td>
                   <td>14</td>
                   <td>8</td>
-                  <td>mantenimiento</td>
-                  <td>reparacion de tanque</td>
-                  <td>28/08/2021</td>
-                  <td>tanque 1</td>
                   <td>cloracion de agua</td>
+                  <td>
+                    <br>
+                    <input type="checkbox"/>
+                  </td>
+                  <td>
+                    <button class="editar">✏️</button>
+                    <button class="eliminar">🗑️</button>
+                    </td>
                 </tr>
                 <tr>
-                  <td>1</td>
-                  <td>Juan Carlos</td>
-                  <td>40588264</td>
+                  <td>2</td>
+                  <td>tanque 2</td>
                   <td>Sanjose Chacaya</td>
                   <td>28/05/2021</td>
                   <td>18</td>
                   <td>14</td>
                   <td>8</td>
-                  <td>mantenimiento</td>
-                  <td>reparacion de tanque</td>
-                  <td>28/08/2021</td>
-                  <td>tanque 1</td>
                   <td>cloracion de agua</td>
+                  <td>
+                    <br>
+                    <input type="checkbox"/>
+                  </td>
+                  <td>
+                    <button class="editar">✏️</button>
+                    <button class="eliminar">🗑️</button>
+                    </td>
                 </tr>
                 <tr>
-                  <td>1</td>
-                  <td>Juan Carlos</td>
-                  <td>40588264</td>
+                  <td>3</td>
+                  <td>tanque 3</td>
                   <td>Sanjose Chacaya</td>
                   <td>28/05/2021</td>
                   <td>18</td>
                   <td>14</td>
                   <td>8</td>
-                  <td>mantenimiento</td>
-                  <td>reparacion de tanque</td>
-                  <td>28/08/2021</td>
-                  <td>tanque 1</td>
                   <td>cloracion de agua</td>
+                  <td>
+                    <br>
+                    <input type="checkbox"/>
+                  </td>
+                  <td>
+                    <button class="editar">✏️</button>
+                    <button class="eliminar">🗑️</button>
+                    </td>
                 <tr>
-                  <td>1</td>
-                  <td>Juan Carlos</td>
-                  <td>40588264</td>
+                  <td>4</td>
+                  <td>tanque 4</td>
                   <td>Sanjose Chacaya</td>
                   <td>28/05/2021</td>
                   <td>18</td>
                   <td>14</td>
                   <td>8</td>
-                  <td>mantenimiento</td>
-                  <td>reparacion de tanque</td>
-                  <td>28/08/2021</td>
-                  <td>tanque 1</td>
                   <td>cloracion de agua</td>
+                  <td>
+                    <br>
+                    <input type="checkbox"/>
+                  </td>
+                  <td>
+                    <button class="editar">✏️</button>
+                    <button class="eliminar">🗑️</button>
+                    </td>
                 </tr>
               </tbody>
           </table>          
         </div>
     </section>
         `;
-        function iniTanques(){
+        function initEditarTanque(){
+          document.getElementById('tabla-tanque').addEventListener('click',(e)=>{
+            if (e.target.classList.contains('editar')) {
+              ventanModal(EditarTanque());
+            }else if (e.target.classList.contains('eliminar')){
+              console.log('eliminando registro');
+
+            }
+          })
           const form = document.querySelector ('.tanque-buscador');
           form.addEventListener('keydown',(e)=>{
             let tipo = e.target.name;
@@ -111,10 +130,7 @@ export function Tanques(){
             let valor = e.target.value;
             validarInput(tipo,id,valor);
           })
-
-
-
         }
-        setTimeout(()=>iniTanques(),100);
+        setTimeout(()=>initEditarTanque(),100);
         return $tanques;
 }

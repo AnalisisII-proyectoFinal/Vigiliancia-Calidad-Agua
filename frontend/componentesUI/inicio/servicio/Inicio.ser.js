@@ -7,7 +7,7 @@
  * @copyright - ksksue
  * @version 1.0
  */
-class PeticionInicio {
+class ServicioInicio {
     constructor(){
         this.url ='http://localhost:3000/api/v1/inicio';
     }
@@ -43,4 +43,4 @@ class PeticionInicio {
     }
 }
 
-export default PeticionInicio;
+export default ServicioInicio;

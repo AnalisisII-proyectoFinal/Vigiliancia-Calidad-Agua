@@ -1,0 +1,12 @@
+### obtner muestras
+GET http://localhost:3000/api/v1/muestra/tipomuestra
+
+
+### post ruta inicio
+POST http://localhost:3000/api/v1/muestra/tipomuestra
+Content-Type: application/json
+
+{ 
+    "tipo":"casa 1",
+    "desc":"casa mas cercana"
+}

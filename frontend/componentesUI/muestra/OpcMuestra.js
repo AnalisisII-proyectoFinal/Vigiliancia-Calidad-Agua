@@ -12,6 +12,9 @@
  * @requires componente:funciones - mostrar, ocultar y resaltar componentes.
  */
 import {mostrarComponente} from '../utilidades/MostrarComponente.js';
+import UiHilo from './ui/Hilo.ui.js'
+import UiIngMuestra from './ui/IngresoMuestra.ui.js';
+import UiTipoMuestra from './ui/TipoMuestra.ui.js'; 
 /**
  * @type {string} - id de paginas
  */
@@ -40,14 +43,26 @@ export function OpcMuestra(){
     const opcModulo = document.querySelector('.menu-lateral');
       opcModulo.addEventListener('click',(e)=>{
         if(e.target && e.target.tagName === 'BUTTON'){
-          mostrarComponente(e.target.id);
+          let idpag = e.target.id;
+          mostrarComponente(idpag);
+          if (idpag === 'btn-1') {
+            const listarH = new UiHilo();
+            listarH.obtnerHilos(); 
+          }else if(idpag === 'btn-3'){
+            const iniIngMuestra = new UiIngMuestra();
+            iniIngMuestra.obtnerHilo();
+            iniIngMuestra.obtenerMuestras();
+            iniIngMuestra.obtnerTanquesOpc();
+            iniIngMuestra.obtnerTipoMuestra();
+          }else if(idpag=== 'btn-4'){
+            const initTipoMuestra = new UiTipoMuestra();
+            initTipoMuestra.obtnerTipoMuestra();
+          }
         }
       })     
       mostrarComponente(BTN_1);
-      function listarHilos() {
-        const listarH = new UiHilo();
-        listarH.obtnerHilos();            
-      }
+      const listarHi = new UiHilo();
+            listarHi.obtnerHilos(); 
   }
   setTimeout(()=>iniMuestra(),100);
   return $opcmuestra;

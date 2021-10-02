@@ -22,8 +22,8 @@ class UiTipoMuestra{
               let $fila = document.createElement('tr');
                 $fila.innerHTML=`
                 <td>${$n}</td>
-                <td>${el.tm}</td>
-                  <td>${el.d}</td>
+                <td>${el.tipo}</td>
+                  <td>${el.descr}</td>
                   <td>
                   <button _id="${el.id}" class="eliminar">🗑️</button>
                   </td>`;
@@ -32,10 +32,19 @@ class UiTipoMuestra{
             })  
         $tablatipom.appendChild($fragment);
     }
-
     nuevoTipoMuestra(tipomuestra){
         serTipoMuestra.hacerPeticion('/tipomuestra',tipomuestra,'POST').then(r=>{
             serNotificacionTM.agregarNotificacion('exito',r.body.msg);
+        }).catch(err=>{
+            console.log(err)
+            serNotificacionTM.agregarNotificacion('error','ocurrio un error');
+        })
+    }
+
+    eliminarTipoMuestra(idtm){
+        serTipoMuestra.hacerPeticion('/tipomuestra',{id:idtm},'PUT').then(r=>{
+            serNotificacionTM.agregarNotificacion('exito',r.body.msg);
+            this.obtnerTipoMuestra();
         }).catch(err=>{
             console.log(err)
             serNotificacionTM.agregarNotificacion('error','ocurrio un error');

@@ -16,28 +16,19 @@ export function IngresoMuestra(){
         $ingresomuestra.innerHTML=`
         <section class="contenedor-muestras">  
         <div>
-          <h3>Ingreso de muestra ----  Hilo actual 123466 [Del: 05/10/2021 Al: 10/11/2021]</h3>
+          <h3 id="i-m-hilo"></h3>
           <hr>
           <form action="" class="form-ingreso-muestra">
+          <p id="hilo-id" hidden></p>
           <div><label for="" class="input-label">Tanque:</label>
             <div class="select">    
-                <select id="m-tanque">
-                    <option selected disabled>opcion</option>
-                    <option value="opcion1">Opcion1</option>
-                    <option value="opcion2">Opcion2</option>
-                    <option value="opcion3">Opcion3</option>
-                    <option value="opcion4">Opcion4</option>
+                <select id="m-t-op">
                 </select>
             </div>
             </div>
           <div><label for="" class="input-label">Tipo:</label>
             <div class="select">    
-                <select id="m-tipo">
-                    <option selected disabled>opcion</option>
-                    <option value="opcion1">Opcion1</option>
-                    <option value="opcion2">Opcion2</option>
-                    <option value="opcion3">Opcion3</option>
-                    <option value="opcion4">Opcion4</option>
+                <select id="m-tp-op">
                 </select>
             </div>
             </div>
@@ -48,8 +39,6 @@ export function IngresoMuestra(){
             <input type="number" id="m-ph" class="input-dato"  placeholder="ph" required=""/></div>
           <div><label for="" class="input-label">Cloro recidual:</label>
             <input type="number" id="m-cl" class="input-dato"  placeholder="cloro" required=""/></div>
-          <div><label for="" class="input-label">Presion de agua:</label>
-            <input type="number" id="m-pa" class="input-dato" placeholder="presion agua" required=""/></div>
           </form>
           <br>
           <br>
@@ -66,13 +55,14 @@ export function IngresoMuestra(){
                 <tr>
                   <th>No.</th>
                   <th>Tanque</th>
-                  <th>Tipo de muestra</th>
-                  <th>Punto de muestra</th>
+                  <th>Tipo</th>
+                  <th>Punto</th>
                   <th>PH</th>
-                  <th>Cloro recidual</th>
-                  <th>Presion de Agua</th>
-                  <th>fecha</th>
-                  <th>Opciones</th>
+                  <th>Cloro</th>
+                  <th>Fecha</th>
+                  <th>Hora</th>
+                  <th>Responsable</th>
+                  <th>cliente<th>
                 </tr>
               </thead>
               <tbody id="lista-muestras">
@@ -83,30 +73,33 @@ export function IngresoMuestra(){
         `;
         function initEditarIngresoMuestra(){
 
-          const $mtanque = document.getElementById('m-tanque');
-          const $mtipo = document.getElementById('m-tipo');
+          const $mtanque = document.getElementById('m-t-op');
+          const $mtipo = document.getElementById('m-tp-op');
           const $mpunto = document.getElementById('m-punto');
           const $mph = document.getElementById('m-ph');
           const $mcl = document.getElementById('m-cl');
-          const $mpa = document.getElementById('m-pa');
+          const $midh = document.getElementById('hilo-id');
           const $btng = document.getElementById('m-btn-g');
           const $btnn = document.getElementById('m-btn-n');
-
+          //tanque,tipo,punto,ph,cl,idus,idh,cliente
           $btng.addEventListener('click',()=>{
+            console.log()
             let datosMuestra={
               tanque:$mtanque.value,
               tipo:$mtipo.value,
               punto:$mpunto.value,
-              ph:$mph.value,
-              cl:$mcl.value,
-              pa:$mpa.value
+              ph:$mph.value + 'ml',
+              cl:$mcl.value + 'ml',
+              idus: 2,
+              idh:$midh.innerHTML,
+              cliente:1
             }
             const $nuevaMuestra = new UiIngMuestra();
             $nuevaMuestra.nuevaMuestra(datosMuestra);
           })
 
 
-          document.getElementById('tabla-ingreso-muestra').addEventListener('click',(e)=>{
+          document.getElementById('lista-muestras').addEventListener('click',(e)=>{
             if (e.target.classList.contains('editar')) {
               const editMuestra = new UiIngMuestra();
               editMuestra.editarMuestra();

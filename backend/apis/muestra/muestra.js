@@ -15,6 +15,7 @@ router.post('/agregartanques',ctrl.nuevohilo.agregarTanques);
 
 //muestras
 router.get('/muestra',ctrl.muestra.obtnerMuestras);
+router.get('/hiloactual',ctrl.muestra.obtnerHiloActual);
 router.post('/muestra',ctrl.muestra.nuevaMuestra);
 router.put('/muestra',ctrl.muestra.actulizarMuestra);
 router.put('/eliminarmuestra',ctrl.muestra.eliminarMuestra);

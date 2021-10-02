@@ -46,8 +46,8 @@ export function Hilos(){
                 </tr>
               </thead>
               <tbody id="lista-hilos">
-        </tbody>
-    </table>
+              </tbody>
+        </table>
     </div>
   </section>
         `;

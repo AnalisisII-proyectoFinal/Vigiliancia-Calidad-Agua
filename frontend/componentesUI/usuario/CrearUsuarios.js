@@ -1,11 +1,14 @@
+//import pticiones 
 import{validarInput}from '../utilidades/ValidarFormulario.js'
-export function EditarUsuarios() {
-    const $editarusuarios = document.createElement('div');
-    $editarusuarios.classList.add('editar-usuario');
-    $editarusuarios.innerHTML=` 
-    <section class="contenedor-Usuarios">
+export function CrearUsuarios(){
+    const $crearusuarios = document.createElement('div');
+        $crearusuarios.classList.add("pagina");
+        $crearusuarios.setAttribute('id',"pg2");
+        $crearusuarios.setAttribute('style',"display:none;")
+        $crearusuarios.innerHTML=`
+        <section class="contenedor-usuario">
     <div class="datos-Usuario">
-     <center><h2>Editar Usuario</h2></center>
+     <center><h2>Crear Usuario</h2></center>
       <h4><span>Datos personales creados el: 23/05/2020 09:00</span></h4>
       <hr>
     </div>
@@ -43,23 +46,23 @@ export function EditarUsuarios() {
                             </p>
 <select class="input-opciones" id="">
   </form>
-      <div class="botones-usuario">
-      <br>
-      <br>
-        <p><button class="primer-btn">Actualizar</button></p> 
-      </div>
-    </div> 
-  </section>
-    `;
-    function iniEditarusuarios(){
-      const form = document.querySelector ('.datos-usuario');
-      form.addEventListener('keydown',(e)=>{
-        let tipo = e.target.name;
-        let id = e.target.id;
-        let valor = e.target.value;
-        validarInput(tipo,id,valor);
-      })
-      }
-      setTimeout(()=>iniEditarusuarios(),100);
-    return $editarusuarios;
+  <br>
+  <div class="botones-usuario">
+    <center><p><button class="tercer-btn">Resetear</button></p></center>
+    <center><p><button class="primer-btn">Guardar</button></p></center>
+  </div>
+</div> 
+</section>
+        `;
+        function iniCrearUsuarios(){
+          const form = document.querySelector ('.datos-usuario');
+          form.addEventListener('keydown',(e)=>{
+            let tipo = e.target.name;
+            let id = e.target.id;
+            let valor = e.target.value;
+            validarInput(tipo,id,valor);
+          })
+        }
+        setTimeout(()=>iniCrearUsuarios(),100);
+        return $crearusuarios;
 }

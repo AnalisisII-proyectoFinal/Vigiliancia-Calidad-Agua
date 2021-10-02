@@ -5,7 +5,9 @@
  * @returns {void} historial del modulo y funcionalidades
  */
  import { EditarUsuarios } from './EditarUsuarios.js';
+ import { VerDetalles } from './VerDetalles.js';
  import { ventanModal } from '../utilidades/VentanaModal.js';
+
 export function ListaUsuarios(){
     const $listausuarios = document.createElement('div');
         $listausuarios.classList.add("pagina");
@@ -26,15 +28,10 @@ export function ListaUsuarios(){
               <thead>
                 <tr>
                   <th>Id</th>
-                  <th>Nombre completo de empleado</th>
+                  <th>Nombre Empleado</th>
                   <th>DPI</th>
-                  <th>Fech. Nacimiento</th>
-                  <th>Sexo</th>
                   <th>Dirección</th>
                   <th>Cargo</th>
-                  <th>Tel/celular</th>
-                  <th>Correo Electrónico</th>
-                  <th>Fecha Creación</th>
                   <th>Estado</th>
                   <th>Opciones</th>
                 </tr>
@@ -44,69 +41,53 @@ export function ListaUsuarios(){
               <tbody>
                 <tr>
                   <td>1</td>
-                  <td>Gálvez Rámirez Luis Omar</td>
+                  <td>Luis Gálvez</td>
                   <td>2911975050704</td>
-                  <td>15/03/1993</td>
-                  <td>Másculino</td>
                   <td>Sololá</td>
                   <td>Director de Agua</td>
-                  <td>44637872</td>
-                  <td>e-mail@test-email.com</td>
-                  <td>12/03/2021</td>
                   <td>Activo</td>
                   <td>
                   <button class="editar">✏️</button>
                   <button class="eliminar">🗑️</button>
+                  <button class="ver">🔍​</button>
                   </td>
                 </tr>
                 <tr>
                 <td>2</td>
-                <td>Lucía Esmeralda López Rámirez</td>
+                <td>Lucía López</td>
                 <td>2911975050704</td>
-                <td>15/03/1993</td>
-                <td>Fémenino</td>
                 <td>Sololá</td>
                 <td>Secretaria</td>
-                <td>44637872</td>
-                <td>e-mail@test-email.com</td>
-                <td>12/03/2021</td>
                 <td>Bloquedo</td>
                 <td>
                 <button class="editar">✏️</button>
                 <button class="eliminar">🗑️</button>
+                <button class="ver">🔍​</button>
                   </td>
                 </tr>
                 <tr>
                 <td>3</td>
-                <td>Jordan Omar Fuentes Sazo</td>
+                <td>Jordan Fuentes</td>
                 <td>2911975050704</td>
-                <td>15/03/1993</td>
-                <td>Másculino</td>
                 <td>Sololá</td>
                 <td>Director de Agua</td>
-                <td>44637872</td>
-                <td>e-mail@test-email.com</td>
-                <td>12/03/2021</td>
                 <td>Inactivo</td>
                 <td>
                 <button class="editar">✏️</button>
                 <button class="eliminar">🗑️</button>
+                <button class="ver">🔍​</button>
                 </tr>
                 <tr>
                 <td>4</td>
-                <td>Luisa Mariela Chávez Gonzáles</td>
+                <td>Luisa Gonzáles</td>
                 <td>2911975050704</td>
-                <td>15/03/1993</td>
-                <td>Fémenino</td>
                 <td>Sololá</td>
                 <td>Director de Agua</td>
-                <td>44637872</td>
-                <td>e-mail@test-email.com</td>
-                <td>12/03/2021</td>
                 <td>Activo</td>
                 <td>
                 <button class="editar">✏️</button>
                 <button class="eliminar">🗑️</button>
+                <button class="ver">🔍​</button>
                 </tr>
               </tbody>
           </table>
@@ -116,9 +97,11 @@ export function ListaUsuarios(){
         `;
         function initListaUsuarios() {
           document.getElementById('tabla-usuarios').addEventListener('click',(e)=>{
-            if (e.target.classList.contains('editar')) {
-              ventanModal(EditarUsuarios());
-            }else if(e.target.classList.contains('eliminar')){
+            if (e.target.classList.contains('editar'))
+              ventanModal(EditarUsuarios())
+              if (e.target.classList.contains('ver'))
+              ventanModal(VerDetalles())
+                else if(e.target.classList.contains('eliminar')){
               console.log('elimando registro')
             }
           })

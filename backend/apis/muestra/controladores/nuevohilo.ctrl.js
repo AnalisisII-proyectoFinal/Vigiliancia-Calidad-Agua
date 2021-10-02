@@ -13,8 +13,6 @@ async function obtnerTanquesOpc(req,res) {
     
 }
 
-
-
 async function nuevoHilo(req,res) {
     const {fechafin,descripcion,idusuario}=req.body;
     try {

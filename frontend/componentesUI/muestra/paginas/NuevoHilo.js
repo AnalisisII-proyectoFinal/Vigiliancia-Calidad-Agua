@@ -1,8 +1,6 @@
 "use strict";
 //@ts-check
 import{validarInput}from '../../utilidades/ValidarFormulario.js'
-import { EditarNuevoHilo } from './EditarNuevoHilo.js';
-import{ventanModal}from '../../utilidades/VentanaModal.js';
 import UiNuevoHilo from '../ui/NuevoHilo.ui.js';
 /**
  * creacion de las opciones que tendra el modulo dashboard

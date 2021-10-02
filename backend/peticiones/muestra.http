@@ -1,0 +1,21 @@
+### obtner muestras
+GET http://localhost:3000/api/v1/muestra/muestra
+
+
+### post ruta inicio
+POST http://localhost:3000/api/v1/muestra/muestra
+Content-Type: application/json
+
+{ 
+    "tanque":2,
+    "tipo":1,
+    "punto":"casa don jose",
+    "ph":"2.5 ml",
+    "cl":"0.5ml",
+    "idus":2,
+    "idh":1016,
+    "cliente":1
+}
+
+### obtner muestras
+GET http://localhost:3000/api/v1/muestra/hiloactual

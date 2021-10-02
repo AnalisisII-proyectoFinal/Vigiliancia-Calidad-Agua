@@ -10,8 +10,11 @@ export function EditarMetodoCloracion() {
   <p><label for="" class="input-label">Descripcion:</label>
     <input type="text" class="input-dato" name="descripcion" id="n-cloracion" placeholder="descripcion" required=""/></p>
   <p><label for="" class="input-label"></label>
-        <button class="primer-btn">Actualizar</button></P>
     </form>
+    <br>
+      <button class="primer-btn">Actualizar</button>
+      </div>
+    <br>
     </div>
   <div>
     `;

@@ -6,7 +6,7 @@
  */
 import {OpcUsuario} from './OpcUsuario.js';
 import { ListaUsuarios } from './ListaUsuarios.js';
-import { CreaUsuarios } from './CreaUsuarios.js';
+import { CrearUsuarios } from './CrearUsuarios.js';
 
 
 /**
@@ -23,7 +23,7 @@ export function Usuario() {
     $paginas.classList.add("contenido-pagina")
     /** aqui se agregan las paginas... */
     $paginas.appendChild(ListaUsuarios());
-    $paginas.appendChild(CreaUsuarios());
+    $paginas.appendChild(CrearUsuarios());
     $usuario.appendChild($paginas);
     return $usuario;
 }

@@ -8,9 +8,6 @@ class UiHilo{
         })
 
     }
-    obtnerHilo(){
-
-    }
     listarHilos(hilos){
         const $tablahilos = document.getElementById('lista-hilos');
         $tablahilos.innerHTML='';

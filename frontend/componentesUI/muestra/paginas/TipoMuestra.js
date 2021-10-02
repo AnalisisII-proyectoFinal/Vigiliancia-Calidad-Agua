@@ -33,6 +33,7 @@ export function TipoMuestra(){
             <table>
               <thead>
                 <tr>
+                  <th>No.</th>
                   <th>Tipo Muestra</th>
                   <th>Descripcion</th>
                   <th>Opciones</th>
@@ -56,14 +57,25 @@ export function TipoMuestra(){
             nuevoTipoMuestra.nuevoTipoMuestra(datosTM);
           })
 
-          const form = document.querySelector ('.form-nuevo-tipo-muestra');
+          document.getElementById('lista-tipo-muestra').addEventListener('click',(e)=>{
+            if (e.target.classList.contains("eliminar")) {
+              let idUs= e.target.getAttribute('_id');
+              const eliminarTM = new UiTipoMuestra();
+              eliminarTM.eliminarTipoMuestra(idUs)              
+            }
+          })
+        }
+        setTimeout(()=>initTipoMuestra(),100);
+        return $tipomuestra;
+}
+
+/**
+ const form = document.querySelector ('.form-nuevo-tipo-muestra');
           form.addEventListener('keydown',(e)=>{
             let tipo = e.target.name;
             let id = e.target.id;
             let valor = e.target.value;
             validarInput(tipo,id,valor);
           })
-        }
-        setTimeout(()=>initTipoMuestra(),100);
-        return $tipomuestra;
-}
+ * 
+ */
