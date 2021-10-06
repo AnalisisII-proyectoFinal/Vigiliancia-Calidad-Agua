@@ -5,3 +5,7 @@ Content-Type: application/json
 ### post ruta inicio
 GET http://localhost:3000/api/v1/inicio/publicaciones
 Content-Type: application/json
+
+### post ruta inicio
+GET http://localhost:3000/api/v1/inicio/hiloactual
+Content-Type: application/json

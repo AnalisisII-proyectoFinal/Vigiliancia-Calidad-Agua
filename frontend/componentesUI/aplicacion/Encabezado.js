@@ -22,7 +22,7 @@ export function Encabezado() {
             console.log(datos.body)
             $tituloEl.innerHTML=`${datos.body[0].entidad}<br>${datos.body[0].dependencia}<br>${datos.body[0].app}`;
            // let uri='http://localhost:3000'+datos.body.logo;
-            $log.setAttribute('src',`http://localhost:3000${datos.body[0].logo}`);
+            $log.setAttribute('src',`http://localhost:4000${datos.body[0].logo}`);
         }).then(()=>{
             document.getElementById('encabezado-datos').appendChild($tituloEl);
         })

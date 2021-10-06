@@ -30,6 +30,7 @@ export function AppMovil(){
       <div>
           <h3>Usuarios de la aplicacion</h3>
           <hr>
+          <div class="tabla-lista">
             <table>
               <thead>
                 <tr>
@@ -50,6 +51,7 @@ export function AppMovil(){
               <tbody id="lista-app-us"> 
               </tbody>
           </table>
+          </div>
       </div>
   </section>
         `;

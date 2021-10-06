@@ -8,7 +8,7 @@ const serNotificacion = new Notificacion();
 class UiIngMuestra{
 
     obtenerMuestras(){
-        serIngMuestra.hacerPeticion('/muestra',{},'GET').then(datos=>{
+        serIngMuestra.hacerPeticion('/muestra/0/0',{},'GET').then(datos=>{
             this.listarMuestras(datos.body)
         }).catch(errr=>{
             console.log(errr)
@@ -23,13 +23,21 @@ class UiIngMuestra{
 
     agregarHilo(hilo){
         console.log(hilo)
-        const h = document.getElementById('i-m-hilo');
-        let titulo = `Ingreso Muestras : Hilo De: ${hilo[0].inicio} AL: ${hilo[0].fin}`;
-        h.innerHTML=titulo;
-        document.getElementById('hilo-id').innerHTML=hilo[0].id;
+        let fI=this.formatearFecha(hilo[0].fecha1);
+        let fF = this.formatearFecha(hilo[0].fecha2);
+        const $h = document.getElementById('i-m-hilo');
+         $h.innerHTML= `Ingreso Muestras De: ${fI} AL: ${fF} [${hilo[0].porcentaje}%]`;
+         document.getElementById('p-hilo-i').setAttribute('value',hilo[0].porcentaje);
+         document.getElementById('hilo-id').innerHTML=hilo[0].id
      }
 
-//--tanque,tipomuestra,punto,ph,cl,fecha,hora,responsable,cliente
+     formatearFecha(fecha){
+        const f = new Date(fecha);
+        const mes = f.getMonth() + 1; 
+        const dia = f.getDate();
+        return `${(dia < 10 ? '0' : '').concat(dia)}-${(mes < 10 ? '0' : '').concat(mes)}-${f.getFullYear()}`;
+    }
+
     listarMuestras(muestras){
         const $tablamuestras = document.getElementById('lista-muestras');
         $tablamuestras.innerHTML='';
@@ -37,6 +45,7 @@ class UiIngMuestra{
             let $n=1;
             muestras.forEach(el=>{
                 let client = (el.cliente === 1)?'🖥️':'📱';
+                let ff= this.formatearFecha(el.fecha);
               let $fila = document.createElement('tr');
                 $fila.innerHTML=`
                   <td>${$n}</td>
@@ -45,7 +54,7 @@ class UiIngMuestra{
                   <td>${el.pmuestra}</td>
                   <td>${el.ph}</td>
                   <td>${el.cl}</td>
-                  <td>${el.fecha}</td>
+                  <td>${ff}</td>
                   <td>${el.hora}</td>
                   <td>${el.usuario}</td>
                   <td>${client}</td>

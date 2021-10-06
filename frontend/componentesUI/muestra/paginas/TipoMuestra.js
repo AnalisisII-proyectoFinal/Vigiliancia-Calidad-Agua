@@ -30,6 +30,7 @@ export function TipoMuestra(){
         <div>
           <h2>Tipos de muestras</h2>
           <hr>
+          <div class="tabla-lista">
             <table>
               <thead>
                 <tr>
@@ -41,6 +42,7 @@ export function TipoMuestra(){
               <tbody id="lista-tipo-muestra">
             </tbody>
         </table>
+        </div>
       </div>
     </section>
         `;

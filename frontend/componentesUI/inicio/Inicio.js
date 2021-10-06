@@ -6,7 +6,7 @@ export function Inicio() {
     $Inicio.innerHTML=`
     <section class="contenedor-progreso">
         <h2>PROGRESO DE TOMA DE MUESTRA</h2>
-        <h3>Del: 21/05/2021 Al: 28/05/2021</h3>
+        <h3 id="hilo-actual-i"></h3>
       <div class="contenedor-grafica" id="contenedor-progreso-ini"></div>
     </section>
     <section  class="contenedor-vision-mision">
@@ -50,6 +50,7 @@ export function Inicio() {
 
     function iniInicio() {
       const iniDatos = new UiInicio();
+      iniDatos.obtenerHiloActual();
       iniDatos.obtnerDatosProgresoMuestras();
       iniDatos.obtenerPublicaciones();
       iniDatos.obtnerMisionVision();

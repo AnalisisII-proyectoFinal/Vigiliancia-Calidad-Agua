@@ -1,4 +1,5 @@
 export function Tarjeta(p1,p2,p3) {
+
     let $por1=0;
     let $clase1='';
     let $por2=0;
@@ -10,11 +11,11 @@ export function Tarjeta(p1,p2,p3) {
         $clase1='listo'    
     }
     if (p2.estado > 0) {
-      $por2=100;
+        $por2=100;
         $clase2='listo'    
     }
     if (p3.estado > 0) {
-      $por3=100;
+        $por3=100;
         $clase3='listo'    
     }
     let $contenedorT = document.createElement('div');

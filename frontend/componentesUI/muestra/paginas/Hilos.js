@@ -32,7 +32,7 @@ export function Hilos(){
           </form>
           <br>
           <br>
-        <div class="hilos-muestras">
+        <div class="tabla-lista">
         <table>
             <thead>
                 <tr>

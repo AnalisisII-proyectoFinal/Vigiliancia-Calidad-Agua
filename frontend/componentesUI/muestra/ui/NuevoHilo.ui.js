@@ -10,7 +10,6 @@ class UiNuevoHilo{
             serNotificacionNH.agregarNotificacion('exito',r.body.msg);   
         }).catch(err=>{
             console.log(err)
-            serNotificacionNH.agregarNotificacion('error','ocurrio un error')
         })
     }
 

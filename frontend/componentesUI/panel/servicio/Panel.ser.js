@@ -9,7 +9,7 @@
  */
 class ServicioPanel {
     constructor(){
-        this.url ='http://localhost:3000/api/v1/panel';
+        this.url ='http://localhost:4000/api/v1/panel';
     }
     obtnerEncabezado(){
         return{

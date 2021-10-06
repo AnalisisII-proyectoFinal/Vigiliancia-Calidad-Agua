@@ -4,7 +4,7 @@ const respuesta = require('../../../respuesta/respuesta.js');
 async function obtnerHiloActual(req,res) {
     try {
         const pool = await getConexion();
-        const result = await pool.request().execute('dbo.uspobtnerhiloactual')
+        const result = await pool.request().execute('dbo.uspobtenerhiloactual')
         respuesta.exito(req,res,result.recordset,200);
     } catch (error) {
         respuesta.error(req,res,error.message,500);
@@ -15,9 +15,14 @@ async function obtnerHiloActual(req,res) {
 
 
 async function obtnerMuestras(req,res) {
+    const ignorar = req.params.ig;
+    const cantidad = req.params.cant;
     try {
         const pool = await getConexion();
-        const result = await pool.request().execute('dbo.obtnermuestras')
+        const result = await pool.request()
+        .input('ig',sql.Int,ignorar)
+        .input('fil',sql.Int,cantidad)
+        .execute('dbo.uspobtenermuestras')
         respuesta.exito(req,res,result.recordset,200);
     } catch (error) {
         respuesta.error(req,res,error.message,500);

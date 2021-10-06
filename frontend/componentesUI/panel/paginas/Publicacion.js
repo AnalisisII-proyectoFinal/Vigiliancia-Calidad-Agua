@@ -26,7 +26,8 @@ export function Publicacion(){
         <div class="datos-publicaciones">
           <h3>Lista de publicaciones</h3>
           <hr>
-          <table id="tabla-publicaciones">
+          <div class="tabla-lista">
+          <table>
             <thead>
               <tr>
                 <th>No.</th>
@@ -44,6 +45,7 @@ export function Publicacion(){
             <tbody id="lista-publicacion">
             </tbody>
         </table>
+        </div>
         </div>
       </section>
         `;

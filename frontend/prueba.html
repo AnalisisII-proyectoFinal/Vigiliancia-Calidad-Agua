@@ -8,16 +8,18 @@
     <title>Document</title>
 </head>
 <body>
-  <div class="login-app">
-    <form action="">
-      <p><h2>ACCESO AL SISTEMA</h2></p>
-      <p><label for="" class="input-label">Usuario:</label>
-        <input type="text" class="input-dato" id="" placeholder="mi usuario" required=""/></p>
-      <p><label for="" class="input-label">Contraseñan:</label>
-          <input type="password" class="input-dato" id="" placeholder="" required=""/></p>
-      <p><button id="btn-login" class="tercer-btn">Ingresar</button></p>
-    </form>
-  </div>
+  <script>
+    const formatearFecha = fecha => {
+    const mes = fecha.getMonth() + 1; // Ya que los meses los cuenta desde el 0
+    const dia = fecha.getDate();
+    return `${(dia < 10 ? '0' : '').concat(dia)}-${(mes < 10 ? '0' : '').concat(mes)}-${fecha.getFullYear()}`;
+    };
+
+    // Probar con la fecha de hoy
+    const fechaDeHoy = new Date('10/05/2021');
+    const fechaFormateada = formatearFecha(fechaDeHoy);
+    console.log(fechaFormateada);
+  </script>
 </body>
 </html>
 

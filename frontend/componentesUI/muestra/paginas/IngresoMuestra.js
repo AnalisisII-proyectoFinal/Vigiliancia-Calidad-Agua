@@ -15,9 +15,10 @@ export function IngresoMuestra(){
         $ingresomuestra.setAttribute('style',"display:none;")
         $ingresomuestra.innerHTML=`
         <section class="contenedor-muestras">  
-        <div>
-          <h3 id="i-m-hilo"></h3>
-          <hr>
+          <div>
+            <h3 id="i-m-hilo"></h3>
+            <progress id="p-hilo-i" max="100" value="" class="progreso-muestra"></progress>
+            <hr>
           <form action="" class="form-ingreso-muestra">
           <p id="hilo-id" hidden></p>
           <div><label for="" class="input-label">Tanque:</label>
@@ -50,6 +51,7 @@ export function IngresoMuestra(){
           <div>
           <h2>Historial de muestras</h2>
           <hr>
+          <div class="tabla-lista">
           <table>
             <thead>
                 <tr>
@@ -63,13 +65,15 @@ export function IngresoMuestra(){
                   <th>Hora</th>
                   <th>Responsable</th>
                   <th>cliente<th>
+                  <th>Opciones<th>
                 </tr>
               </thead>
               <tbody id="lista-muestras">
               </tbody>
-    </table>
-  </div>
-  </section> 
+            </table>
+            </div>
+          </div>
+        </section> 
         `;
         function initEditarIngresoMuestra(){
 
@@ -91,7 +95,7 @@ export function IngresoMuestra(){
               ph:$mph.value + 'ml',
               cl:$mcl.value + 'ml',
               idus: 2,
-              idh:$midh.value,
+              idh:$midh.innerHTML,
               cliente:1
             }
             const $nuevaMuestra = new UiIngMuestra();

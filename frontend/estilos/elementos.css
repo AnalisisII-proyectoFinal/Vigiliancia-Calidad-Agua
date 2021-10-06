@@ -243,6 +243,15 @@ select::-ms-expand{
   color: var(--cuarto-color);
 }
 
+
+/*{{{{tabla*/
+.tabla-lista{
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+
 /*-=================    TABLA MOSTRAR DATOS =======================-*/ 
 table {
   border-collapse: collapse;

@@ -4,6 +4,26 @@ const serInicio = new ServicioInicio();
 
 class UiInicio{
 
+
+    obtenerHiloActual(){
+        serInicio.hacerPeticion('/hiloactual',{},'GET').then(datos=>{
+            console.log(datos.body[0])
+            const ha =document.getElementById('hilo-actual-i');
+            let fechai =this.formatearFecha(datos.body[0].fecha1);
+            let fechaf =this.formatearFecha(datos.body[0].fecha2);
+            ha.innerHTML=`Del: ${fechai} 
+            Al: ${fechaf} [${datos.body[0].porcentaje} %]`;
+        }).catch(err=>{
+            console.log(err)
+        })
+    }
+    formatearFecha(fecha){
+        const f = new Date(fecha);
+        const mes = f.getMonth() + 1; // Ya que los meses los cuenta desde el 0
+        const dia = f.getDate();
+        return `${(dia < 10 ? '0' : '').concat(dia)}-${(mes < 10 ? '0' : '').concat(mes)}-${f.getFullYear()}`;
+    }
+
     obtnerDatosProgresoMuestras(){
         serInicio.hacerPeticion('/progresoactual',{},'GET').then(datos=>{
             this.crearTargetas(datos.body)
@@ -15,13 +35,12 @@ class UiInicio{
     crearTargetas(muestras){
         const grafica = document.getElementById('contenedor-progreso-ini');
         const $fragment = document.createDocumentFragment();
-        console.log(muestras[0])    
         for (let i = 0; i < muestras.length; i=i+3) {
             let dm1 = muestras[i];
             let dm2 = muestras[i+1];
             let dm3 = muestras[i+2];
             const tarjeta = Tarjeta(dm1,dm2,dm3);
-            $fragment.appendChild(tarjeta);
+           $fragment.appendChild(tarjeta);
         }
         
         grafica.appendChild($fragment)
@@ -47,7 +66,7 @@ class UiInicio{
               $card.innerHTML=`
                 <div class="card-public">
                     <div class="imgpublic">
-                        <img src="http://localhost:3000${el.img}" alt="">
+                        <img src="http://localhost:4000${el.img}" alt="">
                     </div>
                     <div class="descripcion-public">
                         <h2>${el.titulo}</h2>
@@ -81,7 +100,7 @@ class UiInicio{
                 <p>${datos.vision}</p>
             </div>
             <div>
-                <img src="http://localhost:3000${datos.imgv}" alt="img">
+                <img src="http://localhost:4000${datos.imgv}" alt="img">
             </div>  
         </div>
         <div class="mision">
@@ -90,7 +109,7 @@ class UiInicio{
             <p>${datos.mision}</p>
             </div>
             <div>
-            <img src="http://localhost:3000${datos.imgm}" alt="img">
+            <img src="http://localhost:4000${datos.imgm}" alt="img">
             </div>
         </div>
        `;

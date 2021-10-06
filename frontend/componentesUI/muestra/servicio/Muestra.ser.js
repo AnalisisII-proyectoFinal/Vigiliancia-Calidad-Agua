@@ -9,7 +9,7 @@
  */
 class ServicioMuestra {
     constructor(){
-        this.url ='http://localhost:3000/api/v1/muestra';
+        this.url ='http://localhost:4000/api/v1/muestra';
     }
     obtnerEncabezado(){
         return{
