@@ -14,9 +14,9 @@
  * @requires componente:HiloActual - progreso del hilo
  * @requires componente:Historial - listado de los hilos completados
  */
-import {OpcDashboard} from './OpcDashboard.js'
-import {HiloActual} from './HiloActual.js'
-import {Historial} from './Historial.js'
+import {OpcDashboard} from './OpcDashboard.js';
+import {HiloActual} from './paginas/HiloActual.js';
+import {Historial} from './paginas/Historial.js';
 
 /**
  * Unificacion de componentes del modulo

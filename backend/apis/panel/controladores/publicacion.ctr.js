@@ -12,14 +12,15 @@ async function obtnerPublicaciones(req,res) {
 }
 
 async function nuevaPublicacion(req,res) {
-    const{titulo,fecha,descripcion,img}=req.body;
+    const{titulo,fecha,descripcion}=req.body;
+    const uri_img = (req.file==undefined)?'':'/imgcargados/' + req.file.filename;
     try {
         const pool = await getConexion();
         await pool.request()
         .input('titulo',sql.VarChar(100),titulo)
         .input('fecha',sql.Date,fecha)
         .input('descripcion',sql.Text,descripcion)
-        .input('img',sql.VarChar(200),img)
+        .input('img',sql.VarChar(200),uri_img)
         .execute('dbo.uspnuevapublicacion')
         respuesta.exito(req,res,{msg:'publicacion creada'},200);
     } catch (error) {
@@ -41,10 +42,15 @@ async function eliminarPublicacion(req,res) {
 }
 
 async function actulizarPublicacion(req,res) {
-    const {id}=req.body;
+    const {id,descripcion}=req.body;
+    const uri_img = (req.file==undefined)?'':'/imgcargados/' + req.file.filename;
     try {
         const pool = await getConexion();
-        await pool.request().input('id',sql.Int,id).execute('dbo.uspeliminarpublicacion');
+        await pool.request()
+        .input('id',sql.Int,id)
+        .input('desc',sql.Text,descripcion)
+        .input('img',sql.VarChar(200),uri_img)
+        .execute('dbo.uspactualizarpublicacion');
         respuesta.exito(req,res,{msg:'publicacion eliminado'},200)
         
     } catch (error) {
@@ -58,6 +64,7 @@ async function actulizarPublicacion(req,res) {
 module.exports={
     obtnerPublicaciones,
     nuevaPublicacion,
-    eliminarPublicacion
+    eliminarPublicacion,
+    actulizarPublicacion
 
 }

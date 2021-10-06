@@ -1,4 +1,4 @@
-import{validarInput}from '../utilidades/ValidarFormulario.js'
+import{validarInput}from '../../utilidades/ValidarFormulario.js'
 export function EditarUsuarios() {
     const $editarusuarios = document.createElement('div');
     $editarusuarios.classList.add('editar-usuario');

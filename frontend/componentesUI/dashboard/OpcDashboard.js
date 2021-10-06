@@ -11,7 +11,8 @@
  * importacion de modulos
  * @requires componente:funciones - mostrar, ocultar y resaltar componentes.
  */
-import {mostrarComponente} from '../utilidades/MostrarComponente.js'
+import {mostrarComponente} from '../utilidades/MostrarComponente.js';
+import UiHiloActual from './ui/HiloActual.ui.js';
 /**
  * @type {string} - id de paginas
  */
@@ -39,9 +40,17 @@ export function OpcDashboard(){
           opcModulo.addEventListener('click',(e)=>{
             if(e.target && e.target.tagName === 'BUTTON'){
               mostrarComponente(e.target.id);
+              if (e.target.id==='btn-1') {
+                const progActual = new UiHiloActual();
+                progActual.obtnerMuestras();
+                
+              }
             }
           })     
          mostrarComponente(BTN_1);
+         const pro = new UiHiloActual();
+         pro.obtnerMuestras();
+         
         }
         setTimeout(()=>iniDashboard(),100);
         return $opcdashboard;

@@ -1,0 +1,11 @@
+### post ruta inicio
+GET http://localhost:3000/api/v1/panel/institucion
+Content-Type: application/json
+
+### obtener mision
+GET http://localhost:3000/api/v1/panel/mision
+Content-Type: application/json
+
+### obtner vision
+GET http://localhost:3000/api/v1/panel/vision
+Content-Type: application/json

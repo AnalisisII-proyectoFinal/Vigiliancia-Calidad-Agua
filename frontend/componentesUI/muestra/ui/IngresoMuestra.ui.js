@@ -112,11 +112,11 @@ class UiIngMuestra{
 
     nuevaMuestra(muestra){
         serIngMuestra.hacerPeticion('/muestra',muestra,'POST').then(r=>{
-            serNotificacion.agregarNotificacion('exito',r.body.msg);
+            serNotificacion.mostrarNotificacion('exito..!',r.body.msg)
             this.obtenerMuestras();
         }).catch(err=>{
             console.log(err)
-            serNotificacion.agregarNotificacion('error','ocurrio un erro')
+           serNotificacion.mostrarNotificacion('error','ocurrio un erro')
         })
     }
 

@@ -5,8 +5,8 @@
  * @requires componente: opcPanel  para las opciones del modulo
  */
 import {OpcUsuario} from './OpcUsuario.js';
-import { ListaUsuarios } from './ListaUsuarios.js';
-import { CrearUsuarios } from './CrearUsuarios.js';
+import { ListaUsuarios } from './paginas/ListaUsuarios.js';
+import { CrearUsuarios } from './paginas/CrearUsuarios.js';
 
 
 /**

@@ -1,10 +1,10 @@
-//import PeticionEncabezado from './Controlador.js';
+import PeticionEncabezado from './Controlador.js';
 export function Encabezado() {
     const $Encabezado=document.createElement('head');
     $Encabezado.classList.add('encabezado')
     $Encabezado.innerHTML=`
         <div>
-            <img src="./assets/img/logo.png" alt="logo">
+            <img id="logo-inst" src="" alt="logo">
         </div>
         <div id="encabezado-datos">
         </div>
@@ -14,15 +14,18 @@ export function Encabezado() {
         </div>
         `;
     function initEncabezado(){
-        /*
+        
         const $manEncabezado = new PeticionEncabezado();
+        const $log = document.getElementById('logo-inst');
         const $tituloEl = document.createElement('h1');
-        $manEncabezado.hacerPeticion(null,{},'GET').then(datos =>{
-            $tituloEl.innerHTML=`${datos.body[0].entidad}<br>${datos.body[0].dependencia}<br>${datos.body[0].nombre_aplicacion}`;
+        $manEncabezado.hacerPeticion('/datosinstitucion',{},'GET').then(datos =>{
+            console.log(datos.body)
+            $tituloEl.innerHTML=`${datos.body[0].entidad}<br>${datos.body[0].dependencia}<br>${datos.body[0].app}`;
+           // let uri='http://localhost:3000'+datos.body.logo;
+            $log.setAttribute('src',`http://localhost:3000${datos.body[0].logo}`);
         }).then(()=>{
             document.getElementById('encabezado-datos').appendChild($tituloEl);
         })
-*/
 
         const btn = document.getElementById('btn-irlogin');
 

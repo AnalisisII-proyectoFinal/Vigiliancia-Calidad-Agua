@@ -7,9 +7,9 @@
  * @copyright - ksksue
  * @version 1.0
  */
-class ServicioPanel {
+class ServicioUsuario {
     constructor(){
-        this.url ='http://localhost:3000/api/v1/panel';
+        this.url ='http://localhost:3000/api/v1/usuario';
     }
     obtnerEncabezado(){
         return{
@@ -69,4 +69,4 @@ class ServicioPanel {
     }
 }
 
-export default ServicioPanel;
+export default ServicioUsuario;

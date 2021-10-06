@@ -91,7 +91,7 @@ export function IngresoMuestra(){
               ph:$mph.value + 'ml',
               cl:$mcl.value + 'ml',
               idus: 2,
-              idh:$midh.innerHTML,
+              idh:$midh.value,
               cliente:1
             }
             const $nuevaMuestra = new UiIngMuestra();
@@ -107,9 +107,6 @@ export function IngresoMuestra(){
               console.log('eliminando registro');
             }
           })
-
-
-
 
           const form = document.querySelector ('.form-ingreso-muestra');
           form.addEventListener('keydown',(e)=>{

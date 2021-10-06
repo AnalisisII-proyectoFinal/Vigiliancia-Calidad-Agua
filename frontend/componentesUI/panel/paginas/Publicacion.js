@@ -55,16 +55,17 @@ export function Publicacion(){
           const $btnCrear= document.getElementById('p-btn-c');
           const $listaPublic=document.getElementById('lista-publicacion');
 
-          $btnCrear.addEventListener('click',async ()=>{
-            let datosPublic={
-              titulo:$titulo.value,
-              fecha:$fecha.value,
-              descripcion:$descripcion.value,
-              img:'lsllsls'
-            }
+          $btnCrear.addEventListener('click', function(e){
+            const datoPublic = new FormData();
+            datoPublic.append('titulo',$titulo.value)
+            datoPublic.append('fecha',$fecha.value)
+            datoPublic.append('descripcion',$descripcion.value)
+            datoPublic.append('imagen',$img.files[0])
             const $nPublicacion = new UiPublicacion();
-            $nPublicacion.nuevaPublicacion(datosPublic);
+            $nPublicacion.nuevaPublicacion(datoPublic);
+            e.preventDefault();
           })
+          
 
           $listaPublic.addEventListener('click',(e)=>{
             if (e.target.classList.contains('eliminar')) {
@@ -75,9 +76,10 @@ export function Publicacion(){
             }else if(e.target.classList.contains('editar')){
               const t=e.target.getAttribute('t');
               const d=e.target.getAttribute('d');
+              const im=e.target.getAttribute('im')
               const idp= e.target.getAttribute('_id');
               const editPublic = new UiPublicacion();
-              editPublic.editarPublicacion(t,d,idp);
+              editPublic.editarPublicacion(t,d,idp,im);
             }
           })     
         }

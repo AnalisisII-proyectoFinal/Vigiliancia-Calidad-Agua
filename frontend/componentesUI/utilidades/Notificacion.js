@@ -1,26 +1,29 @@
 
-const notificaciones=[];
 
-
-class Notificacion{
-    mostrarNotificacion(){
-
-    }
-    agregarNotificacion(tipo,msj){
-        let dataN={
-            fecha:'05-01-2021',
-            tipo:tipo,
-            msj:msj
+class ServicioNotificacion{
+    mostrarNotificacion(titulo,mensaje){
+        let opcion = {
+            body: mensaje,
+            vibrate: true
         }
-        notificaciones.push(dataN)
-        this.desplegarNotificacon(dataN)
-    }
+        if (!("Notification" in window)) {
+            alert("No soporta Notificaciones")
+            
+        }else if (Notification.permission === "granted") {
+            new Notification(titulo,opcion)
 
-    desplegarNotificacon(dataN){
-        alert(dataN.msj)
+        }else if(Notification.permission !== "denied"){
+            Notification.requestPermission((permission)=>{
+                if (Notification.permission ==="granted") {
+                    let notificacion = new Notification('notificiones Habilitado')
+                }
+            })
+        }
+
     }
+   
 
 
 }
 
-export default Notificacion;
+export default ServicioNotificacion;

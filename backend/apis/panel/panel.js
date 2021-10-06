@@ -1,31 +1,40 @@
 const express = require('express');
 const router = express.Router();
-const ctr = require('./controladores');
+const ctrl = require('./controladores');
 /**
  * Rutas de pagina insitutucion
  */
-router.get('/institucion',ctr.institucion.obtnerDatos);
-router.put('/institucion',ctr.institucion.actualizarDatos);
+router.get('/institucion',ctrl.institucion.obtnerDatosInstitucion);
+router.get('/mision',ctrl.institucion.obtnerDatosMision);
+router.get('/vision',ctrl.institucion.obtnerDatosVision);
+router.put('/institucion',ctrl.institucion.actualizarDatosInstitucion);
+router.put('/mision',ctrl.institucion.actualizarMision);
+router.put('/vision',ctrl.institucion.actualizarVision);
+
+
+//router.put('/institucion',ctr.institucion.actualizarDatos);
 /**
  * Rutas de pagina institucion/datos centro de salud
  */
-router.get('/datoscentrosalud',ctr.institucion.obtnerDatosCentroSalud);
-router.put('/datoscentrosalud',ctr.institucion.actualizarDatosSalud);
+router.get('/datoscentrosalud',ctrl.institucion.obtnerDatosCentroSalud);
+router.put('/datoscentrosalud',ctrl.institucion.actualizarDatosSalud);
+router.put('/logosal',ctrl.institucion.actualizarLogoSalud);
+router.put('/logosiv',ctrl.institucion.actualizarLogoSiv);
 /**
  * Rutas de pagina appmovil
  */
-router.get('/appmovil',ctr.appmovil.obtnerAppUsuarios);
-router.post('/appmovilnuevo',ctr.appmovil.nuevoUsuarioApp);
-router.put('/appmovilestado',ctr.appmovil.cambiarEstadoUsuario);
-router.put('/eliminarusuario',ctr.appmovil.eliminarUsuario);
+router.get('/appmovil',ctrl.appmovil.obtnerAppUsuarios);
+router.post('/appmovilnuevo',ctrl.appmovil.nuevoUsuarioApp);
+router.put('/appmovilestado',ctrl.appmovil.cambiarEstadoUsuario);
+router.put('/eliminarusuario',ctrl.appmovil.eliminarUsuario);
 /**
  * Rutas de pagina de publicacion
  */
-router.get('/publicacion',ctr.publicion.obtnerPublicaciones);
+router.get('/publicacion',ctrl.publicion.obtnerPublicaciones);
 router.get('/publicacion/:id',);
-router.post('/publicacion',ctr.publicion.nuevaPublicacion);
-router.put('/eliminarpublic',ctr.publicion.eliminarPublicacion);
-router.put('/actpublicacion',);
+router.post('/publicacion',ctrl.publicion.nuevaPublicacion);
+router.put('/eliminarpublic',ctrl.publicion.eliminarPublicacion);
+router.put('/actpublicacion',ctrl.publicion.actulizarPublicacion);
 router.delete('/publicacion/:id',);
 /**
  * Rutas de pagina copia de seguridad

@@ -1,5 +1,5 @@
 //import pticiones 
-import{validarInput}from '../utilidades/ValidarFormulario.js'
+import{validarInput}from '../../utilidades/ValidarFormulario.js'
 export function CrearUsuarios(){
     const $crearusuarios = document.createElement('div');
         $crearusuarios.classList.add("pagina");

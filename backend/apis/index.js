@@ -13,17 +13,30 @@ const ayuda = require('./ayuda/ayuda.js');
 const pkg=require('../package.json');
 const auth = require('./auth/index.js');
 const {verificacarToken}=require('./auth/autenticacion.js')
+const multer = require('multer');
+const path = require('path');
 require('dotenv').config();
 
-
 const app = express();
-app.set('pkg',pkg);
 
-//configuraciones
+//app.set('pkg',pkg);
+
+//middlewares
 app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
+
+const storage = multer.diskStorage({
+    destination: path.join(__dirname,'../public/imgcargados'),
+    filename(req,file,cb){
+        cb(null,new Date().getTime() + path.extname(file.originalname));
+    }
+})
+app.use(multer({storage}).single('imagen'));
+
+
+
 /*
 app.get('/',(req,res)=>{
     res.json({
@@ -43,6 +56,8 @@ app.use('/api/v1/usuario',usuario);
 app.use('/api/v1/panel',panel);
 app.use('/api/v1/ayuda',ayuda);
 
+
+app.use(express.static(path.join(__dirname, '../public')));
 
 app.listen(config.api.port,()=>{
     console.log('api escuchando en el puerto',config.api.port)

@@ -5,8 +5,6 @@
  * @returns {HTMLDivElement}
  */
 
-import{DetalleTanque} from './DetalleTanque.js';
-import{ventanModal} from '../utilidades/VentanaModal.js';
 export function HiloActual(){
     const $hiloactual = document.createElement('div');
         $hiloactual.classList.add("pagina");
@@ -16,7 +14,7 @@ export function HiloActual(){
         <section class="contenedor-dashboard">
         <h3>Muestra Del: 21/05/2021 Al: 28/05/2021</h3>
         <hr>
-        <div class="contenedor-grafica-dash">
+        <div class="contenedor-grafica-dash" id="g-t-p-d">
           <div class="card-tanque-dash">
           <div class="card-progreso-d">
             <h3>tanque no. 1</h3>

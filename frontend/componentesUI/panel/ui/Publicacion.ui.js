@@ -1,6 +1,7 @@
 import {ventanModal} from '../../utilidades/VentanaModal.js';
 import{EditarPublicacion} from '../paginas/EditarPublicacion.js';
 import ServicioPanel from '../servicio/Panel.ser.js';
+import ServicioNotificacion from '../../utilidades/Notificacion.js';
 const servPublicacion = new ServicioPanel();
 
 
@@ -30,7 +31,7 @@ class UiPublicacion {
               <input type="checkbox" class="estado" _id="${el.idp}" ${check}>
               </td>
               <td>
-              <button class="editar" _id="${el.idp}" t="${el.titulo}" d="${el.descripcion}">✏️</button>
+              <button class="editar" _id="${el.idp}" t="${el.titulo}" d="${el.descripcion}" im="${el.img}">✏️</button>
               <button class="eliminar" _id="${el.idp}">🗑️</button>
               </td>`;
               $fragment.appendChild($fila)
@@ -41,22 +42,22 @@ class UiPublicacion {
 
 
     nuevaPublicacion(datosPublic){
-        servPublicacion.hacerPeticion('/publicacion',datosPublic,'POST').then(r=>{
+        servPublicacion.hacerPeticionConImagen('/publicacion',datosPublic,'POST').then(r=>{
             this.obtnerPublicaciones();
-            this.notificarAccion(r.body.msg);
+            this.notificar('exito..!',r.body.msg)
         }).catch(err=>{
             console.log(err)
         })
     }
 
-    editarPublicacion(t,d,idp){
-        ventanModal(EditarPublicacion(t,d,idp))
+    editarPublicacion(t,d,idp,im){
+        ventanModal(EditarPublicacion(t,d,idp,im))
     }
 
-    actualizarPublicacion(id,t,d){
-        servPublicacion.hacerPeticion('/actpublicacion',{idp:id,tit:t,des:d},'PUT').then(r=>{
+    actualizarPublicacion(datosPublic){
+        servPublicacion.hacerPeticionConImagen('/actpublicacion',datosPublic,'PUT').then(r=>{
             this.obtnerPublicaciones();
-            this.notificarAccion(r.body.msg);
+            this.notificar(r.body.msg);
         })
 
     }
@@ -64,14 +65,15 @@ class UiPublicacion {
     eliminarPublicacion(idpub){
         servPublicacion.hacerPeticion('/eliminarpublic',{id:idpub},'PUT').then(r=>{
             this.obtnerPublicaciones();
-            this.notificarAccion(r.body.msg);
+            this.notificar(r.body.msg);
             }).catch(err=>{
             console.log(err)
         })
     }
 
-    notificarAccion(msg){
-        alert(msg)
+    notificar(titulo,msg){
+        const $notipublic = new ServicioNotificacion();
+        $notipublic.mostrarNotificacion(titulo,msg)
     }
 }
 

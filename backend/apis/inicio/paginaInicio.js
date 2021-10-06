@@ -7,5 +7,9 @@ router.get('/datosinstitucion',ctrl.obtnerDatosInstitucion);
 router.get('/hiloactual',ctrl.obtnerHiloActual);
 router.get('/publicaciones',ctrl.obtnerPublicaciones);
 router.get('/progresoactual',ctrl.obtnerProgresoActual);
+router.get('/misionvision',ctrl.obtnerMisionVision);
+router.post('/hello',(req,res)=>{
+    res.json({name:'recibiendo'})
+})
 
 module.exports = router;
