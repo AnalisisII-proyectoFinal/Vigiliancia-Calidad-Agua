@@ -1,0 +1,19 @@
+### Get ruta user
+GET http://localhost:4000/api/v1/appmovil/autenticacion/kpilo/123
+Content-Type: application/json
+
+### Get ruta user
+GET http://localhost:4000/api/v1/appmovil/tanques
+Content-Type: application/json
+
+### Get ruta user
+GET http://localhost:4000/api/v1/appmovil/tipomuestra
+Content-Type: application/json
+
+### Get ruta user
+GET http://localhost:4000/api/v1/appmovil/muestra
+Content-Type: application/json
+
+### obtener muestras activas
+GET http://localhost:4000/api/v1/appmovil/muestrasactivas/3
+Content-Type: application/json

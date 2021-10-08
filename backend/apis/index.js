@@ -12,6 +12,7 @@ const panel = require('./panel/panel.js');
 const ayuda = require('./ayuda/ayuda.js');
 const pkg=require('../package.json');
 const auth = require('./auth/index.js');
+const appmovil = require('./appmovil/appmovil.js');
 const {verificacarToken}=require('./auth/autenticacion.js')
 const multer = require('multer');
 const path = require('path');
@@ -55,6 +56,7 @@ app.use('/api/v1/reporte',reporte);
 app.use('/api/v1/usuario',usuario);
 app.use('/api/v1/panel',panel);
 app.use('/api/v1/ayuda',ayuda);
+app.use('/api/v1/appmovil',appmovil);
 
 
 app.use(express.static(path.join(__dirname, '../public')));
