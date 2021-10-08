@@ -5,8 +5,8 @@
  * @requires componente: Cuerpo modulo seleccionado
  * @requires componente: router encargado mostrar el modulo seleccionado
  */
-import {Encabezado}from './componentesUI/aplicacion/Encabezado.js';
-import {Cuerpo} from './componentesUI/aplicacion/Cuerpo.js';
+import {Encabezado}from './componentesUI/aplicacion/paginas/Encabezado.js';
+import {Cuerpo} from './componentesUI/aplicacion/layouts/Cuerpo.js';
 import {Router} from './componentesUI/Router.js';
 
 

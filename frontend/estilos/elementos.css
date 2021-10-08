@@ -21,7 +21,9 @@
 
 .primer-btn:hover 
 {
-    background-color: var(--primer-boton-light);
+    background-color: var(--segundo-color);
+    color: var(--titulo-color);
+    border: 1px solid var(--cuarto-color);
 }
 
 .segundo-btn /*- boton segundo-*/
@@ -136,7 +138,6 @@
 }
 
 .modal-contenedor::before{
-  content: 'X';
   color: var(--titulo-color);
   position: absolute;
   top: 1rem;
@@ -146,7 +147,7 @@
 }
 
 .modal-contenido{
-  background-color: var(--quinto-color);
+  background-color: var(--cuarto-color);
   color: var(--texto-color-light);
   width: 90%;
   max-width: 1000px;
@@ -173,11 +174,12 @@ input[type="file"]::file-selector-button{
   letter-spacing: 1px;
   font-size: 0.5rem;
   cursor: pointer;
-  background-color: var(--cuarto-color);
+  background-color: var(--titulo-color);
   transition: 0.5s all;
 }
 input[type="file"]:hover:file-selector-button{
-  background-color: var(--quinto-color);
+  background-color: var(--segundo-color);
+  color: var(--titulo-color);
 }
 
 input[type="file"]::-webkit-file-upload-button{
@@ -189,11 +191,11 @@ input[type="file"]::-webkit-file-upload-button{
   letter-spacing: 1px;
   font-size: 0.5rem;
   cursor: pointer;
-  background-color: var(--cuarto-color);
+  background-color: var(--titulo-color);
   transition: 0.5s all;
 }
 input[type="file"]:hover::-webkit-file-upload-button{
-  background-color: var(--quinto-color);
+  background-color: var(--titulo-color);
 }
 
 /*-====================== SELECT PARA OPCIONES =======================-*/

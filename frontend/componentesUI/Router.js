@@ -23,9 +23,9 @@
  * @requires modulo:ayuda -funcionalidades e interfaz del modulo 
  */
 import {Inicio} from './inicio/Inicio.js';
-import{MenuPagina} from './aplicacion/MenuPagina.js';
-import{MenuApp} from './aplicacion/MenuApp.js';
-import{Login} from './aplicacion/Login.js';
+import{MenuPagina} from './aplicacion/paginas/MenuPagina.js';
+import{MenuApp} from './aplicacion/paginas/MenuApp.js';
+import{Login} from './aplicacion/paginas/Login.js';
 import {Tanque} from './tanque/Tanque.js';
 import {Muestra} from './muestra/Muestra.js';
 import {Dashboard} from './dashboard/Dashboard.js';
