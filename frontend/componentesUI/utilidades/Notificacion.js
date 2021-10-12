@@ -1,7 +1,7 @@
 
 
 class ServicioNotificacion{
-    mostrarNotificacion(titulo,mensaje){
+    notificarPush(titulo,mensaje){
         let opcion = {
             body: mensaje,
             vibrate: true
@@ -21,8 +21,9 @@ class ServicioNotificacion{
         }
 
     }
-   
-
+    notificarToast(tipo,mensaje){
+        toastr[tipo](mensaje)
+    }
 
 }
 

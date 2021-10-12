@@ -18,8 +18,7 @@ router.put('/vision',ctrl.institucion.actualizarVision);
  */
 router.get('/datoscentrosalud',ctrl.institucion.obtnerDatosCentroSalud);
 router.put('/datoscentrosalud',ctrl.institucion.actualizarDatosSalud);
-router.put('/logosal',ctrl.institucion.actualizarLogoSalud);
-router.put('/logosiv',ctrl.institucion.actualizarLogoSiv);
+
 /**
  * Rutas de pagina appmovil
  */

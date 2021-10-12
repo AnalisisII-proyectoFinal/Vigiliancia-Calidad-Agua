@@ -66,7 +66,7 @@ class UiInicio{
               $card.innerHTML=`
                 <div class="card-public">
                     <div class="imgpublic">
-                        <img src="http://localhost:4000${el.img}" alt="">
+                        <img src="${el.img}" alt="">
                     </div>
                     <div class="descripcion-public">
                         <h2>${el.titulo}</h2>
@@ -82,14 +82,14 @@ class UiInicio{
 
     obtnerMisionVision(){
         serInicio.hacerPeticion('/misionvision',{},'GET').then(datos=>{
-            this.mostratvisionmision(datos.body[0])
+            this.mostrarvisionmision(datos.body[0])
             console.log(datos.body);
         }).catch(error=>{
             console.log(error)
         })
     }
 
-    mostratvisionmision(datos){
+    mostrarvisionmision(datos){
        const $mv = document.getElementById('mision-vision');
        $mv.innerHTML='';
        let $content = document.createElement('div');
@@ -100,7 +100,7 @@ class UiInicio{
                 <p>${datos.vision}</p>
             </div>
             <div>
-                <img src="http://localhost:4000${datos.imgv}" alt="img">
+                <img src="${datos.imgv}" alt="img">
             </div>  
         </div>
         <div class="mision">
@@ -109,7 +109,7 @@ class UiInicio{
             <p>${datos.mision}</p>
             </div>
             <div>
-            <img src="http://localhost:4000${datos.imgm}" alt="img">
+            <img src="${datos.imgm}" alt="img">
             </div>
         </div>
        `;

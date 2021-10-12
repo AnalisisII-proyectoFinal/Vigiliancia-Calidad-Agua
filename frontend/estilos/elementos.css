@@ -166,13 +166,13 @@
 /*-====================== INPUT PARA ARCHIVO =======================-*/
 
 input[type="file"]::file-selector-button{
-  padding: 15px;
+  padding: 10px;
   border-radius: 5px;
   border:none;
   color: var(--texto-color-light);
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 0.5rem;
+  font-size: 0.1rem;
   cursor: pointer;
   background-color: var(--titulo-color);
   transition: 0.5s all;
@@ -183,7 +183,7 @@ input[type="file"]:hover:file-selector-button{
 }
 
 input[type="file"]::-webkit-file-upload-button{
-  padding: 15px;
+  padding: 10px;
   border-radius: 5px;
   border:none;
   color: var(--texto-color-light);
@@ -291,7 +291,7 @@ table tr:nth-child(even) {
 
 textarea{
   position: relative;
-  width: 100%;
+  width: 80%;
   border: 2px solid var(--quinto-color);
   color: var(--titulo-color);
   background-color: var(--segundo-color);
@@ -413,4 +413,46 @@ input:checked[type="checkbox"]::before
 }
 .muestras-progreso li.listo + li:after{
   background-color: #0791E6;
+}
+
+/*--------------img---------------*/
+.container-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.container-img img{
+  position: absolute;
+  border-radius: 5px;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.25);
+}
+
+.container-img img:hover{
+  transform: scale(1.2);
+  transition: transform .5s;;
+}
+.card {
+ /* border: 2px solid var(--quinto-color);
+  border-radius: 5px;
+  background-color: var(--segundo-color);*/
+  display: flex;
+  justify-content: center;
+  height: 20rem;
+  width: 15rem;
+  position: relative;
+}
+
+.card-footer {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 9px;
+}
+
+.card-footer input {
+  text-align: center;
 }

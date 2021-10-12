@@ -9,14 +9,16 @@
 /*----=========progreso=======----*/
 .contenedor-grafica
 {
-    display: grid;
-    grid-template-columns: 20% 20% 20% 20%;
-    gap: 5%;
-    width: 98%;
-    height: 60vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding: 0px 5px 0px 20px;     
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  /* display: grid;
+  grid-template-columns: 20% 20% 20% 20%; */
+  gap: 5%;
+  width: 98%;
+  height: 60vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0px 5px 0px 20px;     
 }
 
 .contenedor-tanque-card{
@@ -109,9 +111,15 @@
 
 .publicaciones
 {
-  display: flex;
+  display: grid;
+ /* grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  /* display: grid;*/
+  grid-template-columns: 20% 20% 20% 20%; 
+  gap: 5%;
+  width: 98%;
+/*   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
   
 }
 

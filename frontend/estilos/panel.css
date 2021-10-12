@@ -20,7 +20,8 @@
 .datos-institucion form
 {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 40% 40%;
+    gap:5%;
 }
 .datos-institucion p 
 {
@@ -65,7 +66,7 @@
 .publicacion-nuevo
 {
     display: grid;
-    grid-template-columns: 30% 30% 30%;
+    grid-template-columns: 40% 40%;
     gap: 5%;
 }
 

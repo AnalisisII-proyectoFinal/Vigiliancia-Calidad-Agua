@@ -8,7 +8,7 @@ export function EditarPublicacion(t,d,idp,im) {
             <div class="editar-publicacion">
               <div class="card-public">
                 <div class="imgpublic">
-                <img src="http://localhost:3000${im}" alt="">
+                <img src="${im}" alt="">
                 </div>
                 <div class="descripcion-public">
                   <h2>${t}</h2>
@@ -33,12 +33,13 @@ export function EditarPublicacion(t,d,idp,im) {
       const $img = document.getElementById('p-img');
       const $btnA=document.getElementById('p-btn-a');
       $btnA.addEventListener('click',()=>{
-          const datosPublic = new FormData();
-          datosPublic.append('id',$id)
-          datosPublic.append('descripcion',$d)
-          datosPublic.append('imagen',$img.files[0])
+        let datosEditarPublic = {
+          id:$id,
+          descripcion:$d,
+          imgp:$img.scr
+        }
           const $actPublic = new UiPublicacion();
-          $actPublic.actualizarPublicacion(datosPublic);
+          $actPublic.actualizarPublicacion(datosEditarPublic);
       })
       
     }

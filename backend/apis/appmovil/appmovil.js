@@ -5,9 +5,10 @@ const router = express.Router();
 
 router.get('/autenticacion/:user/:pass',ctrl.autenticacion.autenticarUsuario);
 router.get('/tanques',ctrl.tanque.obtenerTanques);
-router.get('/tipomuestra',ctrl.tipomuestra.obtenerTipoMuestra);
 router.get('/hilo',ctrl.hilo.obtenerHilo);
 router.get('/muestra',ctrl.muestra.obtenerMuestras)
-router.get('/muestrasactivas/:id',ctrl.muestra.obtnerMuestrasActivas);
+router.get('/muestrascompletadas',ctrl.muestra.obtnerMuestrasCompletas);
+router.get('/muestrasincompletas/:id',ctrl.muestra.obtenerMuestrasIncompletas);
+router.put('/nuevamuestra',ctrl.muestra.nuevaMuestraApp)
 
 module.exports= router;

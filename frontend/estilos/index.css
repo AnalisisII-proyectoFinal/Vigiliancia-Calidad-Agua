@@ -22,6 +22,7 @@ Estilos sistema de vigilancia de calidad de agua. municipilidad de san jose chac
 @import url('./inicio.css');
 
 
+
 body{
     background-color: var(--primer-color);
     margin: 0 auto;

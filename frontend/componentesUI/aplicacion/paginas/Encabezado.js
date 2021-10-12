@@ -1,4 +1,4 @@
-import PeticionEncabezado from '../servicio/Aplicacion.ser.js';
+import UiAplicacion from '../ui/Encabezado.ui.js';
 import {EditarPerfil} from './Perfil.js'
 import {ventanModal} from '../../utilidades/VentanaModal.js';
 export function Encabezado() {
@@ -20,16 +20,9 @@ export function Encabezado() {
         const $btnOp = document.getElementById('btn-opciones');
         const $avatar = document.getElementById('avatar-us');
         const $btnSalir = document.getElementById('btn-salir');
-        const $manEncabezado = new PeticionEncabezado();
-        const $log = document.getElementById('logo-inst');
-        const $tituloEl = document.createElement('h1');
-        $manEncabezado.hacerPeticion('/datosinstitucion',{},'GET').then(datos =>{
-            console.log(datos.body)
-            $tituloEl.innerHTML=`${datos.body[0].entidad}<br>${datos.body[0].dependencia}<br>${datos.body[0].app}`;
-            $log.setAttribute('src',`http://localhost:4000${datos.body[0].logo}`);
-        }).then(()=>{
-            document.getElementById('encabezado-datos').appendChild($tituloEl);
-        })
+
+        const datosEncabezado = new UiAplicacion();
+        datosEncabezado.obtenerDatosEncabezado();
 
         const btn = document.getElementById('btn-irlogin');
 

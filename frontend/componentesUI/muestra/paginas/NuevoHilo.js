@@ -46,13 +46,14 @@ export function NuevoHilo(date){
 </section> 
         `;
         function initNuevoHilo(){
-          document.getElementById('nh-n-h').addEventListener('click',()=>{
+          document.getElementById('nh-n-h').addEventListener('click',(e)=>{
+            e.preventDefault();
             const fechaF=document.getElementById('nh-f-fin').value;
             const descrip= document.getElementById('nh-des').value;
             let datosNhilo={
               fechafin:fechaF,
               descripcion:descrip,
-              idusuario:1
+              idusuario:2
             }
             const nuevoHilo = new UiNuevoHilo();
             nuevoHilo.nuevoHilo(datosNhilo)

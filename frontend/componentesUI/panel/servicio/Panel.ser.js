@@ -43,30 +43,6 @@ class ServicioPanel {
         })
     }
 
-    hacerPeticionConImagen(peticion,params,tipopeticion){
-        return new Promise((resolve,reject)=>{
-            console.log(`Enviando peticion a:${peticion}`)
-            fetch(this.url + (peticion ||''),{
-                method: tipopeticion,
-                body: tipopeticion !== 'GET' ? params: null
-            }).then((response)=>{
-                if (!response.ok) {
-                    throw Error(response.statusText);
-                }
-                return response
-            })
-            .then(response =>{
-                return response.json();
-            }).then(data =>{
-                console.log(data)
-                resolve(data);
-            })
-            .catch(error=>{
-                console.log('request error',error);
-                reject(new Error(error));
-            })
-        })
-    }
 }
 
 export default ServicioPanel;

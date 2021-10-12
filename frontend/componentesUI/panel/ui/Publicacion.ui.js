@@ -3,10 +3,10 @@ import{EditarPublicacion} from '../paginas/EditarPublicacion.js';
 import ServicioPanel from '../servicio/Panel.ser.js';
 import ServicioNotificacion from '../../utilidades/Notificacion.js';
 const servPublicacion = new ServicioPanel();
+const servNoti= new ServicioNotificacion();
 
 
 class UiPublicacion {
-    //metodos
     obtnerPublicaciones(){
         servPublicacion.hacerPeticion('/publicacion',{},'GET').then(datos=>{
             this.mostrarPublicaciones(datos.body)
@@ -42,10 +42,11 @@ class UiPublicacion {
 
 
     nuevaPublicacion(datosPublic){
-        servPublicacion.hacerPeticionConImagen('/publicacion',datosPublic,'POST').then(r=>{
+        servPublicacion.hacerPeticion('/publicacion',datosPublic,'POST').then( r=>{
             this.obtnerPublicaciones();
-            this.notificar('exito..!',r.body.msg)
+            servNoti.notificarToast("success",r.body.msg);
         }).catch(err=>{
+            servNoti.notificarToast("error","No se pudo crar la publicacion");
             console.log(err)
         })
     }
@@ -55,7 +56,7 @@ class UiPublicacion {
     }
 
     actualizarPublicacion(datosPublic){
-        servPublicacion.hacerPeticionConImagen('/actpublicacion',datosPublic,'PUT').then(r=>{
+        servPublicacion.hacerPeticion('/actpublicacion',datosPublic,'PUT').then(r=>{
             this.obtnerPublicaciones();
             this.notificar(r.body.msg);
         })
@@ -71,10 +72,7 @@ class UiPublicacion {
         })
     }
 
-    notificar(titulo,msg){
-        const $notipublic = new ServicioNotificacion();
-        $notipublic.mostrarNotificacion(titulo,msg)
-    }
+    
 }
 
 export default UiPublicacion;

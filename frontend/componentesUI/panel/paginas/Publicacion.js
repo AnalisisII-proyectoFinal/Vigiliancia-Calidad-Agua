@@ -1,4 +1,5 @@
 import UiPublicacion from '../ui/Publicacion.ui.js';
+import {subirImagen} from '../../utilidades/SubirImagen.js';
 export function Publicacion(){
     const $publicacion = document.createElement('div');
         $publicacion.classList.add("pagina");
@@ -10,16 +11,26 @@ export function Publicacion(){
             <h3>Nueva publicacion</h3>
             <hr>
             <div class="publicacion-nuevo">
+              <div>
               <div><label for="" class="input-label">Titulo:</label>
                 <input type="text" class="input-dato" id="p-titulo" placeholder="Titulo ..." required=""/></div>
               <div><label for="" class="input-label">Fecha de la actividad:</label>
                 <input type="date" class="input-dato" id="p-fecha" placeholder="" required=""/></div>
               <div><label for="" class="input-label">Descripción:</label>
                 <textarea id="p-descrip" rows="4" cols="37" maxlength="100" minlength="3" placeholder="descripcion..."></textarea></div>
-              <div><label for=""class="input-label">Imagen:</label><input id="p-img" type="file"></div>
-              <div class="botones-institucion">
-                <p><button id="p-btn-c" class="primer-btn">Crear</button></p> 
               </div>
+              <div class="container-img">
+              <div class="card">
+                <img id="prev-img-p" height="200px" width="200px" src="https://res.cloudinary.com/municipalidad-san-jose-chacaya/image/upload/v1633988872/qk3z5et9kglbvlh28cib.svg">
+                <div class="card-footer">
+                  <progress id="prog-img-p" max="100" value="0" class="progreso-muestra"></progress>
+                  <input type="file" id="subir-img-p">
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="botones-institucion">
+                <p><button id="p-btn-c" class="primer-btn">Crear</button></p> 
           </div>
           <br>
           </div>
@@ -50,12 +61,53 @@ export function Publicacion(){
       </section>
         `;
         function initPublicacion() {
-          const $titulo=document.getElementById('p-titulo');
-          const $fecha=document.getElementById('p-fecha');
-          const $descripcion=document.getElementById('p-descrip');
-          const $img=document.getElementById('p-img');
-          const $btnCrear= document.getElementById('p-btn-c');
+          
+         // const $img=document.getElementById('p-img');
+          //const $btnCrear= document.getElementById('p-btn-c');
           const $listaPublic=document.getElementById('lista-publicacion');
+
+
+          const $inpImgP = document.getElementById('subir-img-p');
+          $inpImgP.addEventListener('change',async (e)=>{
+            e.preventDefault();
+            const prevImg = document.getElementById('prev-img-p');
+            const progImg = document.getElementById('prog-img-p').id;
+            const imgP = e.target.files[0];
+            const imgUrl = await subirImagen(progImg,imgP)
+            prevImg.src=imgUrl;
+          })
+
+          const btnCrearPublicacion = document.getElementById('p-btn-c');
+          btnCrearPublicacion.addEventListener('click',(e)=>{
+            e.preventDefault();
+            const $titulo=document.getElementById('p-titulo').value;
+            const $fecha=document.getElementById('p-fecha').value;
+            const $descripcion=document.getElementById('p-descrip').value;
+            const $img = document.getElementById('prev-img-p').src;
+            let datosPublicacion={
+              titulo:$titulo,
+              fecha:$fecha,
+              descripcion:$descripcion,
+              imgp:$img
+            }
+            const crearPublic = new UiPublicacion();
+            crearPublic.nuevaPublicacion(datosPublicacion);
+
+          })
+
+
+
+
+          
+          /*
+          const $inpImgPublic = document.getElementById('subir-img-p');
+          $inpImgPublic.addEventListener('change',(e)=>{
+            const prevImg = document.getElementById('prev-img-p');
+            const progImgP = document.getElementById('prog-img-p').id;
+            const file = e.target.files[0];
+
+          })
+
 
           $btnCrear.addEventListener('click', function(e){
             const datoPublic = new FormData();
@@ -67,7 +119,7 @@ export function Publicacion(){
             $nPublicacion.nuevaPublicacion(datoPublic);
             e.preventDefault();
           })
-          
+          */
 
           $listaPublic.addEventListener('click',(e)=>{
             if (e.target.classList.contains('eliminar')) {

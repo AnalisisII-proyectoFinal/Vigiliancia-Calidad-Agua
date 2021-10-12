@@ -11,9 +11,13 @@ GET http://localhost:4000/api/v1/appmovil/tipomuestra
 Content-Type: application/json
 
 ### Get ruta user
-GET http://localhost:4000/api/v1/appmovil/muestra
+GET http://localhost:4000/api/v1/appmovil/muestrasincompletas/:id
 Content-Type: application/json
 
 ### obtener muestras activas
 GET http://localhost:4000/api/v1/appmovil/muestrasactivas/3
+Content-Type: application/json
+
+### Get ruta user
+GET http://localhost:4000/api/v1/appmovil/hilo
 Content-Type: application/json
