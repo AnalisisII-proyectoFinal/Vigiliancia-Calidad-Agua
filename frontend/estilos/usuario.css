@@ -10,6 +10,25 @@
     padding: 0px 10px 0px 10px;
 }
 
+.f-datos-usuario{
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    gap: 5%;
+}
+
+.img-nuevo-usuario{
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-nuevo-usuario img{
+    width: 125px;
+    height: 125px;
+}
+
 
 .datos-institucion{
     width: 100%;

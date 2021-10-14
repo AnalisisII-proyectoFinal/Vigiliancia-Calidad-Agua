@@ -19,6 +19,7 @@ router.get('/hiloactual',ctrl.muestra.obtnerHiloActual);
 router.post('/muestra',ctrl.muestra.nuevaMuestra);
 router.put('/muestra',ctrl.muestra.actulizarMuestra);
 router.put('/eliminarmuestra',ctrl.muestra.eliminarMuestra);
+router.get('/muestrasincompletas/:id',ctrl.muestra.obtnerMuestrasIncompletas);
 
 //tipomuestra
 router.get('/tipomuestra',ctrl.tipomuestra.obtenerTipoMuestra);

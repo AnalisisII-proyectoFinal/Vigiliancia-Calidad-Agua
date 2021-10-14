@@ -9,3 +9,12 @@ Content-Type: application/json
 ### post ruta inicio
 GET http://localhost:3000/api/v1/inicio/hiloactual
 Content-Type: application/json
+
+
+###
+GET http://localhost:4000/api/v1/inicio/obtenerdatosusuario/4
+
+
+###
+POST http://localhost:4000/api/v1/inicio/hello
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNjM0MDkxMDU3LCJleHAiOjE2MzQxNzc0NTd9.eKsDym5JFDK7gwERyruEVdPhgyXjPOxNFM4q2Th9Pg8

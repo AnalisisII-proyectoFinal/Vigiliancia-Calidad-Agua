@@ -76,11 +76,25 @@ async function eliminarMuestra(req,res) {
     }
 }
 
+async function obtnerMuestrasIncompletas(req,res) {
+    const idtanque=req.params.id;
+    try {
+        const pool = await getConexion();
+        const resut = await pool.request()
+        .input('idt',sql.Int,idtanque)
+        .execute('dbo.obtenermuestrasincompletoapp');
+        respuesta.exito(req,res,resut.recordset,200)
+    } catch (error) {
+        respuesta.error(req,res,error,500)
+    }
+}
+
 
 module.exports={
     obtnerMuestras,
     nuevaMuestra,
     eliminarMuestra,
     actulizarMuestra,
-    obtnerHiloActual
+    obtnerHiloActual,
+    obtnerMuestrasIncompletas
 }

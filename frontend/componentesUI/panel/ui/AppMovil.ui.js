@@ -1,5 +1,8 @@
 import ServicioPanel from '../servicio/Panel.ser.js';
+import ServicioNotificacion from '../../utilidades/Notificacion.js';
+import {ventanModal} from '../../utilidades/VentanaModal.js';
 const serAppMovil = new ServicioPanel();
+const servNoti = new ServicioNotificacion();
 
 class UiAppMovil{
 
@@ -41,9 +44,10 @@ class UiAppMovil{
     agregarUsuario(us){
       serAppMovil.hacerPeticion('/appmovilnuevo',{usuario:us},'POST').then(r=>{
         this.obtnerUsuariosApp();
-        this.notificar(r.body.msg);
+        servNoti.notificarToast('success',r.body.msg);
         }).catch(err=>{
               console.log(err)
+              servNoti.notificarToast('error','No se agregor el usuario');
         })
     }
 
@@ -55,25 +59,30 @@ class UiAppMovil{
             accesoU=1
         } 
         serAppMovil.hacerPeticion('/appmovilestado',{id:idUsario,acceso:accesoU},'PUT').then(r=>{
-            this.notificar(r.body.msg)
+            servNoti.notificarToast('success',r.body.msg);
         }).catch(err=>{
             console.log(err)
+            servNoti.notificarToast('error','Transaccion Fallida');
         })
     }
 
     eliminarUsuarioApp(idUs){
-        serAppMovil.hacerPeticion('/eliminarusuario',{id:idUs},'PUT').then(r=>{
-            this.obtnerUsuariosApp();
-            this.notificar(r.body.msg)
-        }).catch(err=>{
-            console.log(err)
-        })
+        let res = confirm("Quieres eliminar el registro .?")
+        if (res) {
+            serAppMovil.hacerPeticion('/eliminarusuario',{id:idUs},'PUT').then(r=>{
+                this.obtnerUsuariosApp();
+                servNoti.notificarToast('success',r.body.msg);
+            }).catch(err=>{
+                console.log(err)
+                servNoti.notificarToast('error','Transaccion Fallida');
+            })
+        }else{
+            servNoti.notificarToast('info','Eliminacion, cancelado');
+        }
     }
 
 
-    notificar(msg){
-        alert(msg)
-    }
+   
 
 }
 export default UiAppMovil;

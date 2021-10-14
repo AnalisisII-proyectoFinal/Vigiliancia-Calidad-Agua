@@ -1,12 +1,9 @@
 const express = require('express');
-const {obtnerUsuario}= require('./controladores/usuarios.ctrl.js')
-const {encriptar}=require('../utilidad/cifrado.js')
-
+const ctrl = require('./controladores');
 const router = express.Router();
 
 // rutas
 
-router.get('/usuarios',obtnerUsuario);
-
-
+router.post('/nuevousuario',ctrl.nuevoUsuario.nuevoEmpleadoUsuario);
+router.get('/obtenerpermisos',ctrl.nuevoUsuario.obtenerPermisos);
 module.exports = router;

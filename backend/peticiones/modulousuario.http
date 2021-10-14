@@ -1,0 +1,22 @@
+### post ruta user
+POST http://localhost:4000/api/v1/usuario/nuevousuario
+Content-Type: application/json
+
+{ 
+    "pn":"Mario",
+    "sn":"Oscar",
+    "pa":"Perez",
+    "sa":"Caracas",
+    "dpi":"123468799",
+    "sex":"masculino",
+    "dir":"solola",
+    "carg":"director",
+    "tel":"123466",
+    "corr":"lsls@gmail.com",
+    "fnaci":"2021-05-01",
+    "uria":"lslsisislslsllse",
+    "user":"mPerez",
+    "pass":"password",
+    "perm": 1
+} 
+

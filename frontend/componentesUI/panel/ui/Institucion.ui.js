@@ -1,6 +1,6 @@
 import ServicioPanel from '../servicio/Panel.ser.js';
 import ServicioNotificacion from '../../utilidades/Notificacion.js';
-import UiAplicacion from '../../aplicacion/ui/Encabezado.ui.js';
+import UiAplicacion from '../../aplicacion/ui/Aplicacion.ui.js';
 const servInstitucion = new ServicioPanel();
 const servNotificar = new ServicioNotificacion();
 

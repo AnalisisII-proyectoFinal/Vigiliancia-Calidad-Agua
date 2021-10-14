@@ -58,18 +58,28 @@ class UiPublicacion {
     actualizarPublicacion(datosPublic){
         servPublicacion.hacerPeticion('/actpublicacion',datosPublic,'PUT').then(r=>{
             this.obtnerPublicaciones();
-            this.notificar(r.body.msg);
+            servNoti.notificarToast("success",r.body.msg)
+        }).catch(err=>{
+            console.log(err)
+            servNoti.notificarToast("error","no se pudo actualizar")
         })
 
     }
 
     eliminarPublicacion(idpub){
-        servPublicacion.hacerPeticion('/eliminarpublic',{id:idpub},'PUT').then(r=>{
-            this.obtnerPublicaciones();
-            this.notificar(r.body.msg);
-            }).catch(err=>{
-            console.log(err)
-        })
+        const res = confirm("Quieres eliminar la publicacion ?")
+
+        if (res) {
+            servPublicacion.hacerPeticion('/eliminarpublic',{id:idpub},'PUT').then(r=>{
+                this.obtnerPublicaciones();
+                servNoti.notificarToast("success",r.body.msg)
+                }).catch(err=>{
+                console.log(err)
+                servNoti.notificarToast("error","no se pudo eliminar")
+            })  
+        }else{
+            servNoti.notificarToast("info","Eliminacion cancelado")
+        }  
     }
 
     

@@ -60,7 +60,6 @@ class UiIngMuestra{
                   <td>${client}</td>
                   <td>
                   <button _id="${el.id}" class="editar">✏️</button>
-                  <button _id="${el.id}" class="eliminar">🗑️</button>
                   </td>`;
                 $fragment.appendChild($fila)
                 $n++;
@@ -78,7 +77,6 @@ class UiIngMuestra{
 
 
     llenarOpcTanques(tanques){
-        console.log(tanques);
         const $selectT =document.getElementById('m-t-op')
         $selectT.innerHTML='';
             let $fragment= document.createDocumentFragment();
@@ -89,33 +87,30 @@ class UiIngMuestra{
                   ${el.nombre}`;
                 $fragment.appendChild($fila)
             })
-              
             $selectT.appendChild($fragment);
+            this.obtenerMuestrasIncompletadTanque(tanques[0].id)
     }
 
-    obtnerTipoMuestra(){
-        serIngMuestra.hacerPeticion('/tipomuestra',{},'GET').then(datos=>{
-            this.llenarOpcTipoMuestra(datos.body)
+    obtenerMuestrasIncompletadTanque(idt){
+        serIngMuestra.hacerPeticion(`/muestrasincompletas/${idt}`,{},'GET').then(datos=>{
+            this.llenarSelectMuestras(datos.body)
         }).catch(err=>{
             console.log(err)
         })
     }
 
-    llenarOpcTipoMuestra(tipomuestra){
-        console.log(tipomuestra);
+    llenarSelectMuestras(muestrasIn){
         const $selectTM =document.getElementById('m-tp-op')
         $selectTM.innerHTML='';
             let $fragment= document.createDocumentFragment();
-            tipomuestra.forEach(el=>{
+            muestrasIn.forEach(el=>{
               let $fila = document.createElement('option');
               $fila.setAttribute('value',el.id)
                 $fila.innerHTML=`
-                  ${el.tipo}`;
+                  ${el.idm}`;
                 $fragment.appendChild($fila)
             })
-              
             $selectTM.appendChild($fragment);
-
     }
 
 
@@ -128,15 +123,6 @@ class UiIngMuestra{
            serNotificacion.mostrarNotificacion('error','ocurrio un erro')
         })
     }
-
-
-
-
-
-
-
-
-
 
 
     editarMuestra(){

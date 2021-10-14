@@ -1,6 +1,6 @@
-import UiAplicacion from '../ui/Encabezado.ui.js';
-import {EditarPerfil} from './Perfil.js'
-import {ventanModal} from '../../utilidades/VentanaModal.js';
+import UiAplicacion from "../ui/Aplicacion.ui.js";
+import {ventanModal} from "../../utilidades/VentanaModal.js";
+import {EditarPerfil} from "../paginas/Perfil.js";
 export function Encabezado() {
     const $Encabezado=document.createElement('head');
     $Encabezado.classList.add('encabezado')
@@ -9,18 +9,18 @@ export function Encabezado() {
             <img id="logo-inst" src="" alt="logo">
         </div>
         <div id="encabezado-datos"></div>
-        <div>
-            <img id="avatar-us" src="../../../assets/img/avatar.svg" alt="logo" style="visibility:hidden;"/>
-            <button id="btn-opciones" class="primer-btn" style="visibility:hidden;">perfil</button>
-            <button id="btn-salir" class="primer-btn" style="visibility:hidden;">Salir</button>
-            <button id="btn-irlogin" class="primer-btn" style="visibility:visible;">Entrar</button>
+        <div class="elementosperfil">
+            <div class="avatarnombre" id="perfil-usuario" style="visibility:hidden;">
+                <img id="avatar-us"  src="https://res.cloudinary.com/municipalidad-san-jose-chacaya/image/upload/v1634070657/avatar_mryjhz.svg" alt="avatar"/>
+                <span id="nombre-u"></span>
+                <span><button id="perfil-edit" class="btn-perfil">Perfil</button> | <button id="salir-app" class="btn-perfil">Salir</button></span>
+            </div>
+                <button id="btn-irlogin" class="primer-btn" style="visibility:visible;">Entrar</button>
         </div>
         `;
     function initEncabezado(){
-        const $btnOp = document.getElementById('btn-opciones');
-        const $avatar = document.getElementById('avatar-us');
-        const $btnSalir = document.getElementById('btn-salir');
-
+        const editarPefil = document.getElementById('perfil-edit');
+        const salirApp = document.getElementById('salir-app');
         const datosEncabezado = new UiAplicacion();
         datosEncabezado.obtenerDatosEncabezado();
 
@@ -30,32 +30,23 @@ export function Encabezado() {
             e.preventDefault();
             location.href= '#/app/login';
             btn.style.visibility = 'hidden';
-            $btnSalir.style.visibility = 'visible'; 
+        })  
+        editarPefil.addEventListener('click',(e)=>{
+            e.preventDefault();
+            let dataLocal=localStorage.getItem('dataUser');
+            let dataParse=JSON.parse(dataLocal);
+            const editPerfil = new UiAplicacion();
+            editPerfil.editarPerfil(dataParse.id)
         })
 
-        $btnSalir.addEventListener('click',(e)=>{
-            e.preventDefault();
+        salirApp.addEventListener('click',(e)=>{
+            localStorage.removeItem('nombre');
+            localStorage.removeItem('avatar');
+            localStorage.removeItem('dataUser');
             location.href='#/';
-            btn.style.visibility = 'visible';
-            $btnSalir.style.visibility = 'hidden';
-            $btnOp.style.visibility = 'hidden';
-            $avatar.style.visibility = 'hidden';
-        })
-        const btnMenu = document.getElementById('btn-opciones');
-        btnMenu.addEventListener('click',(e)=>{
-                e.preventDefault();
-                ventanModal(EditarPerfil())
-            /*
-            let vleft = document.querySelector('.menu-app').style.left;
-            if (vleft == "100%") {
-                document.querySelector('.menu-app').style.left=0;
-            }else{
-                document.querySelector('.menu-app').style.left="100%";
-            }*/
         })
     }
     setTimeout(()=>initEncabezado(),100);
     return $Encabezado; 
 }
 
-//<h1>${datos.entidad}<br>${datos.dependencia}<br>${datos.aplicacion}</h1>

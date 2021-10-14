@@ -2,14 +2,14 @@
 //@ts-check
 /**
  * Clase de peticiones http
- * @module peticionPanel - clase handler
+ * @module peticionInicio - clase handler
  * @author autor 
  * @copyright - ksksue
  * @version 1.0
  */
-class ServicioUsuario {
+class ServicioAuth {
     constructor(){
-        this.url ='http://localhost:4000/api/v1/usuario';
+        this.url ='http://localhost:4000/api/v1/auth';
     }
     obtnerEncabezado(){
         return{
@@ -18,11 +18,11 @@ class ServicioUsuario {
     }
     hacerPeticion(peticion,params,tipopeticion){
         return new Promise((resolve,reject)=>{
-            console.log(`Enviando peticion a:${peticion}`)
+            console.log('enviando parametros')
             fetch(this.url + (peticion ||''),{
                 headers: this.obtnerEncabezado(),
                 method: tipopeticion,
-                body:tipopeticion !== 'GET' ? JSON.stringify(params): null
+                body: tipopeticion !== 'GET' ? JSON.stringify(params): null
             })
             .then((response)=>{
                 if (!response.ok) {
@@ -33,7 +33,6 @@ class ServicioUsuario {
             .then(response =>{
                 return response.json();
             }).then(data =>{
-                console.log(data)
                 resolve(data);
             })
             .catch(error=>{
@@ -44,4 +43,4 @@ class ServicioUsuario {
     }
 }
 
-export default ServicioUsuario;
+export default ServicioAuth;

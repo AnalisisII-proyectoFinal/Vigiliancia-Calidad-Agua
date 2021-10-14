@@ -1,0 +1,8 @@
+### post ruta user
+POST http://localhost:4000/api/v1/auth/autenticarusuario
+Content-Type: application/json
+
+{ 
+    "user":"cperez",
+    "pass":"password"
+} 

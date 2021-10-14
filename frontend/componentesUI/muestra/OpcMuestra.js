@@ -53,7 +53,6 @@ export function OpcMuestra(){
             iniIngMuestra.obtnerHilo();
             iniIngMuestra.obtenerMuestras();
             iniIngMuestra.obtnerTanquesOpc();
-            iniIngMuestra.obtnerTipoMuestra();
           }else if(idpag=== 'btn-4'){
             const initTipoMuestra = new UiTipoMuestra();
             initTipoMuestra.obtnerTipoMuestra();

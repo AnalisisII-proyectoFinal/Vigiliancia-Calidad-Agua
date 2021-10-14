@@ -86,6 +86,14 @@ export function IngresoMuestra(){
           const $btng = document.getElementById('m-btn-g');
           const $btnn = document.getElementById('m-btn-n');
           //tanque,tipo,punto,ph,cl,idus,idh,cliente
+          $mtanque.addEventListener('change',(e)=>{
+            const obtenerMuestra=new UiIngMuestra();
+            obtenerMuestra.obtenerMuestrasIncompletadTanque(e.target.value);
+          })
+
+
+
+
           $btng.addEventListener('click',()=>{
             console.log()
             let datosMuestra={

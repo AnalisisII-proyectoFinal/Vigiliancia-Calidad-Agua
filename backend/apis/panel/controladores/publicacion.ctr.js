@@ -44,7 +44,6 @@ async function eliminarPublicacion(req,res) {
 
 async function actulizarPublicacion(req,res) {
     const {id,descripcion,imgp}=req.body;
-    //const uri_img = (req.file==undefined)?'':'/imgcargados/' + req.file.filename;
     try {
         const pool = await getConexion();
         await pool.request()
@@ -52,7 +51,7 @@ async function actulizarPublicacion(req,res) {
         .input('desc',sql.Text,descripcion)
         .input('img',sql.VarChar(200),imgp)
         .execute('dbo.uspactualizarpublicacion');
-        respuesta.exito(req,res,{msg:'publicacion eliminado'},200)
+        respuesta.exito(req,res,{msg:'publicacion Actualizada'},200)
         
     } catch (error) {
         respuesta.error(req,res,error,500)  

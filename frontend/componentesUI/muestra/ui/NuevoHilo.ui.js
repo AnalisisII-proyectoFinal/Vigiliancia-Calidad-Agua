@@ -25,10 +25,7 @@ class UiNuevoHilo{
         const $selectT =document.getElementById('nh-opc-t')
         $selectT.innerHTML='';
             let $fragment= document.createDocumentFragment();
-           // let $opc1=`<option selected disabled> tanques </option>`;
             let $opc2=`<option value="0"> todos </option>`;
-            //$fragment.;
-            //$fragment.appendChild($opc2);
             tanques.forEach(el=>{
               let $fila = document.createElement('option');
               $fila.setAttribute('value',el.id)

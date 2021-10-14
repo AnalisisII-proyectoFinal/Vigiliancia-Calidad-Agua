@@ -3,8 +3,6 @@ import {Tarjeta} from './Tarjeta.js';
 const serInicio = new ServicioInicio();
 
 class UiInicio{
-
-
     obtenerHiloActual(){
         serInicio.hacerPeticion('/hiloactual',{},'GET').then(datos=>{
             console.log(datos.body[0])
