@@ -1,6 +1,7 @@
 "use strict";
 //@ts-check
 import{validarInput}from '../../utilidades/ValidarFormulario.js';
+import ServicioNotificacion from '../../utilidades/Notificacion.js';
 import UiHilo from '../ui/Hilo.ui.js'
 /**
  * creacion de las opciones que tendra el modulo dashboard
@@ -15,21 +16,29 @@ export function Hilos(){
         <section class="contenedor-muestras">
         <h3>Hilos de toma de muestra</h3>
         <hr>
-        <form action="" class="form-filtro-hilos">
+          <div class="filtro-hilo">
           <div class="select">
-          <select name="format" id="format">
-          <option selected disabled>mes</option>
-          <option value="opcion1">enero</option>
-          <option value="opcion2">febrero</option>
-          <option value="opcion3">marzo</option>
-          <option value="opcion4">abril</option>
-          </select>
+            <select name="format" id="h-mes">
+            <option selected disabled>mes</option>
+            <option value="1">enero</option>
+            <option value="2">febrero</option>
+            <option value="3">marzo</option>
+            <option value="4">abril</option>
+            <option value="5">mayo</option>
+            <option value="6">junio</option>
+            <option value="7">julio</option>
+            <option value="8">agosto</option>
+            <option value="9">septiembre</option>
+            <option value="10">octubre</option>
+            <option value="11">noviembre</option>
+            <option value="12">diciembre</option>
+            </select>
           </div>
           <div>
-          <input class="input-buscar" type="text" placeholder="año">
-          <input class="input-buscardor-btn" type="submit" value="Buscar">
+            <input class="input-buscar" id="h-ano" type="number" placeholder="año" requerid>
+            <input class="input-buscardor-btn" id="buscar-hilo" type="submit" value="Buscar">
           </div>
-          </form>
+          </div>
           <br>
           <br>
         <div class="tabla-lista">
@@ -52,9 +61,29 @@ export function Hilos(){
   </section>
         `;
         function iniHilo(){
+          const btnBuscar=document.getElementById('buscar-hilo');
+          btnBuscar.addEventListener('click',(e)=>{
+            e.preventDefault();
+            const m=document.getElementById('h-mes').value;
+            const y=document.getElementById('h-ano').value;
+            if (m!='' && y!='') {
+              console.log(y,m)
+              const buscarHilo = new UiHilo();
+              buscarHilo.obtnerHilosXFecha(y,m);
+              
+            }else{
+              const llenarInput = new ServicioNotificacion();
+              llenarInput.notificarToast('error','lleno todos datos')
+            }
+          })
+
+
           document.getElementById('lista-hilos').addEventListener('click',(e)=>{
             if(e.target.classList.contains('detalle')){
-              console.log(e.target.getAttribute('_id'))
+              const detalles = new UiHilo();
+              detalles.obtenerMuestrasxhilo(e.target.getAttribute('_id'));
+              //console.log(e.target.getAttribute('_id'))
+              
             }else if(e.target.classList.contains('estado')){
               console.log(e.target.getAttribute('_id'))
             }

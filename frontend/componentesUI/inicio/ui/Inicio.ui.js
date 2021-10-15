@@ -17,7 +17,7 @@ class UiInicio{
     }
     formatearFecha(fecha){
         const f = new Date(fecha);
-        const mes = f.getMonth() + 1; // Ya que los meses los cuenta desde el 0
+        const mes = f.getMonth() + 1; 
         const dia = f.getDate();
         return `${(dia < 10 ? '0' : '').concat(dia)}-${(mes < 10 ? '0' : '').concat(mes)}-${f.getFullYear()}`;
     }

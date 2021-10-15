@@ -19,3 +19,9 @@ Content-Type: application/json
 ### post ruta inicio
 GET http://localhost:3000/api/v1/muestra/hilos
 Content-Type: application/json
+
+### post ruta inicio
+GET http://localhost:4000/api/v1/muestra/hiloxfecha/2022/9
+Content-Type: application/json
+###
+GET http://localhost:4000/api/v1/muestra/muestrasxhilo/8

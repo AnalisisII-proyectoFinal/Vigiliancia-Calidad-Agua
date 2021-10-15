@@ -7,6 +7,8 @@ const router = express.Router();
 //hilos
 router.get('/hilos',ctrl.hilo.obtnerDatosHilos)
 router.get('/hilo',ctrl.hilo.obtnerDatosHilo)
+router.get('/hiloxfecha/:y/:m',ctrl.hilo.obtenerHilosXfecha);
+router.get('/muestrasxhilo/:id',ctrl.hilo.obtenerMuestrasXHilo);
 //nuevo hilo
 router.post('/nuevohilo',ctrl.nuevohilo.nuevoHilo)
 router.get('/tanquesopc',ctrl.nuevohilo.obtnerTanquesOpc)

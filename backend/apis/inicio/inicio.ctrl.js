@@ -1,5 +1,6 @@
 const {getConexion,sql}=require('../../sqlserver/sqlserverconexion.js');
 const respuesta = require('../../respuesta/respuesta.js');
+const {encriptar}=require('../utilidad/cifrado.js');
 
 async function obtnerDatosInstitucion(req,res) {
     try{
@@ -80,23 +81,55 @@ async function obtenerDatosUsuario(req,res) {
 }
 
 async function actualizarDatosUsuario(req,res) {
-    const id= req.params;
+    const id= req.params.id;
+    const {av,tel,dir,em}=req.body;
+    console.log(id);
+    console.log(req.body);
     try {
         const pool = await getConexion();
-        const result = await pool.request()
-                        .input()
-                        .input()
-                        .execute('')
+        await pool.request()
+                    .input('id',sql.Int,id)
+                    .input('avatar',sql.VarChar(200),av)
+                    .input('tel',sql.VarChar(100),tel)
+                    .input('dir',sql.VarChar(200),dir)
+                    .input('em',sql.VarChar(100),em)
+                    .execute('dbo.uspactualizardatosusuarioperfil')
         respuesta.exito(req,res,{msg:'Datos actualizado'},200)
         
     } catch (error) {
         console.log(error)
-        respuesta.error(req,res,{msg:'Error servidor'},500)
+        respuesta.error(req,res,error,500)
         
     }
 }
 
+async function actualizarContrasena(req,res) {
+    const {id,pass} = req.body;
+    const passEncript= await encriptar(pass);
+    try {
+        const pool = await getConexion();
+        await pool.request().input('id',sql.Int,id).input('pass',sql.VarChar(200),passEncript)
+        .execute('dbo.uspactualizarcontrasena');
+        respuesta.exito(req,res,{msg:'dato actualizado'},200)
+    } catch (error) {
+        console.log(error)
+        respuesta.error(req,res,{msg:'Erro de servidor'},500)
+    }  
+}
 
+async function actualizarPin(req,res) {
+    const id=req.params.id;
+    const {pin} = req.body;
+    try {
+        const pool = await getConexion();
+        await pool.request().input('id',sql.Int,id).input('pin',sql.Int,pin)
+        .execute('dbo.uspactualizarpin');
+        respuesta.exito(req,res,{msg:'dato actualizado'},200)
+    } catch (error) {
+        console.log(error)
+        respuesta.error(req,res,{msg:'Erro de servidor'},500)
+    }  
+}
 
 
 module.exports = {
@@ -107,5 +140,7 @@ module.exports = {
     obtnerMisionVision,
     obtenerInformacionUsuario,
     obtenerDatosUsuario,
-    actualizarDatosUsuario
+    actualizarDatosUsuario,
+    actualizarContrasena,
+    actualizarPin
 }

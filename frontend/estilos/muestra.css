@@ -128,3 +128,15 @@
 .editar-nuevohilo{
     padding: 10px 10px 10px 10px;
 }
+
+.filtro-hilo{
+  width: 90%;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 5%;
+  place-items: center;
+}
+.muestras-hilo{
+  display: grid;
+  place-content: center;
+}

@@ -12,6 +12,10 @@ router.get('/misionvision',ctrl.obtnerMisionVision);
 router.get('/infousuario/:id',ctrl.obtenerInformacionUsuario);
 router.get('/obtenerdatosusuario/:id',ctrl.obtenerDatosUsuario);
 router.put('/actualizardatosusuario/:id',ctrl.actualizarDatosUsuario);
+router.put('/actualizarcontrasena',ctrl.actualizarContrasena);
+router.put('/actualizarpin/:id',ctrl.actualizarPin)
+
+
 router.post('/hello',validarToken,(req,res)=>{
     res.json({name:'Bienvenido'})
 })

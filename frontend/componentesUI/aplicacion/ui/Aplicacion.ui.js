@@ -81,14 +81,35 @@ class UiAplicacion{
         document.getElementById('btn-irlogin').style.visibility="visible";
     }
     
-    cambiarContrasena(password){
-        console.log(password)
+    cambiarContrasena(pass){
+        const datosUs = localStorage.getItem('dataUser');
+        const idu=JSON.parse(datosUs).id;
+        servAplicacion.hacerPeticion('/actualizarcontrasena',{id:idu,pass:pass},'PUT').then(r=>{
+            serNoti.notificarToast('success',r.body.msg)
+        }).catch(err=>{
+            console.log(err)
+            serNoti.notificarToast('error','No se pudo actualizar');
+        })
     }
     cambiarPin(pin){
-        console.log(pin)
+        const datosUs = localStorage.getItem('dataUser');
+        const idu=JSON.parse(datosUs).id;
+        servAplicacion.hacerPeticion(`/actualizarpin/${idu}`,{pin:pin},'PUT').then(r=>{
+            serNoti.notificarToast('success',r.body.msg)
+        }).catch(err=>{
+            console.log(err)
+            serNoti.notificarToast('error','No se pudo actualizar');
+        })
     }
     actualizarDatosUsuario(datos){
-        console.log(datos)
+        const datosUs = localStorage.getItem('dataUser');
+        const idu=JSON.parse(datosUs).id;
+        servAplicacion.hacerPeticion(`/actualizardatosusuario/${idu}`,datos,'PUT').then(r=>{
+            serNoti.notificarToast('success',r.body.msg)
+        }).catch(err=>{
+            console.log(err)
+            serNoti.notificarToast('error','No se pudo actualizar');
+        })
     }
 }
 export default UiAplicacion;

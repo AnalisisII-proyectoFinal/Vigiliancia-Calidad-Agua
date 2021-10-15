@@ -13,10 +13,11 @@ export function Inicio() {
         <h2>Quienes somos</h2>
         <div id="mision-vision"></div>
     </section>
-    <section id="#/publicacion" class="contenedor-publicacion">
+    <section id="#/publicacion" class="contenedor-publicaciones">
         <h2>Mejoras y mantenimientos</h2>
         <div class="publicaciones" id="publicaciones-i"></div>
-    </section><br>
+    </section>
+    <br>
     <footer>
       <div class="footer-datos">
         <div>
