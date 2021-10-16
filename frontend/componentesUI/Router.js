@@ -82,6 +82,7 @@ export function Router(){
         if ($rol > 0) {
           $contenedor.appendChild(MenuApp(M_TANQUE));
           $contenedor.appendChild(Tanque());
+          uIApp.mostrarPerfil();
         }else{
           location.href='#/';
           serNoti.notificarToast("warning","Necesita Autenticacion")
@@ -91,6 +92,7 @@ export function Router(){
         if ($rol > 0) {
           $contenedor.appendChild(MenuApp(M_MUESTRA));
           $contenedor.appendChild(Muestra());
+          uIApp.mostrarPerfil();
         }else{
           location.href='#/';
           serNoti.notificarToast("warning","Necesita Autenticacion")
@@ -111,6 +113,7 @@ export function Router(){
         if ($rol > 0) {
           $contenedor.appendChild(MenuApp(M_REPORTE));
           $contenedor.appendChild(Reporte());
+          uIApp.mostrarPerfil();
         }
         else{
           location.href='#/';
@@ -122,12 +125,13 @@ export function Router(){
           location.href='#/';
           serNoti.notificarToast("warning","Necesita Autenticacion")
           
-        }else if ($rol > 0 && $rol != 2) {
+        }else if ($rol > 0 && $rol != 3) {
           location.href='#/app/dashboard';
           serNoti.notificarToast("info","No tiene autorizacion")
         }else{
           $contenedor.appendChild(MenuApp(M_USUARIO));
           $contenedor.appendChild(Usuario());
+          uIApp.mostrarPerfil();
         }
 
         break;
@@ -135,18 +139,20 @@ export function Router(){
         if ($rol === 0) {
           location.href='#/';
           serNoti.notificarToast("warning","Necesita Autenticacion")
-        }else if ($rol > 0 && $rol != 2) {
+        }else if ($rol > 0 && $rol != 3) {
           location.href='#/app/dashboard';
           serNoti.notificarToast("info","No tiene autorizacion")  
         }else{
           $contenedor.appendChild(MenuApp(M_PANEL));
           $contenedor.appendChild(Panel());
+          uIApp.mostrarPerfil();
         }
         break;
       case '#/app/ayuda':
         if ($rol > 0) {
           $contenedor.appendChild(MenuApp(M_AYUDA));
           $contenedor.appendChild(Ayuda());
+          uIApp.mostrarPerfil();
         }
         else{
           location.href='#/';

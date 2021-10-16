@@ -35,7 +35,7 @@
     box-shadow: 2px 2px 5px #999;
     transition: 0.3s ease-in-out;
   }
-  .card-tanque-dashs:hover{
+  .card-tanque-dash:hover{
     height: 500px;
   }
   .card-tanque-dash-e{

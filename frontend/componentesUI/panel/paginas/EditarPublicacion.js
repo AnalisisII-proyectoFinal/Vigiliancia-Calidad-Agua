@@ -61,7 +61,3 @@ export function EditarPublicacion(t,d,idp,im) {
     setTimeout(()=>iniEditarPublicacion(),100);
     return $editarpublicacion;
 }
-
-/**
- * 
- */

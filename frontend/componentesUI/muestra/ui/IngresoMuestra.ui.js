@@ -1,9 +1,9 @@
 import ServicioMuestra from '../servicio/Muestra.ser.js';
-import Notificacion from '../../utilidades/Notificacion.js';
+import ServicioNotificacion from "../../utilidades/Notificacion.js";
 import {EditarIngresoMuestra} from '../paginas/EditarIngresoMuestra.js';
 import {ventanModal} from '../../utilidades/VentanaModal.js';
 const serIngMuestra = new ServicioMuestra();
-const serNotificacion = new Notificacion();
+const servNoti = new ServicioNotificacion();
 
 class UiIngMuestra{
 
@@ -41,6 +41,7 @@ class UiIngMuestra{
     listarMuestras(muestras){
         const $tablamuestras = document.getElementById('lista-muestras');
         $tablamuestras.innerHTML='';
+        if (muestras.length != 0) {
             let $fragment= document.createDocumentFragment();
             let $n=1;
             muestras.forEach(el=>{
@@ -65,6 +66,12 @@ class UiIngMuestra{
                 $n++;
             })  
             $tablamuestras.appendChild($fragment);
+            
+        }else{
+            let $filas = document.createElement('tr');
+            $filas.innerHTML=`No hay resultados`
+        }
+            
     }
 
     obtnerTanquesOpc(){
@@ -100,8 +107,9 @@ class UiIngMuestra{
     }
 
     llenarSelectMuestras(muestrasIn){
-        const $selectTM =document.getElementById('m-tp-op')
+        const $selectTM =document.getElementById('m-tp-op');
         $selectTM.innerHTML='';
+        if (muestrasIn.length != 0) {
             let $fragment= document.createDocumentFragment();
             muestrasIn.forEach(el=>{
               let $fila = document.createElement('option');
@@ -111,16 +119,36 @@ class UiIngMuestra{
                 $fragment.appendChild($fila)
             })
             $selectTM.appendChild($fragment);
+        }else{
+            const $opt=document.createElement('option');
+            $opt.setAttribute('selected',true);
+            $opt.setAttribute('disabled',true);
+            $opt.innerHTML=`completado`;
+            $selectTM.appendChild($opt);
+        }
+        
+           // let op=`<option selected disabled>muestra</option>`;
+           // $selectTM.appendChild(op);
+             
+            /*
+        if (muestrasIn.length > 0) {
+            
+        }else{
+            let ops=`<option selected disabled>No hay muestras</option>`;
+            $selectTM.appendChild(ops);
+            $selectTM.appendChild($fragment);
+        }    */
     }
 
 
     nuevaMuestra(muestra){
+        console.log(muestra)
         serIngMuestra.hacerPeticion('/muestra',muestra,'POST').then(r=>{
-            serNotificacion.mostrarNotificacion('exito..!',r.body.msg)
+            servNoti.notificarToast('success',r.body.msg);
             this.obtenerMuestras();
         }).catch(err=>{
             console.log(err)
-           serNotificacion.mostrarNotificacion('error','ocurrio un erro')
+            servNoti.notificarToast('error',"Al cargar los datos");
         })
     }
 
@@ -128,6 +156,9 @@ class UiIngMuestra{
     editarMuestra(){
         serIngMuestra.hacerPeticion('/editmuestra',{},'GET').then(datos=>{
             ventanModal(EditarIngresoMuestra(datos.body))
+        }).catch(err=>{
+            console.log(err)
+            servNoti.notificarToast('error',"Al cargar los datos");
         })
     }
 

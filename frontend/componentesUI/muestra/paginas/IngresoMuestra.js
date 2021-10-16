@@ -36,9 +36,9 @@ export function IngresoMuestra(){
           <div>
           <label for="" class="input-label">Punto de muestra:</label>
             <input type="text"  id="m-punto" class="input-dato" placeholder="Hogar,tanque.." required=""/></div>
-          <div><label for="" class="input-label">PH:</label>
+          <div><label for="" class="input-label">PH(ml):</label>
             <input type="number" id="m-ph" class="input-dato"  placeholder="ph" required=""/></div>
-          <div><label for="" class="input-label">Cloro recidual:</label>
+          <div><label for="" class="input-label">Cloro recidual(ml):</label>
             <input type="number" id="m-cl" class="input-dato"  placeholder="cloro" required=""/></div>
           </form>
           <br>
@@ -78,10 +78,8 @@ export function IngresoMuestra(){
         function initEditarIngresoMuestra(){
 
           const $mtanque = document.getElementById('m-t-op');
-          const $mtipo = document.getElementById('m-tp-op');
           const $mpunto = document.getElementById('m-punto');
-          const $mph = document.getElementById('m-ph');
-          const $mcl = document.getElementById('m-cl');
+         
           const $midh = document.getElementById('hilo-id');
           const $btng = document.getElementById('m-btn-g');
           const $btnn = document.getElementById('m-btn-n');
@@ -95,16 +93,23 @@ export function IngresoMuestra(){
 
 
           $btng.addEventListener('click',()=>{
-            console.log()
+            const $idMuestra=document.getElementById('m-tp-op');
+            const $mph = document.getElementById('m-ph');
+            const $mcl = document.getElementById('m-cl');
+            let $idU=0;
+            if (localStorage.getItem('dataUser')) {
+              let dataU=localStorage.getItem('dataUser');
+              let dataParse=JSON.parse(dataU);
+              $idU=dataParse.id;
+            }
+
             let datosMuestra={
-              tanque:$mtanque.value,
-              tipo:$mtipo.value,
+              idm:$idMuestra.value,
               punto:$mpunto.value,
               ph:$mph.value + 'ml',
               cl:$mcl.value + 'ml',
-              idus: 2,
-              idh:$midh.innerHTML,
-              cliente:1
+              idu: $idU,
+              idh:$midh.innerHTML
             }
             const $nuevaMuestra = new UiIngMuestra();
             $nuevaMuestra.nuevaMuestra(datosMuestra);

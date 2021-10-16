@@ -61,11 +61,7 @@ export function Publicacion(){
       </section>
         `;
         function initPublicacion() {
-          
-         // const $img=document.getElementById('p-img');
-          //const $btnCrear= document.getElementById('p-btn-c');
           const $listaPublic=document.getElementById('lista-publicacion');
-
 
           const $inpImgP = document.getElementById('subir-img-p');
           $inpImgP.addEventListener('change',async (e)=>{
@@ -94,32 +90,6 @@ export function Publicacion(){
             crearPublic.nuevaPublicacion(datosPublicacion);
 
           })
-
-
-
-
-          
-          /*
-          const $inpImgPublic = document.getElementById('subir-img-p');
-          $inpImgPublic.addEventListener('change',(e)=>{
-            const prevImg = document.getElementById('prev-img-p');
-            const progImgP = document.getElementById('prog-img-p').id;
-            const file = e.target.files[0];
-
-          })
-
-
-          $btnCrear.addEventListener('click', function(e){
-            const datoPublic = new FormData();
-            datoPublic.append('titulo',$titulo.value)
-            datoPublic.append('fecha',$fecha.value)
-            datoPublic.append('descripcion',$descripcion.value)
-            datoPublic.append('imagen',$img.files[0])
-            const $nPublicacion = new UiPublicacion();
-            $nPublicacion.nuevaPublicacion(datoPublic);
-            e.preventDefault();
-          })
-          */
 
           $listaPublic.addEventListener('click',(e)=>{
             if (e.target.classList.contains('eliminar')) {

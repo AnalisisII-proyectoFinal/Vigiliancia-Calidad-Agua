@@ -80,7 +80,7 @@
 }
 .vision img:hover
 {
-    transform: scale(1.3);
+    transform: scale(1.1);
 }
 .mision
 {
@@ -97,7 +97,7 @@
 }
 .mision img:hover
 {
-  transform: scale(1.3);
+  transform: scale(1.1);
 }
 .contenedor-publicaciones
 {
@@ -152,11 +152,11 @@
   width: 260px;
   height: 260px;
   top: -60px;
-  left: 20px;
+  left: 0px;
 }
 
 .imgpublic img{
-  max-width: 100%;
+  width: 240px;
   height: 200px;
   border-radius: 4px;
 }

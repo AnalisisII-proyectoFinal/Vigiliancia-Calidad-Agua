@@ -205,6 +205,7 @@ select{
   -ms-apparance:none;
   outline: 0;
   box-shadow: none;
+  width: 90%;
   border: 2px solid var(--quinto-color);
   background: var(--segundo-color);
   background-image: none;
@@ -256,6 +257,7 @@ select::-ms-expand{
 
 /*-=================    TABLA MOSTRAR DATOS =======================-*/ 
 table {
+  table-layout: fixed;/**/
   border-collapse: collapse;
   box-shadow: 0 5px 10px #e1e5ee;
   background-color: white;
@@ -263,6 +265,8 @@ table {
   text-align: left;
 }
 table thead {
+  display: block;
+  position: relative;
   box-shadow: 0 5px 10px #e1e5ee;
   background-color: var(--cuarto-color);
   color: var(--texto-color-light);
@@ -274,16 +278,31 @@ table th {
   letter-spacing: 0.1rem;
   font-size: .8rem;
   font-weight: 10;
+  width: 50px;
+  text-align: center;
 }
 table td {
   padding: 10px 2px;
   font-size: 90%;
-
+  width: 50px;
+  text-align: center;
 }
-
+table tr{
+  display: table;
+  width: 100%;
+}
 table tr:nth-child(even) {
+  display: table;
+  width: 100%;
   background-color: var(--tercer-color);
   color: var(--texto-color-light);
+}
+
+table tbody{
+  display: block;
+  width: 100%;
+  height: 250px;
+  overflow: auto;
 }
 
 
@@ -291,7 +310,7 @@ table tr:nth-child(even) {
 
 textarea{
   position: relative;
-  width: 80%;
+  width: 95%;
   border: 2px solid var(--quinto-color);
   color: var(--titulo-color);
   background-color: var(--segundo-color);
@@ -374,7 +393,7 @@ input:checked[type="checkbox"]::before
 .muestras-progreso li{
   list-style-type: none;
   float: left;
-  width: 33.33%;
+  width: 50%;
   position: relative;
   text-align: center;
   z-index: 1;
@@ -388,7 +407,7 @@ input:checked[type="checkbox"]::before
   border: 1px solid var(--primer-color);
   display: block;
   text-align: center;
-  margin: 0 auto 10px auto;
+  margin: 0 10px 10px auto;
   border-radius: 50%;
   background-color: var(--tercer-boton);
 }
@@ -434,9 +453,6 @@ input:checked[type="checkbox"]::before
   transition: transform .5s;;
 }
 .card {
- /* border: 2px solid var(--quinto-color);
-  border-radius: 5px;
-  background-color: var(--segundo-color);*/
   display: flex;
   justify-content: center;
   height: 20rem;

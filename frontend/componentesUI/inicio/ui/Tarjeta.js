@@ -1,5 +1,4 @@
 export function Tarjeta(p1,p2,p3) {
-
     let $por1=0;
     let $clase1='';
     let $por2=0;
@@ -47,27 +46,24 @@ export function Tarjeta(p1,p2,p3) {
         <p>${p1.tanque}</p>
         <div class="contenedor-toma">
           <ul class="muestras-progreso">
-            <li class="${$clase1}">${p1.ph}</li>
-            <li class="${$clase1}">${p1.cl}</li>
-            <li class="${$clase1}">${p1.cl}</li>
+            <li class="${$clase1}">PH:${p1.ph}</li>
+            <li class="${$clase1}">Cl:${p1.cl}</li>
           </ul>
         </div>
         </div>
         <div>
         <div class="contenedor-toma">
           <ul class="muestras-progreso">
-            <li class="${$clase2}">${p2.ph}</li>
-            <li class="${$clase2}">${p2.cl}</li>
-            <li class="${$clase2}">${p2.cl}</li>
+            <li class="${$clase2}">PH:${p2.ph}</li>
+            <li class="${$clase2}">Cl:${p2.cl}</li>
           </ul>
         </div>
         </div>
         <div>
         <div class="contenedor-toma">
           <ul class="muestras-progreso">
-            <li class="${$clase3}">${p3.ph}</li>
-            <li class="${$clase3}">${p3.cl}</li>
-            <li class="${$clase3}">${p3.cl}</li>
+            <li class="${$clase3}">PH: ${p3.ph}</li>
+            <li class="${$clase3}">Cl:${p3.cl}</li>
           </ul>
         </div>
         </div>

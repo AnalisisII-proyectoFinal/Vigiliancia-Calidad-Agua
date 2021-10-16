@@ -5,8 +5,9 @@ Estilos sistema de vigilancia de calidad de agua. municipilidad de san jose chac
 --- Proyecto de analisis de sistemas II 
 */
 /* importando fuente*/
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');*/
 /*-================= importacion de archivos de estilos =================*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
 @import url('./colores.css');
 @import url('./app.css');
 @import url('./elementos.css');
@@ -26,5 +27,6 @@ Estilos sistema de vigilancia de calidad de agua. municipilidad de san jose chac
 body{
     background-color: var(--primer-color);
     margin: 0 auto;
-    font-family: 'Playfair Display', serif;
+    /*font-family: 'Playfair Display', serif;*/
+    font-family: 'Roboto Condensed', sans-serif;
 }

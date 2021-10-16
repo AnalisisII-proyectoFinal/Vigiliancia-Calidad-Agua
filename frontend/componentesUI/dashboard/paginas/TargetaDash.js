@@ -36,25 +36,22 @@ export function TargetaDash(p1,p2,p3) {
         <p>Tanque</p>
         <div class="contenedor-toma">
           <ul class="muestras-progreso">
-          <li class="${$clase1}">${p1.ph}</li>
-          <li class="${$clase1}">${p1.cl}</li>
-          <li class="${$clase1}">${p1.cl}</li>
+          <li class="${$clase1}">PH:${p1.ph}</li>
+          <li class="${$clase1}">CL:${p1.cl}</li>
           </ul>
         </div>
         <p>Hogar1</p>
         <div class="contenedor-toma">
           <ul class="muestras-progreso">
-          <li class="${$clase2}">${p2.ph}</li>
-          <li class="${$clase2}">${p2.cl}</li>
-          <li class="${$clase2}">${p2.cl}</li>
+          <li class="${$clase2}">PH:${p2.ph}</li>
+          <li class="${$clase2}">CL:${p2.cl}</li>
           </ul>
         </div>
         <p>Hogar2</p>
         <div class="contenedor-toma">
           <ul class="muestras-progreso">
-          <li class="${$clase3}">${p3.ph}</li>
-          <li class="${$clase3}">${p3.cl}</li>
-          <li class="${$clase3}">${p3.cl}</li>
+          <li class="${$clase3}">PH:${p3.ph}</li>
+          <li class="${$clase3}">CL:${p3.cl}</li>
           </ul>
         </div>
       </div>`;

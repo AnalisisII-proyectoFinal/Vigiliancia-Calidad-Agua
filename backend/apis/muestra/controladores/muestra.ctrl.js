@@ -30,18 +30,17 @@ async function obtnerMuestras(req,res) {
 }
 
 async function nuevaMuestra(req,res) {
-    const {tanque,tipo,punto,ph,cl,idus,idh,cliente}=req.body;
+    const {idm,punto,ph,cl,idu,idh}=req.body;
+    console.log(req.body);
     try {
         const pool = await getConexion();
         await pool.request()
-        .input('tanque',sql.Int,tanque)
-        .input('tipo',sql.Int,tipo)
+        .input('idm',sql.Int,idm)
         .input('punto',sql.VarChar(200),punto)
         .input('ph',sql.VarChar(50),ph)
         .input('cl',sql.VarChar(50),cl)
-        .input('idu',sql.Int,idus)
+        .input('idu',sql.Int,idu)
         .input('idh',sql.Int,idh)
-        .input('client',sql.Int,cliente)
         .execute('dbo.uspnuevamuestra');
         respuesta.exito(req,res,{msg:'nueva muestra'},200);
     } catch (error) {

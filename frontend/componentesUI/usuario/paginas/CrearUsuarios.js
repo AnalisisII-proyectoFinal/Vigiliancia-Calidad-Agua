@@ -28,7 +28,7 @@ export function CrearUsuarios(){
               <div><label for="" class="input-label">Género:</label>
                 <div class="select">
                   <select name="format" id="u-g">
-                    <option selected disabled>selecciona una opcion</option>
+                    <option selected disabled>Genero</option>
                     <option value="1">Femenino</option>
                     <option value="2">Masculino</option>
                   </select>
@@ -44,8 +44,8 @@ export function CrearUsuarios(){
               <div><label for="" class="input-label">Tipo de Usuario:</label>
               <div class="select">
                 <select name="format" id="u-per">
-                  <option selected disabled>selecciona una opcion</option>
-                  <option value="1">basico</option>
+                  <option selected disabled>Permiso de usuario</option>
+                  <option value="1">invitado</option>
                   <option value="2">moderador</option>
                   <option value="3">administrador</option>
                 </select>
@@ -53,8 +53,7 @@ export function CrearUsuarios(){
               <div><label for="" class="input-label">Usuario:</label>
                 <input type="text" class="input-dato"  id="u-user" placeholder="..."  disabled/></div>
               <div><label for="" class="input-label">Contraseña:</label>
-                <input type="text" class="input-dato"  id="u-pass" placeholder="..." disabled/></div>
-              
+                <input type="text" class="input-dato"  id="u-pass" placeholder="..." disabled/></div>  
             </form>
             <br>
             <br>

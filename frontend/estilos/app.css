@@ -3,7 +3,59 @@
 */
 /*-===========importacion de colores ================-*/
 @import url(./colores.css);
+/*-====================preloader=========================-*/
 
+.contenedor-carga{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: 2;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cuarto-color);
+    color: var(--texto-color-light);
+    transition: 2s all ease-in-out;
+}
+.contenedor-dots{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dots{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin: 20px;
+    background-color: var(--segundo-color);
+    transform: scale(0.2);
+    animation: anim 1.4s infinite;
+}
+.dots:nth-child(2){
+    animation-delay: 0.2s;
+}
+.dots:nth-child(3){
+    animation-delay: 0.4s;
+}
+.dots:nth-child(4){
+    animation-delay: 0.6s;
+}
+.dots:nth-child(5){
+    animation-delay: 8s;
+}
+.dots:nth-child(6){
+    animation-delay: 1s;
+}
+
+@keyframes anim{
+    0%,100%{
+        transform: scale(0.2s);
+    }
+    50%{
+        transform: scale(1);
+    }
+}
 /*-============== encabezado =======================-*/
 .encabezado
 {

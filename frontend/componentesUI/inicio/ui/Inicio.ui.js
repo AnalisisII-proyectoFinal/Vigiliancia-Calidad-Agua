@@ -10,7 +10,7 @@ class UiInicio{
             let fechai =this.formatearFecha(datos.body[0].fecha1);
             let fechaf =this.formatearFecha(datos.body[0].fecha2);
             ha.innerHTML=`Del: ${fechai} 
-            Al: ${fechaf} [${datos.body[0].porcentaje} %]`;
+            Al: ${fechaf} [${datos.body[0].porcentaje} %] <progress max="100" value="${datos.body[0].porcentaje}" class="progreso-muestra">`;
         }).catch(err=>{
             console.log(err)
         })
