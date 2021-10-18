@@ -5,10 +5,9 @@
  * @requires componente: opcPanel  para las opciones del modulo
  */
 import {OpcTanque} from './OpcTanque.js'
-import { Tanques } from './Tanques.js';
-import { Nuevo } from './Nuevo.js';
-import { Mantenimiento } from './Mantenimiento.js';
-import { MetodoCloracion } from './MetodoCloracion.js';
+import { Nuevo } from './paginas/NuevoTanque.js';
+import { Mantenimiento } from './paginas/Mantenimiento.js';
+import { MetodoCloracion } from './paginas/MetodoCloracion.js';
 
 /**
  * Unificacion de componentes del modulo
@@ -22,7 +21,6 @@ export function Tanque() {
     /**paginas contenedor de paginas */
     const $paginas = document.createElement('div');
     $paginas.classList.add("contenido-pagina")
-    $paginas.appendChild(Tanques());
     $paginas.appendChild(Nuevo());
     $paginas.appendChild(Mantenimiento());
     $paginas.appendChild(MetodoCloracion());

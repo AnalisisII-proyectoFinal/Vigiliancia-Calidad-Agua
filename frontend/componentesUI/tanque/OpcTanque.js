@@ -27,10 +27,9 @@ export function OpcTanque(){
         $opctanque.classList.add("menu-lateral");
         $opctanque.innerHTML=`
           <div><img src="./assets/img/tanque.png" alt="img"></div>
-          <button id="btn-1" class="btn-modulo">Tanques</button>
-          <button id="btn-2" class="btn-modulo">Nuevo</button>
-          <button id="btn-3" class="btn-modulo">Mantenimiento</button>
-          <button id="btn-4" class="btn-modulo">Metodo Cloracion</button>
+          <button id="btn-1" class="btn-modulo">Nuevo</button>
+          <button id="btn-2" class="btn-modulo">Mantenimiento</button>
+          <button id="btn-3" class="btn-modulo">Metodo Cloracion</button>
         `;
         /**
          * inicio de funcionalidades

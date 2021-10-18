@@ -57,12 +57,12 @@ const M_AYUDA='m-ayuda';
  */
 export function Router(){
   const $contenedor = document.getElementById('contenedor-modulo');
-  let $rol=0;
-  if (localStorage.getItem('dataUser')) {
-    let dataU=localStorage.getItem('dataUser');
-    let dataParse=JSON.parse(dataU);
-    $rol=dataParse.rol;
-  }
+  let $rol=3;
+  //if (localStorage.getItem('dataUser')) {
+   // let dataU=localStorage.getItem('dataUser');
+   // let dataParse=JSON.parse(dataU);
+   // $rol=dataParse.rol;
+ // }
     let {hash} = location;
     console.log(hash);
     $contenedor.innerHTML = null;
@@ -125,7 +125,7 @@ export function Router(){
           location.href='#/';
           serNoti.notificarToast("warning","Necesita Autenticacion")
           
-        }else if ($rol > 0 && $rol != 3) {
+        }else if ($rol > 0 && $rol != 2) {
           location.href='#/app/dashboard';
           serNoti.notificarToast("info","No tiene autorizacion")
         }else{

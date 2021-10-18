@@ -8,24 +8,29 @@
     color: var(--titulo-color);
     padding: 0px 10px 0px 10px;
 }
-
-.tanque-buscador
-{
-    display: flex;
-    justify-content: flex-end;
+.contenedor-tanques form{
+    display: grid;
+    grid-template-columns: 30% 25% 25%;
+    gap: 5%;
 
 }
+
+.editar-tanque form{
+    display: grid;
+    grid-template-columns: 30% 25% 25%;
+    gap: 5%;
+
+}
+
+
+
 
 .form-cloracion{
     display: flex;
     justify-content: space-evenly;
 }
 
-.nuevo-tanque{
-    display: grid;
-    grid-template-columns: 20% 20% 20% 20%;
-    gap: 5%;
-}
+
 
 .nuevo-tanque{
     justify-content: center;

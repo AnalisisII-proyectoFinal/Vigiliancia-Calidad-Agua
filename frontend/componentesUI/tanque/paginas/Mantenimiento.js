@@ -1,7 +1,7 @@
 "use strict";
 //@ts-check
-import{validarInput}from '../utilidades/ValidarFormulario.js'
-import{ventanModal}from '../utilidades/VentanaModal.js';
+import{validarInput}from '../../utilidades/ValidarFormulario.js'
+import{ventanModal}from '../../utilidades/VentanaModal.js';
 import { EditarMantenimiento } from './EditarMantenimiento.js';
 /**
  * creacion de las opciones que tendra el modulo dashboard
@@ -10,42 +10,47 @@ import { EditarMantenimiento } from './EditarMantenimiento.js';
 export function Mantenimiento(){
     const $mantenimiento = document.createElement('div');
         $mantenimiento.classList.add("pagina");
-        $mantenimiento.setAttribute('id',"pg3");
+        $mantenimiento.setAttribute('id',"pg2");
         $mantenimiento.setAttribute('style',"display:none;")
         $mantenimiento.innerHTML=`
         <section class="contenedor-tanques">
+            <h2>Mantenimiento y mejoras de tanques</h2>
+            <hr>
+            <form action="" class="form-mantenimiento">
+            <div class="container-img">
+              <div class="card">
+                <img id="prev-img-t-e" height="200px" width="200px" src="">
+                  <div class="card-footer">
+                    <progress id="prog-img-t-e" max="100" value="0" class="progreso-muestra"></progress>
+                    <input type="file" id="subir-img-t-e">
+                  </div>
+                </div>
+              </div>
+              <div>
+                <p><label for="" class="input-label">Titulo:</label>
+                  <input type="text" class="input-dato" name="titulo" id="m-titulo" placeholder="titulo" required=""/></p>
+                <p><label for="" class="input-label">Descripcion:</label>
+                  <input type="text" class="input-dato" name="descripcion" id="m-descripcion" placeholder="descripcion" required=""/></p>
+                <p><label for="" class="input-label">Fecha:</label>
+                  <input type="date" class="input-dato" name="fecha" id="m-fecha" placeholder="" required=""/></p>
+                <p>
+                  <label class="input-label" for="">Tanque</label>
+                    <div class="select">
+                    <select name="format" id="format">
+                      <option selected disabled>selecciona una opcion</option>
+                      <option value="opcion1">Opcion1</option>
+                      <option value="opcion2">Opcion2</option>
+                      <option value="opcion3">Opcion3</option>
+                      <option value="opcion4">Opcion4</option>
+                    </select>
+                  </div>
+                </p>
+              </div>
+            </form>
+            <br>
+              <button class="primer-btn">Guardar</button>
+            </div>
     <div>
-      <h2>Mantenimiento y mejoras de tanques</h2>
-    <hr>
-    <form action="" class="form-mantenimiento">
-      <p><label for="" class="input-label">Titulo:</label>
-        <input type="text" class="input-dato" name="titulo" id="ntitulo" placeholder="titulo" required=""/></p>
-      <p><label for="" class="input-label">Descripcion:</label>
-        <input type="text" class="input-dato" name="descripcion" id="n-mant" placeholder="descripcion" required=""/></p>
-      <p><label for="" class="input-label">Fecha:</label>
-        <input type="date" class="input-dato" name="fecha" id="n-fecha" placeholder="" required=""/></p>
-      <p>
-        <label for="" class="input-label">Fotografia:</label>
-        <label class="input-archivo">
-            <input type="file" id="file" aria-label="archivo">
-            <span class="input-archivo-personalizado"></span>
-          </label>
-      </p>
-      <p>
-        <label class="input-label" for="">Tanque</label>
-        <select class="input-opciones" id="">
-          <option value="Opcion 1">tanque 1</option>
-          <option value="Opcion 2">tanque 2</option>
-          <option value="Opcion 3">Opcion 3</option>
-          <option value="Opcion 4">Opcion 4</option>
-          <option value="Opcion 5">Opcion 5</option>
-        </select>
-      </p>
-    </form>
-    <br>
-    <button class="primer-btn">Guardar</button>
-    </div>
-<div>
     <h2>Historial de mantenimientos</h2>
     <hr>
     <table id="tabla-mantenimiento">
