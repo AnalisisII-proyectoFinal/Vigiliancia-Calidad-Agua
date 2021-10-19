@@ -6,7 +6,60 @@
     color: var(--titulo-color);
     padding: 0px 10px 0px 10px;
 }
-.form-reporte-detalle-tanque{
-    display: flex;
-    justify-content:space-around;
+.contenedor-informe{
+    padding: 10px 10px 10px 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
+.informe-centro-salud{
+    background-color: var(--segundo-color);
+    color:#000;
+}
+.inf-cabecera{
+    display: grid;
+    grid-template-columns: 15% 50% 15% 20%;
+    place-items: center;
+}
+.cabecera-datos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 0%;
+}
+.cabecera-datos p{
+    font-size: 0.5rem;
+}
+.inf-cabecera img{
+    width: 100px;
+    height: 100px;
+}
+.inf-datos-cabecera{
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    gap: 5%;
+    font-weight: bold;
+    margin-left: 10px;
+    text-align: left;
+    font-size: 0.6rem;
+}
+.inf-datos-cabecera li{
+    list-style-type: none;
+}
+.inf-datos-cabecera span{
+    text-decoration: underline;
+    text-transform: uppercase;
+    margin-left: 5px;
+}
+.tabla-muestras table{
+    width: 100%;
+    border-collapse: collapse;
+
+}
+.tabla-muestras tr,th,td{
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+    text-align: center;
+}
+

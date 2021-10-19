@@ -1,5 +1,6 @@
 "use strict";
 //@ts-check
+import UiInformeCS from "../ui/InformeCS.ui.js";
 export function ReporteCentroSalud() {
     const $ReporteCentroSalud = document.createElement('div');
     $ReporteCentroSalud.classList.add("pagina");
@@ -120,5 +121,11 @@ export function ReporteCentroSalud() {
 </div>
 </section>
         `;
+        function initReporteCS() {
+          const reporteCS=new UiInformeCS();
+          reporteCS.obtnerMuestrasxHilo(8);
+          
+        }
+        setTimeout(()=>initReporteCS(),100)
         return $ReporteCentroSalud;
 }

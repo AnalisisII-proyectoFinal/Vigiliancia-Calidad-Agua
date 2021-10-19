@@ -125,7 +125,7 @@ export function Router(){
           location.href='#/';
           serNoti.notificarToast("warning","Necesita Autenticacion")
           
-        }else if ($rol > 0 && $rol != 2) {
+        }else if ($rol > 0 && $rol != 3) {
           location.href='#/app/dashboard';
           serNoti.notificarToast("info","No tiene autorizacion")
         }else{

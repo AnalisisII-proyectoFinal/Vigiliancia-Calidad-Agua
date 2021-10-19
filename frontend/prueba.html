@@ -9,15 +9,90 @@
     <title>Document</title>
 </head>
 <body>
-  <button id= "prueba">prueba</button>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-  <script>
-  document.getElementById('prueba').addEventListener('click',(e)=>{
-    toastr["info"]("My name is Inigo Montoya. You killed my father. Prepare to die!")
-  })
-  </script>
-  
+  <div class="informe-centro-salud">
+    <div class="inf-cabecera">
+      <div>
+        <img src="https://res.cloudinary.com/municipalidad-san-jose-chacaya/image/upload/v1633997164/bdvxoupuo0twmsmla6hu.png" alt="">
+      </div>
+      <div class="cabecera-datos">
+        <h2>VIGILANCIA DE LA CALIDAD DEL AGUA</h2>
+        <h2>pH y CLORO RESIDUAL</h2>
+      </div>
+      <div>
+        <img src="https://res.cloudinary.com/municipalidad-san-jose-chacaya/image/upload/v1633997164/bdvxoupuo0twmsmla6hu.png" alt="">
+      </div>
+      <div class="cabecera-datos">
+        <h2>SIGSA</h2>
+        <h2>SIVIAGUA 3</h2>
+        <p>valido a partir del 2012</p>
+        <p>Formulario-SIGSA/SIVIAGUA/PROVIAGUA-SS3-1.0/06-2012</p>
+      </div>
+    </div>
+    <div class="inf-datos-cabecera">
+      <div>
+        <li>Area de Salud: <span>soloao</span></li>
+        <li>Muncipio: <span>soloao</span></li>
+        <li>1/cargo: <span>soloao</span></li>
+      </div>
+      <div>
+        <li>Departamento: <span>soloao</span></li>
+        <li>Servicio de Salud: <span>soloao</span></li>
+        <li>Firma: <span>soloao</span></li>
+      </div>
+      <div>
+        <li>Distrito de salud: <span>soloao</span></li>
+        <li>Responsable de la informacion: <span>soloao</span></li>
+        <li>fecha: <span>soloao</span></li>
+      </div>
+    </div>
+    <br>
+    <div class="tabla-muestras">
+      <table>
+        <thead>
+          <tr>
+            <td rowspan="2">No.</td>
+            <td rowspan="2">Nombre del sistema</td>
+            <th colspan="4">Datos de muestreo</th>
+            <td rowspan="2">pH</td>
+            <td rowspan="2">Resultado o lectura de cloro residual(mg/L)</td>
+          </tr>
+          <tr>
+            <td>Comunidad donde se toma la muestra</td>
+            <td>punto de muestreo</td>
+            <td>Fecha de muestreo</td>
+            <td>Hora de muestreo</td>
+          </tr>
+        </thead>
+      <tbody>
+        <tr>
+          <td rowspan="3">1</td>
+          <td rowspan="3">prueba 1</td>
+          <td rowspan="3">cabecera</td>
+          <td>tanque</td>
+          <td>01/02/2021</td>
+          <td>12:00</td>
+          <td>0.5ml</td>
+          <td>21.5ml</td>
+        </tr>
+        <tr>
+          <td>casa1</td>
+          <td>01/02/2021</td>
+          <td>12:00</td>
+          <td>0.5ml</td>
+          <td>21.5ml</td>
+        </tr>
+        <tr>
+          <td>casa2</td>
+          <td>01/02/2021</td>
+          <td>12:00</td>
+          <td>0.5ml</td>
+          <td>21.5ml</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</body>
 </html>
 
 <!--

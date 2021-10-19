@@ -5,9 +5,9 @@
  * @requires componente: opcPanel  para las opciones del modulo
  */
 import {OpcAyuda} from './OpcAyuda.js'
-import { Tutoriales} from './Tutoriales.js';
-import { ManualWeb } from './ManualWeb.js';
-import { ManualMovil } from './ManualMovil.js';
+import { Tutoriales} from './paginas/Tutoriales.js';
+import { ManualWeb } from './paginas/ManualWeb.js';
+import { ManualMovil } from './paginas/ManualMovil.js';
 
 /**
  * Unificacion de componentes del modulo

@@ -1,12 +1,25 @@
 import ServicioUsuario from '../servicio/Usuario.ser.js';
-const serUsuario = new ServicioUsuario();
+import ServicioNotificacion from "../../utilidades/Notificacion.js";
+import {ventanModal} from "../../utilidades/VentanaModal.js";
+import {VerDetalles} from "../paginas/VerDetalles.js";
+import {EditarUsuario} from "../paginas/EditarUsuario.js";
+const servUsuario = new ServicioUsuario();
+const servNoti = new ServicioNotificacion();
 
 class UiListarUsuario{
     obtenerDatosUsuarios(){
-        serUsuario.hacerPeticion('/usuarios',{},'GET').then(datos=>{
+        servUsuario.hacerPeticion('/usuarios',{},'GET').then(datos=>{
             this.mostrarUsuarios(datos.body)
         }).catch(error=>{
             console.log(error)
+        })
+    }
+    obtenerDatosUsuario(idu){
+        servUsuario.hacerPeticion(`/usuario/${idu}`,{},'GET').then(dato=>{
+            this.verDetallesUsuario(dato)
+        }).catch(err=>{
+            console.log(err)
+            servNoti.notificarToast("error","al cargar datos")
         })
     }
     mostrarUsuarios(usuarios){
@@ -39,13 +52,20 @@ class UiListarUsuario{
         $lista.appendChild($fragment)
     }
     editarUsuario(){
-
+        ventanModal(EditarUsuario())
     }
-    eliminarUsuario(){
+    eliminarUsuario(idu){
+       servUsuario.hacerPeticion('/',{idu:idu},'DELETE').then(r=>{
+           console.log(r);
+            servNoti.notificarToast("success","eliminado")
+       }).catch(err=>{
+           console.log(err)
+           servNoti.notificarToast("error","al cargar datos");
+       }) 
 
     }
     verDetallesUsuario(){
-
+        ventanModal(VerDetalles())   
     }
 
 }

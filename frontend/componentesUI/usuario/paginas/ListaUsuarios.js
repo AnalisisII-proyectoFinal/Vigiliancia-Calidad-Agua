@@ -4,9 +4,7 @@
  * creacion de las opciones que tendra el modulo usuario
  * @returns {void} historial del modulo y funcionalidades
  */
- import { EditarUsuarios } from './EditarUsuarios.js';
- import { VerDetalles } from './VerDetalles.js';
- import { ventanModal } from '../../utilidades/VentanaModal.js';
+ 
  import UiListarUsuario from '../ui/ListarUsuarios.ui.js';
 
 export function ListaUsuarios(){
@@ -16,17 +14,15 @@ export function ListaUsuarios(){
         $listausuarios.setAttribute('style',"display:block;")
         $listausuarios.innerHTML=`
         <section class="contenedor-usuario">
-        <center><h2> Usuarios registrados</h2></center>
-        <hr>
-        <div>
-        <button id="prueba" >obtnerusuario</button>
-        <form action="">
-        <input class="input-buscar" type="text" placeholder="buscar.. usuario">
-        <input class="input-buscardor-btn" type="submit" value="Buscar">
-      </form>
-          <br>
+          <h2>usuarios registrados</h2>
+          <hr>
           <div>
-            <table id="tabla-usuarios">
+            <input class="input-buscar" id="h-ano" type="text" placeholder="apellido" requerid/>
+            <input class="input-buscardor-btn" id="buscar-empleado" type="submit" value="Buscar"/>
+          </div>
+          <br>
+          <div class="tabla-lista">
+          <table>
               <thead>
                 <tr>
                   <th>Id</th>
@@ -37,13 +33,10 @@ export function ListaUsuarios(){
                   <th>Estado</th>
                   <th>Opciones</th>
                 </tr>
-              </thead>
-              <tfoot>
-              </tfoot>
-              <tbody id="lista-usuarios">
-              </tbody>
-          </table>
-          </div>          
+                </thead>
+                <tbody id="lista-usuarios">
+                </tbody>
+          </table>          
         </div>
     </section>   
         `;

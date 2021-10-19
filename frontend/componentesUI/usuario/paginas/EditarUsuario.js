@@ -1,7 +1,7 @@
-export function VerDetalles() {
-    const $verdetalles = document.createElement('div');
-    $verdetalles.classList.add('ver-detalles');
-    $verdetalles.innerHTML=` 
+export function EditarUsuario() {
+    const $editarUsuario = document.createElement('div');
+    $editarUsuario.classList.add('ver-detalles');
+    $editarUsuario.innerHTML=` 
     <section class="contenedor-usuario">
             <div class="img-nuevo-usuario">
               <img id="u-ava" src="https://res.cloudinary.com/municipalidad-san-jose-chacaya/image/upload/v1634070657/avatar_mryjhz.svg" alt="">
@@ -50,7 +50,13 @@ export function VerDetalles() {
               <div><label for="" class="input-label">Contraseña:</label>
                 <input type="text" class="input-dato"  id="u-pass" placeholder="..." disabled/></div>  
             </form>
+            <br>
+            <br>
+            <div class="botones-institucion">
+                <p><button id="btn-u-g" class="tercer-btn">Actualiar</button></p>
+            </div>
+          </div> 
         </section>`;
     
-    return $verdetalles;
+    return $editarUsuario;
 }

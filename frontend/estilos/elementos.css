@@ -256,7 +256,7 @@ select::-ms-expand{
 
 
 /*-=================    TABLA MOSTRAR DATOS =======================-*/ 
-table {
+.tabla-lista table {
   table-layout: fixed;/**/
   border-collapse: collapse;
   box-shadow: 0 5px 10px #e1e5ee;
@@ -264,7 +264,7 @@ table {
   color: var(--titulo-color);
   text-align: left;
 }
-table thead {
+.tabla-lista table thead {
   display: block;
   position: relative;
   box-shadow: 0 5px 10px #e1e5ee;
@@ -272,7 +272,7 @@ table thead {
   color: var(--texto-color-light);
   text-align: start;
 }
-table th {
+.tabla-lista table th {
   padding: 10px 10px;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
@@ -281,24 +281,24 @@ table th {
   width: 50px;
   text-align: center;
 }
-table td {
+.tabla-lista table td {
   padding: 10px 2px;
   font-size: 90%;
   width: 50px;
   text-align: center;
 }
-table tr{
+.tabla-lista table tr{
   display: table;
   width: 100%;
 }
-table tr:nth-child(even) {
+.tabla-lista table tr:nth-child(even) {
   display: table;
   width: 100%;
   background-color: var(--tercer-color);
   color: var(--texto-color-light);
 }
 
-table tbody{
+.tabla-lista table tbody{
   display: block;
   width: 100%;
   height: 250px;

@@ -5,9 +5,9 @@
  * @requires componente: opcPanel  para las opciones del modulo
  */
 import { OpcReporte } from './OpcReporte.js';
-import { ReporteTanque } from './ReporteTanque.js'; 
-import { ReporteCentroSalud } from './ReporteCentroSalud.js';
-import { ReporteUsuario } from './ReporteUsuario.js';
+import { ReporteTanque } from './paginas/ReporteTanque.js'; 
+import { ReporteCentroSalud } from './paginas/ReporteCentroSalud.js';
+import { ReporteUsuario } from './paginas/ReporteUsuario.js';
 
 /**
  * Unificacion de componentes del modulo
