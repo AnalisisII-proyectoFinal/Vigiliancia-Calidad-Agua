@@ -1,17 +1,14 @@
 const express = require('express');
-const respuesta = require('../../respuesta/respuesta.js');
-const {getConexion} = require('../../sqlserver/sqlserverconexion.js');
+const {
+  obtenerEmpleados,
+  obtenerTanques,
+  informeCentroSaludXHilo
+}=require('./controladores/reporte.ctrl.js');
 const router = express.Router();
 
 // rutas
-
-router.get('/',inicio);
-
-
-
-async function inicio(req,res,next) {
-  res.json({saludo:'soy ruta reporte'})
-}
-
-
+router.get('/informetanques',obtenerTanques);
+router.get('/centrosaludxhilo/:idh',informeCentroSaludXHilo);
+router.get('/informeempleados',obtenerEmpleados);
+//router.get('/obtenerhilo/:m/:y',obtenerHilosXfecha);
 module.exports = router;
