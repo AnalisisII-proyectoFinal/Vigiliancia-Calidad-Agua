@@ -71,13 +71,12 @@ async function obtenerEmpleados(req,res) {
 
 async function informeCentroSaludXHilo(req,res) {
     const idh=req.params.idh;
-    const muestras=[]
+    const muestras=[];
     try {
         const pool = await getConexion();
         const result = await pool.request().input('idh',sql.Int,idh).execute('dbo.uspinformexhilo');
         
         for (let i = 0; i < result.recordset.length; i=i+3) {
-            
             const data1 = result.recordset[i]
             const data2 = result.recordset[i+1]
             const data3 = result.recordset[i+2]
@@ -89,9 +88,11 @@ async function informeCentroSaludXHilo(req,res) {
             muest.agregarMuestra3(data3)
             muestras.push(muest)
         }
-        console.log(muestras)
-        respuesta.exito(req,res,muestras,200)
         
+        const resultD = await pool.request().execute('dbo.uspobtenerdatosinforcs');
+
+
+        respuesta.exito(req,res,{m:muestras,d:resultD.recordset},200)     
     } catch (error) {
         console.log(error)
     }
@@ -126,12 +127,22 @@ async function obtenerHilosXfecha(req,res) {
     
 }
 
-
+async function obtenerUltimosHilos(req,res) {
+    try {
+        const pool = await getConexion();
+        const result = await pool.request().execute('dbo.uspobtenerultimoshilos')
+        respuesta.exito(req,res,result.recordset,200) 
+    } catch (error) {
+        respuesta.error(req,res,error,500)
+    }
+    
+}
 
 
 module.exports={
     obtenerTanques,
     obtenerEmpleados,
     informeCentroSaludXHilo,
-    obtenerHilosXfecha
+    obtenerHilosXfecha,
+    obtenerUltimosHilos
 }

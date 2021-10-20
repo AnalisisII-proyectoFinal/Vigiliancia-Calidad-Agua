@@ -42,13 +42,12 @@ class UiListarUsuario{
             <td>
             <button class="editar" _id="${el.id}">✏️</button>
             <button class="eliminar" _id="${el.id}">🗑️</button>
-            <button class="ver" _id="${el.id}">🔍​</button>
+            <button class="ver" _id="${el.id}">📇​</button>
             </td>
             `;
             $fragment.appendChild($fila)
             $no++;
         });
-
         $lista.appendChild($fragment)
     }
     editarUsuario(){

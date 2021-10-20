@@ -257,23 +257,23 @@ select::-ms-expand{
 
 /*-=================    TABLA MOSTRAR DATOS =======================-*/ 
 .tabla-lista table {
-  table-layout: fixed;/**/
   border-collapse: collapse;
-  box-shadow: 0 5px 10px #e1e5ee;
+  box-shadow: 0 5px 10px #77787c;
   background-color: white;
   color: var(--titulo-color);
   text-align: left;
 }
-.tabla-lista table thead {
-  display: block;
+.tabla-lista  thead {
   position: relative;
   box-shadow: 0 5px 10px #e1e5ee;
   background-color: var(--cuarto-color);
   color: var(--texto-color-light);
   text-align: start;
 }
-.tabla-lista table th {
+.tabla-lista  th {
   padding: 10px 10px;
+  background-color: var(--tercer-color);
+  color: var(--texto-color-light);
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   font-size: .8rem;
@@ -281,29 +281,19 @@ select::-ms-expand{
   width: 50px;
   text-align: center;
 }
-.tabla-lista table td {
+.tabla-lista td {
   padding: 10px 2px;
   font-size: 90%;
   width: 50px;
   text-align: center;
 }
-.tabla-lista table tr{
-  display: table;
-  width: 100%;
-}
-.tabla-lista table tr:nth-child(even) {
-  display: table;
-  width: 100%;
+
+.tabla-lista tr:nth-child(even) {
   background-color: var(--tercer-color);
   color: var(--texto-color-light);
 }
 
-.tabla-lista table tbody{
-  display: block;
-  width: 100%;
-  height: 250px;
-  overflow: auto;
-}
+
 
 
 /*-====================== TEXTAREA =======================-*/
