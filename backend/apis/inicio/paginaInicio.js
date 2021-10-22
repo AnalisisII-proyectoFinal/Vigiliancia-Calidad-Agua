@@ -16,8 +16,4 @@ router.put('/actualizarcontrasena',ctrl.actualizarContrasena);
 router.put('/actualizarpin/:id',ctrl.actualizarPin)
 
 
-router.post('/hello',validarToken,(req,res)=>{
-    res.json({name:'Bienvenido'})
-})
-
 module.exports = router;

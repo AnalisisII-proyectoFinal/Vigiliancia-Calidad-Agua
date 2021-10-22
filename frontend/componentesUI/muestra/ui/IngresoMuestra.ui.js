@@ -127,17 +127,6 @@ class UiIngMuestra{
             $selectTM.appendChild($opt);
         }
         
-           // let op=`<option selected disabled>muestra</option>`;
-           // $selectTM.appendChild(op);
-             
-            /*
-        if (muestrasIn.length > 0) {
-            
-        }else{
-            let ops=`<option selected disabled>No hay muestras</option>`;
-            $selectTM.appendChild(ops);
-            $selectTM.appendChild($fragment);
-        }    */
     }
 
 

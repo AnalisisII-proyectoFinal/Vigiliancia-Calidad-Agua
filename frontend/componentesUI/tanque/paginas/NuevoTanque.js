@@ -7,6 +7,7 @@
 import UiTanque from "../ui/NuevoTanque.ui.js";
 import {subirImagen} from "../../utilidades/SubirImagen.js";
 import ServicioNotificacion from "../../utilidades/Notificacion.js";
+import {DatosUsuario} from "../../utilidades/DatosUsuario.js";
 const uiTanq = new UiTanque();
 const servNoti = new ServicioNotificacion();
 
@@ -117,6 +118,7 @@ export function Nuevo(){
             if (nom ===''||num ===''||ubic ===''||fecha ===''||lar ===''||ancho ===''||altura ===''||metodo ==='') {
                 servNoti.notificarToast("error","complete todo los campos")
             }else{
+              const $dU=DatosUsuario();
               let tanqueD={
                 nombre:nom,
                 numero:num,
@@ -127,7 +129,7 @@ export function Nuevo(){
                 altura:altura,
                 img:imgT,
                 mcl:metodo,
-                idu:4
+                idu:$dU.id
               }
               uiTanq.nuevoTanque(tanqueD);
             }

@@ -35,6 +35,7 @@ import {Panel} from './panel/Panel.js';
 import {Ayuda} from './ayuda/Ayuda.js';
 import ServicioNotificacion from './utilidades/Notificacion.js';
 import UiAplicacion from './aplicacion/ui/Aplicacion.ui.js';
+import {DatosUsuario}from "./utilidades/DatosUsuario.js";
 
 const serNoti = new ServicioNotificacion();
 const uIApp= new UiAplicacion();
@@ -58,13 +59,11 @@ const M_AYUDA='m-ayuda';
 export function Router(){
   const $contenedor = document.getElementById('contenedor-modulo');
   let $rol=0;
-  if (localStorage.getItem('dataUser')) {
-    let dataU=localStorage.getItem('dataUser');
-    let dataParse=JSON.parse(dataU);
-    $rol=dataParse.rol;
+  const $du=DatosUsuario();
+  if ($ !== 0) {
+    $rol=$du.rol;
   }
     let {hash} = location;
-    console.log(hash);
     $contenedor.innerHTML = null;
     switch (hash) {
       case '/':

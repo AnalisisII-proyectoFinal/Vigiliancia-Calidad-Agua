@@ -2,6 +2,54 @@ const {getConexion,sql}=require('../../sqlserver/sqlserverconexion.js');
 const respuesta = require('../../respuesta/respuesta.js');
 const {encriptar}=require('../utilidad/cifrado.js');
 
+
+class Tanque{
+    constructor(){
+        this.tanq='',
+        this.img='',
+        this.ubicacion='',
+        this.m1={
+            tipo:'',
+            por:0
+        },
+        this.m2={
+            tipo:'',
+            por:0
+        },
+        this.m3={
+            tipo:'',
+            por:0
+        }
+    }
+
+    agregarDatosTanque(d){
+        this.tanq=d.tanque;
+        this.img=d.imgt;
+        this.ubicacion=d.ubicacion;
+    }
+    agregarMuestra1(m){
+        this.m1.tipo=m.muestra;
+        if (m.estado===1) {
+            this.m1.por=100
+        }
+
+    }
+    agregarMuestra2(m){
+        this.m2.tipo=m.muestra;
+        if (m.estado===1) {
+            this.m2.por=100
+        }
+
+    }
+    agregarMuestra3(m){
+        this.m3.tipo=m.muestra;
+        if (m.estado===1) {
+            this.m3.por=100
+        }
+
+    }
+}
+
 async function obtnerDatosInstitucion(req,res) {
     try{
         const pool = await getConexion();  
@@ -32,15 +80,33 @@ async function obtnerPublicaciones(req,res) {
         respuesta.error(req,res,error,500);
     }
 }
+//dbo.uspobtenerdatoshiloactual
 
-
-
+//dbo.uspobtenerdatoshiloactualinicio
 async function obtnerProgresoActual(req,res) {
+    let dataT=[];
     try {
         const pool = await getConexion();
-        const result = await pool.request().execute('dbo.uspobtenerdatoshiloactual')
-        respuesta.exito(req,res,result.recordset,200);
+        const result = await pool.request().execute('dbo.uspobtenerdatoshiloactualinicio');
+
+        if (result.recordset.length !== 0) {
+            
+            for (let i = 0; i < result.recordset.length; i=i+3) {
+                const data1=result.recordset[i];
+                const data2=result.recordset[i+1];
+                const data3=result.recordset[i+2];
+                const t= new Tanque();
+                t.agregarDatosTanque(data1);
+                t.agregarMuestra1(data1);
+                t.agregarMuestra2(data2);
+                t.agregarMuestra3(data3);
+                dataT.push(t)
+            }
+            
+        }
+        respuesta.exito(req,res,dataT,200);
     } catch (error) {
+        console.log(error)
         respuesta.error(req,res,error.message,500);
     }
 }

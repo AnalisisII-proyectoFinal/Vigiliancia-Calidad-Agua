@@ -1,5 +1,5 @@
 ### Get ruta user
-GET http://localhost:4000/api/v1/appmovil/autenticacion/kpilo/123
+GET http://localhost:4000/api/v1/appmovil/autenticacion/cperez/passwordd
 Content-Type: application/json
 
 ### Get ruta user

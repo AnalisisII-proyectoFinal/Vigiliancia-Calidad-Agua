@@ -1,7 +1,3 @@
-/**img */
-//const URL='https://api.cloudinary.com/v1_1/municipalidad-san-jose-chacaya/image/upload';
-//const PRESETS='gg5gskkt';
-
 
 async function obtenerCredencialesCloudinary() {
     if (localStorage.getItem('dataUser')) {

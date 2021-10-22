@@ -1,5 +1,4 @@
 import ServicioInicio from '../servicio/Inicio.ser.js';
-import {Tarjeta} from './Tarjeta.js';
 const serInicio = new ServicioInicio();
 
 class UiInicio{
@@ -32,15 +31,42 @@ class UiInicio{
 
     crearTargetas(muestras){
         const grafica = document.getElementById('contenedor-progreso-ini');
+        grafica.innerHTML='';
         const $fragment = document.createDocumentFragment();
-        for (let i = 0; i < muestras.length; i=i+3) {
-            let dm1 = muestras[i];
-            let dm2 = muestras[i+1];
-            let dm3 = muestras[i+2];
-            const tarjeta = Tarjeta(dm1,dm2,dm3);
-           $fragment.appendChild(tarjeta);
-        }
-        
+        muestras.forEach(el=>{
+            let $contenedorT = document.createElement('div');
+            $contenedorT.classList.add('contenedor-tanque-card')
+            let $targeta = document.createElement('div');
+            $targeta.classList.add('tanque-card');
+            $targeta.innerHTML=`
+            <div class="frente-card">
+              <p>${el.tanq}</p>
+              <hr>
+              <div>
+                <p style="width:35%" data-value="${el.m1.por}">${el.m1.tipo}</p>
+                <progress max="100" value="${el.m1.por}" class="progreso-muestra">
+                <span style="width: 35%"> ${el.m1.por}%</span>
+              </div>
+              <div>
+                <p style="width:35%" data-value="${el.m2.por}">${el.m2.tipo}</p>
+                <progress max="100" value="${el.m2.por}" class="progreso-muestra">
+                <span style="width: 35%"> ${el.m2.por}%</span>
+              </div>
+              <div>
+                <p style="width:35%" data-value="${el.m3.por}">${el.m3.tipo}</p>
+                <progress max="100" value="${el.m3.por}" class="progreso-muestra">
+                <span style="width: 35%"> ${el.m3.por}%</span>
+              </div>
+            </div>
+            <div class="detras-card">
+                <img src="${el.img}" alt="img">    
+                <p>Nombre:${el.tanq}</p>
+                <p>Ubicacion:${el.ubicacion}</p> 
+            </div>
+            `;
+            $contenedorT.appendChild($targeta);
+            $fragment.appendChild($contenedorT)
+        })
         grafica.appendChild($fragment)
     }
 

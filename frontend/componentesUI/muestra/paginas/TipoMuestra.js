@@ -61,9 +61,14 @@ export function TipoMuestra(){
 
           document.getElementById('lista-tipo-muestra').addEventListener('click',(e)=>{
             if (e.target.classList.contains("eliminar")) {
-              let idUs= e.target.getAttribute('_id');
-              const eliminarTM = new UiTipoMuestra();
-              eliminarTM.eliminarTipoMuestra(idUs)              
+              let rConf = confirm('Deseas eliminar el tipo de muestras .?')
+              if (rConf) {
+                let idUs= e.target.getAttribute('_id');
+                const eliminarTM = new UiTipoMuestra();
+                eliminarTM.eliminarTipoMuestra(idUs) 
+              }else{
+                console.log('cancelado')
+              }              
             }
           })
         }

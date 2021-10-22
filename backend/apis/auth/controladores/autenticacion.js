@@ -9,7 +9,6 @@ const verificacarToken = async(req,res,next)=>{
         }
         const decoficado= jwt.verify(token,config.jwt.secret)
         req.id = decoficado.id;
-        console.log(token);
         next();
         
     } catch (error) {

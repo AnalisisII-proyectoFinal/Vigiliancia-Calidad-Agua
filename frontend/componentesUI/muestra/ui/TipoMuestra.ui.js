@@ -43,8 +43,8 @@ class UiTipoMuestra{
 
     eliminarTipoMuestra(idtm){
         serTipoMuestra.hacerPeticion('/tipomuestra',{id:idtm},'PUT').then(r=>{
-            serNotificacionTM.agregarNotificacion('exito',r.body.msg);
             this.obtnerTipoMuestra();
+            serNotificacionTM.notificarToast("success",r.body.msg);   
         }).catch(err=>{
             console.log(err)
             serNotificacionTM.agregarNotificacion('error','ocurrio un error');
