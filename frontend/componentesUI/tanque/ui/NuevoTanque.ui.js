@@ -17,7 +17,8 @@ const servNoti = new ServicioNotificacion();
 class UiTanque {
     obtenerTanques(){
         servTanque.hacerPeticion('/tanques',{},'GET').then(datos=>{
-             this.listarTanques(datos);
+            console.log(datos.body)
+             this.listarTanques(datos.body);
         }).catch(err =>{
             console.log(err)
             servNoti.notificarToast("error","al cargar dato");
@@ -25,9 +26,10 @@ class UiTanque {
     }
 
     obtenerTanque(idt){
-        servTanque.hacerPeticion('/tanque',{idt:idt},'GET').then(dato=>{
-            console.log(dato[0])
-            this.editarTanque(dato[0]);
+        console.log(idt)
+        servTanque.hacerPeticion(`/tanques/${idt}`,{},'GET').then(dato=>{
+            console.log(dato.body[0])
+            this.editarTanque(dato.body[0]);
         }).catch(err=>{
             console.log(err)
             servNoti.notificarToast("error","al cargar dato")
@@ -52,11 +54,9 @@ class UiTanque {
                 <td>${el.ancho}</td>
                 <td>${el.altura}</td>
                 <td>${el.tpcloro}</td>
-                <td>
-                  <button _id="${el.idt}" class="editar">✏️</button>
-                </td>
-                <td>
-                <button class="eliminar" _id="${el.idt}">🗑️</button>
+                <td class="opciones-tbl">
+                  <button _id="${el.id}" class="editar">✏️</button>
+                  <button class="eliminar" _id="${el.id}">🗑️</button>
                 </td>`;
                 $fragment.appendChild($fila)
                 $n++;
@@ -70,12 +70,12 @@ class UiTanque {
     }
 
     obtenerMetodoClorificacion(edit){
-        servTanque.hacerPeticion('/metodocloro',{},'GET').then(datos=>{
-            console.log(datos);
-            if (edit!= 1) {
-                this.listarMetodoCloro(datos)
+        servTanque.hacerPeticion('/metodocl',{},'GET').then(datos=>{
+            console.log(datos.body);
+            if (edit!== 1) {
+                this.listarMetodoCloro(datos.body)
             }else{
-                this.listarMetodoCloroEdit(datos)
+                this.listarMetodoCloroEdit(datos.body)
             }
         }).catch(err=>{
             console.log(err)
@@ -90,7 +90,7 @@ class UiTanque {
               let $fila = document.createElement('option');
               $fila.setAttribute('value',el.id)
                 $fila.innerHTML=`
-                  ${el.mcl}`;
+                  ${el.tratamiento}`;
                 $fragment.appendChild($fila)
             })
             $selectT.appendChild($fragment);  
@@ -104,14 +104,15 @@ class UiTanque {
               let $fila = document.createElement('option');
               $fila.setAttribute('value',el.id)
                 $fila.innerHTML=`
-                  ${el.mcl}`;
+                  ${el.tratamiento}`;
                 $fragment.appendChild($fila)
             })
             $selectT.appendChild($fragment);  
     }
 
     nuevoTanque(tanque){
-        servTanque.hacerPeticion('/nuevotanque',tanque,'POST').then(r=>{
+        servTanque.hacerPeticion('/tanque',tanque,'POST').then(r=>{
+            this.obtenerTanques();
             servNoti.notificarToast("success",r.body.msg);
         }).catch(err=>{
             console.log(err)
@@ -133,9 +134,10 @@ class UiTanque {
         })
     }
     eliminarTanque(idt){
-        servTanque.hacerPeticion('/tanque',{idt:idt},'DELETE').then(r=>{
+        servTanque.hacerPeticion(`/tanque/${idt}`,{},'DELETE').then(r=>{
             console.log(r.msg)
-            servNoti.notificarToast("success",r.msg)
+            this.obtenerTanques();
+            servNoti.notificarToast("success",r.body.msg)
         }).catch(err=>{
             console.log(err)
             servNoti.notificarToast("error","no se pudo eliminar el registro..!")

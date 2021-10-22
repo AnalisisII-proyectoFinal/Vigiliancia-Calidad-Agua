@@ -14,9 +14,14 @@ class UiListarUsuario{
             console.log(error)
         })
     }
-    obtenerDatosUsuario(idu){
+    obtenerDatosUsuario(idu,edit){
         servUsuario.hacerPeticion(`/usuario/${idu}`,{},'GET').then(dato=>{
-            this.verDetallesUsuario(dato)
+            if (edit < 1) {
+                this.verDetallesUsuario(dato.body[0])
+            }else{
+                this.editarUsuario(dato.body[0])
+            }
+            
         }).catch(err=>{
             console.log(err)
             servNoti.notificarToast("error","al cargar datos")
@@ -28,7 +33,6 @@ class UiListarUsuario{
         const $fragment = document.createDocumentFragment();
         let $no = 1;
         usuarios.forEach(el => {
-            let check = (el.estado > 0)?'':'checked=""';
             const $fila = document.createElement('tr');
             $fila.innerHTML=`
             <td>${$no}</td>
@@ -37,12 +41,11 @@ class UiListarUsuario{
             <td>${el.direccion}</td>
             <td>${el.cargo}</td>
             <td>
-            <input type="checkbox" class="estado" _id="${el.id}" ${check}>
+            <button class="detalle" _id="${el.id}">📇​</button>
             </td>
-            <td>
+            <td class="opciones-tbl">
             <button class="editar" _id="${el.id}">✏️</button>
             <button class="eliminar" _id="${el.id}">🗑️</button>
-            <button class="ver" _id="${el.id}">📇​</button>
             </td>
             `;
             $fragment.appendChild($fila)
@@ -50,21 +53,32 @@ class UiListarUsuario{
         });
         $lista.appendChild($fragment)
     }
-    editarUsuario(){
-        ventanModal(EditarUsuario())
+    editarUsuario(empleado){
+        ventanModal(EditarUsuario(empleado))
     }
     eliminarUsuario(idu){
-       servUsuario.hacerPeticion('/',{idu:idu},'DELETE').then(r=>{
+       servUsuario.hacerPeticion(`/usuario/${idu}`,{},'DELETE').then(r=>{
            console.log(r);
-            servNoti.notificarToast("success","eliminado")
+           this.obtenerDatosUsuarios();
+            servNoti.notificarToast("success",r.body.msg)
        }).catch(err=>{
            console.log(err)
            servNoti.notificarToast("error","al cargar datos");
        }) 
 
     }
-    verDetallesUsuario(){
-        ventanModal(VerDetalles())   
+    verDetallesUsuario(empleado){
+        ventanModal(VerDetalles(empleado))   
+    }
+    actualizarEmpleado(empleado){
+        console.log(empleado)
+        servUsuario.hacerPeticion('/usuario',empleado,'PUT').then(r=>{
+            this.obtenerDatosUsuarios();
+            servNoti.notificarToast('success',r.body.msg)
+        }).catch(err=>{
+            console.log(err)
+            servNoti.notificarToast('error','no se puedo actuaizar')
+        })
     }
 
 }

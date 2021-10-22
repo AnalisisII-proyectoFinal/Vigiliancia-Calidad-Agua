@@ -83,7 +83,7 @@ export function Nuevo(){
                 </thead>
                 <tfoot>
                   <tr>
-                    <th colspan='7'>tanques registrados</th>
+                    <th colspan='10'>tanques registrados</th>
                   </tr>
                 </tfoot>
                 <tbody id="lista-tanques"> 
@@ -91,9 +91,7 @@ export function Nuevo(){
               </table>
             </div>        
           </section>`;
-        function initEditarNuevo(){
-          uiTanq.obtenerTanques();
-          uiTanq.obtenerMetodoClorificacion(0);
+        function initNuevo(){
           const subirImgT=document.getElementById('subir-img-t');
           subirImgT.addEventListener('change', async (e)=>{
             const imgPrev = document.getElementById('prev-img-t');
@@ -128,7 +126,8 @@ export function Nuevo(){
                 ancho:ancho,
                 altura:altura,
                 img:imgT,
-                mcl:metodo
+                mcl:metodo,
+                idu:4
               }
               uiTanq.nuevoTanque(tanqueD);
             }
@@ -139,23 +138,15 @@ export function Nuevo(){
             
             if (e.target.classList.contains("eliminar")) {
               let idte = e.target.getAttribute('_id');
-              uiTanq.eliminarTanque(idt)
+              uiTanq.eliminarTanque(idte)
             }else if(e.target.classList.contains('editar')){
               let idt = e.target.getAttribute('_id');
+              console.log(idt)
               uiTanq.obtenerTanque(idt)
             }
           })
         }
-        setTimeout(()=>initEditarNuevo(),100);
+        setTimeout(()=>initNuevo(),100);
         return $nuevo;
 }
 
-
-/*
-          const form = document.querySelector ('.nuevo-tanque');
-          form.addEventListener('keydown',(e)=>{
-            let tipo = e.target.name;
-            let id = e.target.id;
-            let valor = e.target.value;
-            validarInput(tipo,id,valor);
-          })*/

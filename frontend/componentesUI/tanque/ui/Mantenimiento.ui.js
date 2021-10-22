@@ -6,19 +6,19 @@ const servTanque = new ServicioTanque();
 const servNoti = new ServicioNotificacion();
 
 class UiMantenimiento{
-    obtnerMantenimiento(){
-        servTanque.hacerPeticion('',{},'GET').then(datos=>{
-            this.listarMantenimientos(datos)
+    obtnerMantenimientos(){
+        servTanque.hacerPeticion('/mantenimiento',{},'GET').then(datos=>{
+            this.listarMantenimientos(datos.body)
         }).catch(err=>{
             console.log(err);
             servNoti.notificarToast('error',"al cargar los datos");
         })
 
     }
-
+    
     obtenerTanques(){
-        servTanque.hacerPeticion('/',{},'GET').then(datos=>{
-            this.listarTanques(datos)
+        servTanque.hacerPeticion('/manttanques',{},'GET').then(datos=>{
+            this.listarTanques(datos.body)
         }).catch(err=>{
             console.log(err)
             servNoti.notificarToast("error","al cargar los datos");
@@ -26,37 +26,33 @@ class UiMantenimiento{
     }
 
     listarMantenimientos(mantenimientos){
-        const $tablaTanques = document.getElementById('lista-mantenimientos');
-        $tablaTanques.innerHTML='';
-        if (tanques.length > 0) {
+        const $tblMant = document.getElementById('lista-mantenimientos');
+        $tblMant.innerHTML='';
+        if (mantenimientos.length > 0) {
             let $fragment= document.createDocumentFragment();
             let $n=1;
             mantenimientos.forEach(el=>{
               let $fila = document.createElement('tr');
                 $fila.innerHTML=`
                 <td>${$n}</td>
-                <td>${el.tanq}</td>
-                <td>${el.num}</td>
-                <td>${el.ubic}</td>
-                <td>${el.ffuncion}</td>
-                <td>${el.largo}</td>
-                <td>${el.ancho}</td>
-                <td>${el.altura}</td>
-                <td>${el.tpcloro}</td>
+                <td>${el.titulo}</td>
+                <td>${el.descripcion}</td>
+                <td>${el.fecha}</td>
+                <td>${el.tanque}</td>
                 <td>
-                  <button _id="${el.idt}" class="editar">✏️</button>
+                  <button _id="${el.idm}" class="editar">✏️</button>
                 </td>
                 <td>
-                <button class="eliminar" _id="${el.idt}">🗑️</button>
+                <button class="eliminar" _id="${el.idm}">🗑️</button>
                 </td>`;
                 $fragment.appendChild($fila)
                 $n++;
             })  
-            $tablaTanques.appendChild($fragment);   
+            $tblMant.appendChild($fragment);   
         }else{
             let $filaf = document.createElement('tr');
             $filaf.innerHTML=`No hay datos encontrados`;
-            $tablaTanques.appendChild($filaf)
+            $tblMant.appendChild($filaf)
         } 
 
     }
@@ -69,7 +65,7 @@ class UiMantenimiento{
               let $fila = document.createElement('option');
               $fila.setAttribute('value',el.id)
                 $fila.innerHTML=`
-                  ${el.tanq}`;
+                  ${el.nombre}`;
                 $fragment.appendChild($fila)
             })
             $selectT.appendChild($fragment);  
@@ -78,17 +74,19 @@ class UiMantenimiento{
 
 
     nuevoMantenimiento(mantenimento){
-        servTanque.hacerPeticion('/',mantenimento,'POST').then(r=>{
-            servNoti.notificarToast("succes","se inserto el datos");
+        servTanque.hacerPeticion('/mantenimiento',mantenimento,'POST').then(r=>{
+            this.obtnerMantenimientos();
+            servNoti.notificarToast("success",r.body.msg);
         }).catch(err=>{
+            console.log(err)
             servNoti.notificarToast("error"," al insertar dato");
         })
 
     }
 
     editarMantenimiento(idm){
-        servTanque.hacerPeticion('/',{idm:idm},'GET').then(datos=>{
-            ventanModal(EditarMantenimiento())
+        servTanque.hacerPeticion(`/mantenimiento/${idm}`,{},'GET').then(dato=>{
+            ventanModal(EditarMantenimiento(dato.body[0]))
         }).catch(err=>{
             console.log(err)
             servNoti.notificarToast("error","al cargar datos");
@@ -96,7 +94,8 @@ class UiMantenimiento{
 
     }
     actualizarMantenimiento(mantenimito){
-        servTanque.hacerPeticion('/',mantenimito,'PUT').then(datos=>{
+        servTanque.hacerPeticion('/mantenimiento',mantenimito,'PUT').then(datos=>{
+            this.obtnerMantenimientos();
             servNoti.notificarToast("success","actualizado");
         }).catch(err=>{
             console.log(err)
@@ -104,8 +103,9 @@ class UiMantenimiento{
         })
     }
     eliminarMantenimiento(idm){
-        servTanque.hacerPeticion('/',{idm:idm},'DELETE').then(r=>{
-            servNoti.notificarToast("success","eliminado")
+        servTanque.hacerPeticion(`/mantenimiento/${idm}`,{},'DELETE').then(r=>{
+            this.obtnerMantenimientos();
+            servNoti.notificarToast("success",r.body.msg)
         }).catch(err=>{
             console.log(err)
             servNoti.notificarToast("error","al cargar datos")

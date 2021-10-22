@@ -1,62 +1,84 @@
-export function EditarUsuario() {
+import UiListarUsuario from "../ui/ListarUsuarios.ui.js";
+export function EditarUsuario(em) {
+  console.log(em)
     const $editarUsuario = document.createElement('div');
     $editarUsuario.classList.add('ver-detalles');
     $editarUsuario.innerHTML=` 
-    <section class="contenedor-usuario">
             <div class="img-nuevo-usuario">
-              <img id="u-ava" src="https://res.cloudinary.com/municipalidad-san-jose-chacaya/image/upload/v1634070657/avatar_mryjhz.svg" alt="">
-              <h3>Nuevo Usuario</h3>
+              <img id="u-ava" src="${em.av}" alt="">
+              <h3>${em.pn} ${em.pa}</h3>
+              <h3>Editar Usuario</h3>
               </div>
             <form action="" class="f-datos-usuario">
+              <span id="e-e-id" hidden>${em.id}</span>
               <div><label for="" class="input-label">Primer Nombre:</label>
-                <input type="text" class="input-dato"  id="u-pn" placeholder="Escribir Segundo apellido" required=""/></div>
+                <input type="text" class="input-dato" id="e-e-pn"   value="${em.pn}" /></div>
               <div><label for="" class="input-label">Segundo Nombre:</label>
-                <input type="text" class="input-dato" id="u-sn" placeholder="Escribir Segundo apellido" required=""/></div>
+                <input type="text" class="input-dato" id="e-e-sn" value="${em.sn}" /></div>
               <div><label for="" class="input-label">Primer Apellido:</label>
-                <input type="text" class="input-dato"  id="u-pa" placeholder="Escribir Primer Nombre" required=""/></div>
+                <input type="text" class="input-dato" id="e-e-pa" value="${em.pa}" /></div>
               <div><label for="" class="input-label">Segundo Apellido:</label>
-                <input type="text" class="input-dato" id="u-sa" placeholder="Escribir Segundo Nombre" required=""/></div>
+                <input type="text" class="input-dato" id="e-e-sa" value="${em.sa}" ></div>
               <div><label for="" class="input-label">Fecha de Nacimiento:</label>
-                <input type="date" class="input-dato" name "fecha" id="u-fn" placeholder="Full name" required=""/></div>
+                <input type="date" class="input-dato" id="e-e-fn" value="${em.fn}" /></div>
               <div><label for="" class="input-label">DPI:</label>
-                <input type="text" class="input-dato"  id="u-dpi" placeholder="Digite 13 números" required=""/></div>
-              <div><label for="" class="input-label">Género:</label>
-                <div class="select">
-                  <select name="format" id="u-g">
-                    <option selected disabled>Genero</option>
-                    <option value="1">Femenino</option>
-                    <option value="2">Masculino</option>
-                  </select>
-                </div></div>
+                <input type="text" class="input-dato" id="e-e-dpi" value="${em.dpi}" /></div>
+                <div><label for="" class="input-label">GENERO:</label>
+                <input type="text" class="input-dato" id="e-e-ge" value="${em.ge}" /></div>
               <div><label for="" class="input-label">Tel/Celular:</label>
-                <input type="text" class="input-dato"  id="u-t" placeholder="Digite 8 números" required=""/></div>
+                <input type="text" class="input-dato" id="e-e-te" value="${em.te}"/></div>
               <div><label for="" class="input-label">Correo Electrónico:</label>
-                <input type="text" class="input-dato" id="u-c" placeholder="Ejemplo@gmail.com" required=""/></div>
+                <input type="text" class="input-dato" id="e-e-ce" value="${em.ce}" /></div>
               <div><label for="" class="input-label">Dirección/Residencia:</label>
-                <input type="text" class="input-dato"  id="u-d" placeholder="solola...." required=""/></div>
+                <input type="text" class="input-dato" id="e-e-di" value="${em.di}"/></div>
               <div><label for="" class="input-label">Puesto:</label>
-                <input type="text" class="input-dato"  id="u-car" placeholder="cargo..." required=""/></div>
-              <div><label for="" class="input-label">Tipo de Usuario:</label>
-              <div class="select">
-                <select name="format" id="u-per">
-                  <option selected disabled>Permiso de usuario</option>
-                  <option value="1">invitado</option>
-                  <option value="2">moderador</option>
-                  <option value="3">administrador</option>
-                </select>
-              </div></div>
-              <div><label for="" class="input-label">Usuario:</label>
-                <input type="text" class="input-dato"  id="u-user" placeholder="..."  disabled/></div>
-              <div><label for="" class="input-label">Contraseña:</label>
-                <input type="text" class="input-dato"  id="u-pass" placeholder="..." disabled/></div>  
+                <input type="text" class="input-dato" id="e-e-ca" value="${em.ca}"/></div>
             </form>
             <br>
-            <br>
             <div class="botones-institucion">
-                <p><button id="btn-u-g" class="tercer-btn">Actualiar</button></p>
+                <p><button id="btn-e-a" class="tercer-btn">Actualizar</button></p>
             </div>
-          </div> 
-        </section>`;
+            
+            `;
     
+    function initEditarEmpleado() {
+      const btnAct = document.getElementById('btn-e-a');
+      btnAct.addEventListener('click',()=>{
+        console.log('presinoand')
+        const ide = document.getElementById('e-e-id').innerHTML;
+        const pn = document.getElementById('e-e-pn').value;
+        const sn = document.getElementById('e-e-sn').value;
+        const pa = document.getElementById('e-e-pa').value;
+        const sa = document.getElementById('e-e-sa').value;
+        const fn = document.getElementById('e-e-fn').value;
+        const dpi = document.getElementById('e-e-dpi').value;
+        const ge = document.getElementById('e-e-ge').value;
+        const te = document.getElementById('e-e-te').value;
+        const ce = document.getElementById('e-e-ce').value;
+        const di = document.getElementById('e-e-di').value;
+        const ca = document.getElementById('e-e-ca').value;
+
+        
+          let datosEmp={
+            ide:ide,
+            pn:pn,
+            sn:sn,
+            pa:pa,
+            sa:sa,
+            dpi:dpi,
+            sex:ge,
+            dir:di,
+            carg:ca,
+            tel:te,
+            corr:ce,
+            fnaci:fn}
+         
+          const actEmp =new UiListarUsuario();
+          actEmp.actualizarEmpleado(datosEmp);
+          
+      })
+      
+    }
+    setTimeout(()=>initEditarEmpleado(),100)
     return $editarUsuario;
 }

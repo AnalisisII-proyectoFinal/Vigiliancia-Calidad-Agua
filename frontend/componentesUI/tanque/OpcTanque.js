@@ -11,7 +11,10 @@
  * importacion de modulos
  * @requires componente:funciones - mostrar, ocultar y resaltar componentes.
  */
-import {mostrarComponente} from '../utilidades/MostrarComponente.js'
+import {mostrarComponente} from '../utilidades/MostrarComponente.js';
+import UiMantenimiento from './ui/Mantenimiento.ui.js';
+import UiMetodoCloracion from './ui/MetodoCloracion.ui.js';
+import UiNuevoTanque from './ui/NuevoTanque.ui.js';
 /**
  * @type {string} - id de paginas
  */
@@ -35,13 +38,28 @@ export function OpcTanque(){
          * inicio de funcionalidades
          */
     function iniTanque(){
+      const tanq=new UiNuevoTanque();
+      const mtc = new UiMetodoCloracion();
+      const mant = new UiMantenimiento();
       const opcModulo = document.querySelector('.menu-lateral');
         opcModulo.addEventListener('click',(e)=>{
           if(e.target && e.target.tagName === 'BUTTON'){
             mostrarComponente(e.target.id);
+            if (e.target.id === 'btn-1') {
+              tanq.obtenerMetodoClorificacion(0);
+              tanq.obtenerTanques();
+            }else if (e.target.id === 'btn-2') {
+              mant.obtnerMantenimientos();
+              mant.obtenerTanques();
+            }else if (e.target.id === 'btn-3') {
+              mtc.obtenerMetodosCloracion();
             }
+            
+          }
         })     
       mostrarComponente(BTN_1);
+      tanq.obtenerMetodoClorificacion(0);
+      tanq.obtenerTanques();
     }
     /**
     * Temporizador para inicio de funcionalidades

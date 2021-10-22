@@ -39,7 +39,7 @@ export function Mantenimiento(){
                 <p>
                   <label class="input-label" for="">Tanque</label>
                     <div class="select">
-                    <select name="format" id="opt-t-m"></select>
+                    <select  id="opt-t-m"></select>
                   </div>
                 </p>
               </div>
@@ -75,9 +75,11 @@ export function Mantenimiento(){
             </div>        
 </section>
         `;
-        function initEditarMantenimiento(){
+        function initMantenimiento(){
             const uiMant = new UiMantenimiento();
             const servNoti = new ServicioNotificacion();
+            uiMant.obtnerMantenimientos();
+            uiMant.obtenerTanques();
 
           const subirImg=document.getElementById('subir-img-m');
           subirImg.addEventListener('change', async (e)=>{
@@ -88,13 +90,14 @@ export function Mantenimiento(){
             prevImg.src=urlImg;
           })
 
-          document.getElementById('tabla-mantenimiento').addEventListener('click',(e)=>{
+          document.getElementById('lista-mantenimientos').addEventListener('click',(e)=>{
             if (e.target.classList.contains('editar')) {
               const idm = e.target.getAttribute('_id');
-              uiMant.obtnerMantenimiento(idm)
+              uiMant.editarMantenimiento(idm)
             }else if (e.target.classList.contains('eliminar')){
               const idmt = e.target.getAttribute('_id');
-              uiMant.eliminarMantenimiento(idmt);
+             console.log(idmt)
+               uiMant.eliminarMantenimiento(idmt);
             }
           })
 
@@ -112,8 +115,10 @@ export function Mantenimiento(){
                 descripcion:desc,
                 fecha:fecha,
                 idtanq:tanq,
-                img:img
+                img:img,
+                idu:4
               }
+              console.log(datosMant);
               uiMant.nuevoMantenimiento(datosMant);
             }else{
               servNoti.notificarToast('error',"llene todos los campos")
@@ -130,6 +135,6 @@ export function Mantenimiento(){
             validarInput(tipo,id,valor);
           })*/
         }
-        setTimeout(()=>initEditarMantenimiento(),100);
+        setTimeout(()=>initMantenimiento(),100);
         return $mantenimiento;
 }

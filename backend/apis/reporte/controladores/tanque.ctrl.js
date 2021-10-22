@@ -61,7 +61,7 @@ async function obtenerDetalleTanque(req,res) {
             dTanque.agregarMantenimiento(mant)
                 
             }
-            data.push(dTanque)
+            datat.push(dTanque)
         }
         respuesta.exito(req,res,datat,200)
         

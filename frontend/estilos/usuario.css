@@ -106,3 +106,7 @@
 {
     height: 40px;
 }
+.ver-detalles{
+    color: var(--texto-color-light);
+    height: 70vh;
+}

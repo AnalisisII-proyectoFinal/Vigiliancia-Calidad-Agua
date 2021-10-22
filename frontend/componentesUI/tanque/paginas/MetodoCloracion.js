@@ -30,10 +30,10 @@ export function MetodoCloracion(){
           <table>
           <thead>
             <tr>
-              <th>nombre</th>
+              <th>No.</th>
+              <th>tratamiento</th>
               <th>Descripción</th>
               <th>Opciones</th>
-              <th>detalles</th>
             </tr>
           </thead>
           <tfoot>
@@ -49,9 +49,10 @@ export function MetodoCloracion(){
         function initEditarMetodoCloracion(){
           const uiMetCl = new UiMetodoCloracion();
           const servNoti = new ServicioNotificacion();
-          document.getElementById('tabla-metodo').addEventListener('click',(e)=>{
+          document.getElementById('lista-metodos').addEventListener('click',(e)=>{
             if (e.target.classList.contains('editar')) {
               const idmcl = e.target.getAttribute('_id');
+              console.log(idmcl)
               uiMetCl.obtenerMetodoCloracion(idmcl);
             }else if (e.target.classList.contains('eliminar')){
               const idmc = e.target.getAttribute('_id');
@@ -68,14 +69,17 @@ export function MetodoCloracion(){
 
           const btnGuardar=document.getElementById('btn-mt-g');
           btnGuardar.addEventListener('click',(e)=>{
+            e.preventDefault();
+            console.log('presionando')
+            
             const metodo=document.getElementById('m-metodo').value;
-            const desc=document.getElementById('m-desc');
+            const desc=document.getElementById('m-desc').value;
             if (metodo !=='' || desc!=='') {
-              let metodoD={
+              let metodoD ={
                 tratamiento:metodo,
                 descripcion:desc
               }
-              uiMant.nuevoMantenimiento(metodoD);
+              uiMetCl.nuevoMetodoCloracion(metodoD);
             }else{
               servNoti.notificarToast("error","llene todos los campos");
             }

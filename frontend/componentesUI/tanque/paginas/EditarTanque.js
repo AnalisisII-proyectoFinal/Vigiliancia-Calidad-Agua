@@ -1,5 +1,3 @@
-//import UiTanque from "../ui/NuevoTanque.ui.js";
-//const uiTanq = new UiTanque();
 import {subirImagen}from "../../utilidades/SubirImagen.js";
 import UiTanque from "../ui/NuevoTanque.ui.js";
 export function EditarTanque(d) {
@@ -9,6 +7,7 @@ export function EditarTanque(d) {
     $editartanque.innerHTML=`
           <h2>Editar Tanque</h2>
           <form>
+            <span id="e-id-t" hidden>${d.id}</span>
             <div class="container-img">
                 <div class="card">
                 <img id="prev-img-t-e" height="200px" width="200px" src="${d.img}">
@@ -34,7 +33,7 @@ export function EditarTanque(d) {
               <p><label for="" class="input-label">Ancho(mts):</label>
                 <input type="text" class="input-dato" id="e-t-ancho" placeholder="ancho mts" required="" value="${d.ancho}"/></p>
               <p><label for="" class="input-label">Altura(mts):</label>
-                <input type="text" class="input-dato" id="e-t-altura" placeholder="altura mts" required="" value="${d.altura}"/></p>
+                <input type="text" class="input-dato" id="e-t-altura" placeholder="altura mts" required="" value="${d.alto}"/></p>
               <div>
               <label for="" class="input-label">Método Cloracion:</label>
               <div class="select">
@@ -63,20 +62,22 @@ export function EditarTanque(d) {
         const btnAct=document.getElementById('btn-t-a');
         btnAct.addEventListener('click',(e)=>{
           e.preventDefault();
+          const idt = document.getElementById('e-id-t').innerHTML;
             const imgT=document.getElementById('prev-img-t-e').src;
-            const nom = document.getElementById('t-nom-e').value;
-            const num = document.getElementById('t-num-e').value;
-            const ubic = document.getElementById('t-ubic-e').value;
-            const fecha = document.getElementById('t-ffun-e').value;
-            const lar = document.getElementById('t-largo-e').value;
-            const ancho = document.getElementById('t-ancho-e').value;
-            const altura = document.getElementById('t-altura-e').value;
+            const nom = document.getElementById('e-t-nom').value;
+            const num = document.getElementById('e-t-num').value;
+            const ubic = document.getElementById('e-t-ubic').value;
+            const fecha = document.getElementById('e-t-ffun').value;
+            const lar = document.getElementById('e-t-largo').value;
+            const ancho = document.getElementById('e-t-ancho').value;
+            const altura = document.getElementById('e-t-altura').value;
             const metodo = document.getElementById('list-metodo-e').value;
 
             if (nom ===''||num ===''||ubic ===''||fecha ===''||lar ===''||ancho ===''||altura ===''||metodo ==='') {
                 servNoti.notificarToast("error","complete todo los campos")
             }else{
               let tanqueD={
+                idt:idt,
                 nombre:nom,
                 numero:num,
                 ubicacion:ubic,
@@ -88,6 +89,7 @@ export function EditarTanque(d) {
                 mcl:metodo
               }
               const uiTanq=new UiTanque();
+              console.log(tanqueD)
               uiTanq.actulizarTanque(tanqueD);
             } 
         })

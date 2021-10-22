@@ -292,7 +292,14 @@ select::-ms-expand{
   background-color: var(--tercer-color);
   color: var(--texto-color-light);
 }
-
+.opciones-tbl{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.opciones-tbl button{
+  margin-left: 5px;
+}
 
 
 
