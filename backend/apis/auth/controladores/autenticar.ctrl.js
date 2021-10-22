@@ -26,7 +26,9 @@ async function autenticarUsuario(req,res) {
                     msg:"Bienvenido",
                     t:token,
                     id:result.recordset[0].id,
-                    rol:result.recordset[0].per
+                    rol:result.recordset[0].per,
+                    cloudinary:config.cloudinary.cloud,
+                    presets:config.cloudinary.presets,
                 }    
                 respuesta.exito(req,res,authExito,200)
             }  
